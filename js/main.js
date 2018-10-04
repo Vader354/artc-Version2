@@ -1,13 +1,18 @@
 console.log("main.js has been called.")
 
-var users = [{
-    username: 'Marten',
-    password: 'Sievers'
-},{
-    username: 'Marie',
-    password: 'Henkelmann'
-}]
 
+// document.getElementById('submit').onclick = function()
+ //   let username = document.getElementById('username').value;
+ //   let password = document.getElementById('password').value;
+
+ //   if(username.length == 0) || password.length == 0)
+ //     
+
+
+
+
+
+// Henriks version:
 // We create a user class, so we have an easy way to create users and further implement features at a later stage
 class User {
 
@@ -52,7 +57,7 @@ class User {
   var users = [];
   
   // Fill it up with a few users
-  users.push(new User("Henrik", "Thorn", "thorn", "qwerty"));
+  users.push(new User("Marie", "Henkelmann", "mahe18aj", "hello"));
   users.push(new User("Peter", "Pan", "milkway", "password"));
   
   // Bind the button to a variable for later use
@@ -138,3 +143,7 @@ class User {
       return false;
     }
   };
+
+
+  // window function to lead to other html
+  // 
