@@ -27,8 +27,11 @@ a {
 }
 
 li a:hover {
-    color: white;
+    color: black;
+    text-decoration: underline;
+    /*
     background-color: black;
     border-radius: 4px;
+    */
 }
 
