@@ -14,19 +14,29 @@ li {
 li a {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
+    display: block;
     color: black;
-    text-align: center;
+    position: relative;
+    text-align: left;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-a {
-    display: block;
-    padding: 10px;
-    background-color: white;
+li a:hover {
+    color: black;
+    text-decoration: underline;
+    /*
+    background-color: black;
+    border-radius: 4px;
+    */
 }
 
-li a:hover {
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
     color: black;
     text-decoration: underline;
     /*

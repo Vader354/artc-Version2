@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- links to different css files -->
+    <link rel="stylesheet" href="../css/headings.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/overview_tabs.css">
+    <link rel="stylesheet" href="../css/overview_mypicks.css">
+
+    <!-- links to fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
+
+    <!-- load all databases before body -->
+    <script src="js/userDB.js"></script>
+
+    <title>ArtC - Overview</title>
+</head>
+<body>
+
+<ul>
+    <li><a href="../index.html">ArtC</a></li>
+    <li><a href="overview.html">Overview</a></li>
+    <li><a href="../html/howitworks.html">How It Works</a></li>
+    <li style="float:right"><a href="../html/login.html">Log-In</a></li>
+</ul>
+
+<!-- https://www.w3schools.com/howto/howto_js_tabs.asp  -->
+<!-- creating two different tabs for venues and current exhibitions -->
+<div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'CurrentExhibitions')">Exhibitions</button>
+        <button class="tablinks" onclick="openTab(event, 'ArtVenues')">Art Venues</button>
+</div>
+      
+<!-- tab content -->
+<div id="CurrentExhibitions" class="tabcontent">
+    <ul>
+        <li>
+            <a href="../html/exhibition1.html" style="padding:0"><h2>Exhibition 1</h2></a>
+            text text text text text text text text text text text text <br><br>
+            <button class="myPicks" onclick="addPick(exhibition1)">+ My Picks</button>
+        </li><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <li>
+                <a href="../html/exhibition2.html" style="padding:0"><h2>Exhibition 2</h2></a>
+            text text text text text text text text text text text text <br><br>
+            <button class="myPicks" onclick="addPick(exhibition2)">+ My Picks</button>
+        </li><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <li>
+            <a href="../html/exhibition3.html" style="padding:0px"><h2>Exhibition 3</h2></a>
+            text text text text text text text text text text text text <br><br>
+            <button class="myPicks" onclick="addPick(exhibition3)">+ My Picks</button>
+        </li>
+    </ul>
+
+</div>
+      
+<div id="ArtVenues" class="tabcontent">
+    <ul>
+        <li>
+            <h2>Venue 1</h2>
+            text text text text text text text text text text text text 
+        </li><br><br><br><br><br><br><br><br>
+        <li>
+            <h2>Venue 2</h2>
+            text text text text text text text text text text text text 
+        </li><br><br><br><br><br><br><br><br>
+        <li>
+            <h2>Venue 3</h2>
+            text text text text text text text text text text text text 
+        </li><br><br><br><br><br><br><br><br>
+    </ul>
+     
+</div>
+
+<script src="../js/overview_tabs.js"></script>
+<script src="../js/overview_mypicks.js"></script>
+      
+    
+
+</body>
+</html>
