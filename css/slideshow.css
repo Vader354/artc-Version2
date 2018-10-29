@@ -66,7 +66,7 @@
   font-weight: 400;
   font-size: 15px;
   /* find a way to make it relative / centrally aligned */
-  bottom: 450px; 
+  bottom: 480px; 
   left: 650px;
   padding: 10px 30px;
   border-style: solid;
@@ -112,7 +112,7 @@
   border-color: #000000;
   display: inline-block;
   position: relative;
-  bottom: 70px;
+  bottom: 55px;
   transition: background-color 0.6s ease;
 }
 

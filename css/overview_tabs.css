@@ -14,13 +14,13 @@
 .tab button {
     display: inline-block;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     border-style: solid;
     border-width: 2px;
     border-color: black;
     background-color: white;
     float: center;
-    padding: 14px 40px;
+    padding: 14px 30px;
     transition: 0.4s;
 }
 
@@ -39,7 +39,8 @@
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 40px 10px;
+    left: 100px;
+    top: 50px;
     position: relative;
     left: 50px;
 }
