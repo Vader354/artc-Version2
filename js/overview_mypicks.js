@@ -1,26 +1,22 @@
 // WIP!
 
-let venues = 
-{ 
-    museums = { ... },
+exhibitionList = document.getElementsByClassName("exhibitionListItem")
+console.log(exhibitionList)
 
-    galleries = { ... }
-}
+// this for venues is not needed for myPicks but for filtering
+venueList = document.getElementsByClassName("venueListItem")
+console.log(venueList)
 
-let exhibitions = 
-{
-    exhibition1 = { ... },
-    exhibition2 = { ... }
+let myPicks = [];
 
-}
-
-function addPicks(exhibitions) {
-    let myPicks = [];
-    // when clicking this and this button, push to the myPicks array;
-    myPicks = myPicks.exhibitions.push();
+function addPick(exhibitionList) {
+    let i = 0;
+    // when clicking this button, push to the myPicks array;
+    myPicks = myPicks.exhibitionList[i].push();
     return myPicks;
 }
+console.log(myPicks)
 
-function removePicks(exhibitions) {
+function removePick(exhibitionListItem) {
     
 }

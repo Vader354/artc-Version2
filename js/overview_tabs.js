@@ -1,9 +1,10 @@
-// WIP ! 
-// need to have class active for the exhibition list as default when opening the page...
+function init() {
+    document.getElementById("defaultOpen").click();
+}
 
 function openTab(evt, listName) {
     // Declare all variables
-    var i, tabcontent, tablinks;
+    let i, tabcontent, tablinks;
 
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
