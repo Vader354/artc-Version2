@@ -8,7 +8,7 @@
   height: 100%;
   object-fit: cover;
   position: absolute;
-  top: 0px;
+  top: 60px;
   left: 0px;
 }
 
@@ -25,7 +25,7 @@
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 360px;
+  top: 300px;
   width: auto;
   /* margin-top: -30px; */
   padding: 30px;
@@ -54,7 +54,7 @@
     color: #000000;
     font-size: 50px;
     position: absolute;
-    bottom: 550px;
+    bottom: 610px;
     width: 100%;
     text-align: center;
 }
@@ -66,7 +66,7 @@
   font-weight: 400;
   font-size: 15px;
   /* find a way to make it relative / centrally aligned */
-  bottom: 480px; 
+  bottom: 540px; 
   left: 650px;
   padding: 10px 30px;
   border-style: solid;
@@ -84,7 +84,7 @@
   font-size: 20px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 130px;
+  bottom: 160px;
   width: 100%;
   text-align: center;
 }
@@ -95,8 +95,8 @@
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
-  top: 60px;
-  left: 5px;
+  top: 10px;
+  left: 12px;
 }
 
 .dot {
@@ -112,7 +112,7 @@
   border-color: #000000;
   display: inline-block;
   position: relative;
-  bottom: 55px;
+  bottom: 60px;
   transition: background-color 0.6s ease;
 }
 
