@@ -10,12 +10,17 @@
     <link rel="stylesheet" href="../css/navigation.css">
     <link rel="stylesheet" href="../css/overview_tabs.css">
     <link rel="stylesheet" href="../css/overview_mypicks.css">
+    <link rel="stylesheet" href="C:\Users\Ehler\Desktop\I2P\I2P Exam Project\artc\css\overview_search.css">
 
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
 
+    <!-- link to search icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
     <!-- load all databases before body -->
     <!-- <script src="js/userDB.js"></script> -->
+    <script src="C:\Users\Ehler\Desktop\I2P\I2P Exam Project\artc\js\overview_search.js"></script>
 
     <title>Overview | ArtC</title>
 </head>
@@ -39,20 +44,27 @@
 
 <!-- tab content -->
 <div id="CurrentExhibitions" class="tabcontent">
-    <ul>
+
+    <!-- Search Function Exhibitions -->
+    <!-- Search function by ID works, but obviously only for one tab (since i used id). Need to work on the second tab, see below -->
+    <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search exhibitions...">
+
+    <ul id="myUL">
         <li>
             <a href="../html/exhibition1.html" style="padding:0"><h2 class="exhibitionListItem">Exhibition 1</h2></a>
-            text text text text text text text text text text text text <br><br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque dignissimos quod dicta perferendis aliquam porro esse hic inventore necessitatibus magni sunt veritatis saepe voluptatibus distinctio, eveniet maiores corrupti earum quas. <br><br>
+            <!-- EHLER: I think instead of using all these breaks, we should try to use more divs, classes, ids etc. to style things like padding and stuff -->
             <button class="myPicks" onclick="addPick(exhibitionList[i])">+ My Picks</button>
-        </li><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </li>
+        <!-- EHLER: I removed all the breakes here, what was their purpose?-->
         <li>
             <a href="../html/exhibition2.html" style="padding:0"><h2 class="exhibitionListItem">Exhibition 2</h2></a>
-            text text text text text text text text text text text text <br><br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo magnam in porro at ad voluptate quidem consequuntur rerum, excepturi iure vero quod culpa veniam, quis esse natus tenetur saepe quia. <br><br>
             <button class="myPicks" onclick="addPick(exhibitionList[i])">+ My Picks</button>
-        </li><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </li>
         <li>
             <a href="../html/exhibition3.html" style="padding:0"><h2 class="exhibitionListItem">Exhibition 3</h2></a>
-            text text text text text text text text text text text text <br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero autem commodi minus deserunt magnam reprehenderit voluptatem? Laboriosam consequatur, doloribus placeat iure dignissimos aliquid, voluptatem asperiores eum obcaecati sed ipsam id. <br><br>
             <button class="myPicks" onclick="addPick(exhibitionList[i])">+ My Picks</button>
         </li>
     </ul>
@@ -60,24 +72,31 @@
 </div>
       
 <div id="ArtVenues" class="tabcontent">
+
+    <!-- Search Function Venues -->
+    <!-- So far just copied the search function form above. Doesn't work (because of ID). didn't figure a better way out yet. -->
+    <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search venues...">
+
     <ul>
         <li>
-            <h2 class="venueListItem">Venue 1</h2>
-            text text text text text text text text text text text text 
-        </li><br><br><br><br><br><br><br><br>
+            <a href="C:\Users\Ehler\Desktop\I2P\I2P Exam Project\artc\html\dummy_venue1.html" style="padding:0"><h2 class="venueListItem">Venue 1</h2></a>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero autem commodi minus deserunt magnam reprehenderit voluptatem? Laboriosam consequatur, doloribus placeat iure dignissimos aliquid, voluptatem asperiores eum obcaecati sed ipsam id.
+        </li>
         <li>
-            <h2 class="venueListItem">Venue 2</h2>
-            text text text text text text text text text text text text 
-        </li><br><br><br><br><br><br><br><br>
+            <a href="C:\Users\Ehler\Desktop\I2P\I2P Exam Project\artc\html\dummy_venue2.html" style="padding:0"><h2 class="venueListItem">Venue 2</h2></a>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eveniet tempore quibusdam quis, quae beatae eaque autem. Rerum aut vero ratione, quisquam illo sint ad, fuga itaque, eaque modi exercitationem!
+        </li>
         <li>
-            <h2 class="venueListItem">Venue 3</h2>
-            text text text text text text text text text text text text 
-        </li><br><br><br><br><br><br><br><br>
+            <a href="C:\Users\Ehler\Desktop\I2P\I2P Exam Project\artc\html\dummy_venue3.html" style="padding:0"><h2 class="venueListItem">Venue 3</h2></a>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam non harum sunt, itaque laboriosam eligendi quaerat ipsam exercitationem atque ipsum? Voluptates dolorum amet aut molestias explicabo animi modi aperiam officia.
+        </li>
     </ul>
      
 </div>
 
 <script src="../js/overview_mypicks.js"></script>
+
+<!-- Filter List:  https://www.w3schools.com/howto/howto_js_filter_lists.asp -->
       
     
 
