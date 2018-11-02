@@ -1,22 +1,39 @@
-// WIP!
+class myPick {
+    constructor(exhibitionListItem) {
+        this.exhibitionListItem = exhibitionListItem;
+        this.pickDate = 0;
+    }
 
-exhibitionList = document.getElementsByClassName("exhibitionListItem")
-console.log(exhibitionList)
-
-// this for venues is not needed for myPicks but for filtering
-venueList = document.getElementsByClassName("venueListItem")
-console.log(venueList)
-
-let myPicks = [];
-
-function addPick(exhibitionList) {
-    let i = 0;
-    // when clicking this button, push to the myPicks array;
-    myPicks = myPicks.exhibitionList[i].push();
-    return myPicks;
+    setPickDate() {
+        this.pickDate = Date.now();
+    }
 }
+
+var myPicks = [];
+
+var exhibitionList = document.getElementsByClassName("exhibitionListItem");
+
+var i = exhibitionList.indexOf("exhibitionListItem");
+
+var exhibitionListItem = exhibitionList[i]
+
+function addPick() {
+    myPicks.push(new myPick("exhibitionListItem"));
+}
+
+// or: ? 
+// var pick = document.getElementsByClassName("addPickButton");
+// pick.onclick = function() {
+//    myPicks.push(new myPick("exhibitionListItem"));
+// }
+
 console.log(myPicks)
 
-function removePick(exhibitionListItem) {
-    
-}
+alert(exhibitionListItem + "has been added to your picks.")
+
+
+
+// WIP!
+
+// function removePick(exhibitionListItem) { 
+// }

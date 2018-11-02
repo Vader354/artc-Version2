@@ -2,7 +2,7 @@ function init() {
     document.getElementById("defaultOpen").click();
 }
 
-function openTab(evt, listName) {
+function openTab(event, listName) {
     // Declare all variables
     let i, tabcontent, tablinks;
 
@@ -20,7 +20,7 @@ function openTab(evt, listName) {
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(listName).style.display = "block";
-    evt.currentTarget.className += " active";
+    event.currentTarget.className += " active";
 }
 
 
