@@ -27,6 +27,13 @@ function addPick() {
 //    myPicks.push(new myPick("exhibitionListItem"));
 // }
 
+// or: ?
+// add(exhibitionListItem) {
+//    if (pick.onlick) {
+//        this.myPicks.push(exhibitionListItem)
+//    }
+//}
+
 console.log(myPicks)
 
 alert(exhibitionListItem + "has been added to your picks.")
