@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../css/headings.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+
+    <!-- links to fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
+
+    <title>Registration | ArtC</title>
+</head>
+<body>
+
+<ul>
+    <li><a href="../index.html">ArtC</a></li>
+    <li><a href="overview.html">Overview</a></li>
+    <li><a href="../html/howitworks.html">How It Works</a></li>
+    <li style="float:right"><a href="../html/login.html">Log-In</a></li>
+</ul>
+    
+<h1>Registration // HTML5 Forms, validation & JS</h1>
+    <form id="registration-form">
+        <label for ="username">Username: </label>
+        <input type="text" id="username" name="username" placeholder="Username" required><br>
+
+        <!-- http://regexlib.com/Search.aspx?k=password&AspxAutoDetectCookieSupport=1 -->
+        <label for ="password">Password: </label> 
+        <input type="password" id="password" name="password" placeholder="Password" pattern="^(?=.*\d).{4,8}$" title="Password must be 4 characters long." required> <br>
+
+        <label for ="email">Email: </label> 
+        <input type="email" id="email" name="email" placeholder="E-Mail" required> <br>
+ 
+        <div>
+            <label for ="male">Male:</label>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for ="female">Female:</label>
+            <input type="radio" id="male" name="gender" value="Female">
+        </div>
+
+        <input type="checkbox" id="gender" name="gender" required> <label for="gender">I read and agree to the terms and conditions.</label> <br>
+        
+        <button>Submit</button>
+
+    </form>
+
+<script>
+
+    document.getElementById('registration-form').addEventListener('submit', function(event) {
+        event.preventDefault()
+
+        let user = {
+            Username: event.target.username.value,
+            Email: event.target.email.value,
+            Password: event.target.password.value,
+            Gender: event.target.gender.value
+        }
+
+        // something like array.push(user) to add to current user data base
+
+        console.log(user)
+
+        event.target.reset()
+    })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+.addPickButton {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    background-color: white;
+    float: center;
+    padding: 14px 30px;
+    transition: 0.4s;
+}
+
+.addPickButton:hover {
+    background-color: black;
+    color: white;
+}

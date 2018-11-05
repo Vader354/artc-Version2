@@ -1,0 +1,46 @@
+/* Style the tab */
+.tab {
+    float: center;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 20px; 
+    /* display: inline-block; */
+    /* border: none;
+    background-color: white; */
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    background-color: white;
+    float: center;
+    padding: 14px 30px;
+    transition: 0.4s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    left: 100px;
+    top: 50px;
+    position: relative;
+    left: 50px;
+}
