@@ -10,8 +10,9 @@ class User {
       this.lastAccess = null;
     }
 
+    // not sure here yet
     setAddress() {
-        this.address = new Address(this.email, this.phone, this.street, this.streetNr, this.postalCode, this.city, this.country)
+        this.address = new Address(this.email, this.phone, this.street, this.streetNr, this.postalCode, this.city, this.country, this.geolocation)
     }
 
     encryptPwd() {
@@ -27,3 +28,5 @@ class User {
     }
 
 }
+
+// add some users
