@@ -10,6 +10,10 @@ class User {
       this.lastAccess = null;
     }
 
+    setAddress() {
+        this.address = new Address(this.email, this.phone, this.street, this.streetNr, this.postalCode, this.city, this.country)
+    }
+
     encryptPwd() {
 
     }
@@ -19,7 +23,6 @@ class User {
     }
 
     addPick() {
-
         document.getElementsByClassName 
     }
 

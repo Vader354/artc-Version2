@@ -6,9 +6,9 @@ class Venue {
         this.openingHours = openingHours;
     }
 
-    // setAddress() {
-    //
-    // }
+    setAddress() {
+        this.address = new Address(this.email, this.phone, this.street, this.streetNr, this.postalCode, this.city, this.country)
+    }
 }
 
 
