@@ -1,17 +1,17 @@
-var myPicks = [];
+// var myPicks = [];
 
-var exhibitionList = document.getElementsByClassName("Exhibition");
+// var exhibitionList = document.getElementsByClassName("Exhibition");
 
-var i = exhibitionList.indexOf("exhibitionListItem");
+// var i = exhibitionList.indexOf("exhibitionListItem");
 
-var exhibitionListItem = exhibitionList[i]
+// var exhibitionListItem = exhibitionList[i]
 
-function addPick() {
-    myPicks.push(new myPick("exhibitionListItem"));
-}
+// function addPick() {
+//    myPicks.push(new myPick("exhibitionListItem"));
+// }
 
 
-slice! 
+// slice! 
 
 // or: ? 
 // var pick = document.getElementsByClassName("addPickButton");
@@ -26,9 +26,9 @@ slice!
 //    }
 //}
 
-console.log(myPicks)
+// console.log(myPicks)
 
-alert(exhibitionListItem + "has been added to your picks.")
+// alert(exhibitionListItem + "has been added to your picks.")
 
 
 

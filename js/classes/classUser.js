@@ -18,4 +18,9 @@ class User {
         this.lastAccess = Date.now();  
     }
 
+    addPick() {
+
+        document.getElementsByClassName 
+    }
+
 }
