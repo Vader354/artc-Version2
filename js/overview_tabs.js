@@ -1,3 +1,5 @@
+// TABS (// https://www.w3schools.com/howto/howto_js_tabs.asp)
+
 // function which will be called onload within the body, so that exhibition tab is active by default through click()
 function init() {
     document.getElementById("defaultOpen").click();
@@ -26,4 +28,18 @@ function openTab(event, listName) {
 }
 
 
-// https://www.w3schools.com/howto/howto_js_tabs.asp 
+
+// MYPICKS
+
+
+
+
+
+
+
+
+
+
+
+
+// SEARCH 

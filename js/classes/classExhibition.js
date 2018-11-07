@@ -10,7 +10,7 @@ class Exhibition {
         this.endDate = endDate;
     }
 
-    getRating() {
+    setContactInformation() {
         ... 
     }
 

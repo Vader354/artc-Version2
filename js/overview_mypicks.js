@@ -1,10 +1,6 @@
-
-
-
-
 var myPicks = [];
 
-var exhibitionList = document.getElementsByClassName("exhibitionListItem");
+var exhibitionList = document.getElementsByClassName("Exhibition");
 
 var i = exhibitionList.indexOf("exhibitionListItem");
 
