@@ -22,13 +22,11 @@
     <li style="float:right"><a href="../html/login.html">Log-In</a></li>
 </ul>
     
-<h1>Registration // HTML5 Forms, validation & JS</h1>
+<h1>Registration Form</h1>
     <form id="registrationForm">
         <div>
-            <label for ="first">First Name: </label>
-            <input type="text" id="first" name="name" placeholder="e.g. John" required>
-            <label for ="last">Last Name: </label>
-            <input type="text" id="last" name="name" placeholder="e.g. Smith" required>
+            <input type="text" id="firstname" name="firstname" placeholder="Firstname e.g. John" required>
+            <input type="text" id="lastname" name="lastname" placeholder="Lastname e.g. Smith" required>
         </div>
         
         <div>
@@ -41,43 +39,37 @@
         </div>
         
         <div>
+            <!-- E-mail must be checked against local storage in JS -->
+            <!-- Improve verification needed -->
+            <input type="email" id="email" name="email" placeholder="E-mail e.g. john.smith@artc.com" required>
+        </div>
+
+        <div>
             <!-- Need to create custom verification in JS of CPR. Might not even be necessary to have, since we wanted it to be open for tourists as well -->
-            <label for="CPR">CPR number:</label>
             <!-- Pattern accepts numbers and a dash as separator -->
-            <input type="text" id="CPR" name="CPR" placeholder="DDMMYY-NNNN" pattern="[0-9]+([-][0-9]+)?" title="CPR must be 10 digits, separeted by a dash" required>
+            <input type="text" id="dateOfBirth" name="dateOfBirth" placeholder="DDMMYY" pattern="[0-9]{6}" title="Enter your date of birth" required>
         </div>
 
      
         <div>
-            <label for="street">Address:</label>
             <input type="text" id="street" name="address" placeholder="Street address" required>
             <!-- JS verification of PC needed -->
-            <label for="postal">Postal code:</label>
             <input type="text" id="postal" name="address" placeholder="Postal code" pattern="[0-9]{4}" title="Postal code must be 4 digits" required>
             <!-- JS verification of PC match city -->
-            <label for="city">City:</label>
             <input type="text" id="city" name="address" placeholder="city" title="City must be located within entered postal code" required>
         </div>
 
         <div>
         <!-- http://regexlib.com/Search.aspx?k=password&AspxAutoDetectCookieSupport=1 -->
-        <!-- Password needs to be encrypted/hased in JS -->
-            <label for ="password">Password: </label> 
-            <input type="password" id="password" name="password" placeholder="Password" pattern="^(?=.*\d).{6,10}$" title="Password must be between 6 to 10 characters." required>
+        <!-- Password needs to be encrypted/hashed in JS -->
+            <input type="password" id="password" name="password" placeholder="Password" title="Password must contain a special character, a capital letter and be at least 6 characters long."  required>
             <!-- Password must match between the two, needs to be done in javascript (?), the passwords can currently differ -->
-            <label for ="confirmPassword">Confirm password: </label> 
-            <input type="Password" id="confirmPassword" name="confirmPassword" placeholder="Password" pattern="^(?=.*\d).{6,10}$" title="Passwords need to match." required>
+            <input type="Password" id="confirmPass" name="confirmPass" placeholder="Confirm Password" title="Passwords need to match." required>
         </div>    
         
-        <div>
-            <!-- E-mail must be checked against local storage in JS -->
-            <label for ="email">Email: </label> 
-            <!-- Improve verification needed -->
-            <input type="email" id="email" name="email" placeholder="e.g. john.smith@artc.com" required>
-        </div>
+
         <div>
             <!-- Should use J-query to input list with flags and countrycodes -->
-            <label for="phone">Phone number:</label>
             <!-- used "tel", because it allows keypad customization for mobile/phone users -->
             <!-- Pattern, check phonenumber for 8 digits without spacing,  -->
             <input type="tel" id="phone" name="phone" placeholder="phone number" pattern="[0-9]{8}" title="Phone number must contain 8 digits and no spacing" required>
@@ -88,9 +80,16 @@
             <input type="checkbox" id="terms" name="terms" title="You must approve the terms and conditions." required> 
         </div>
 
-        <button>Submit</button>
+       
+        <button type="submit">Register</button>
+
+        <!-- link to login page -->
+        <div>
+            <p>Already have an account? <a href="login.html">Sign in</a>.</p>
+        </div>
 
     </form>
+
 
 <script>
 
@@ -98,11 +97,10 @@
         event.preventDefault()
 
         let user = {
-            Username: event.target.username.value,
             Email: event.target.email.value,
             Password: event.target.password.value,
             Gender: event.target.gender.value
-        }
+        };
 
         // something like array.push(user) to add to current user data base
 
