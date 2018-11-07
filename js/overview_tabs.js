@@ -1,39 +1,9 @@
-class Exhibition {
-    constructor(exhibitionID, name, artType, artStyle, description, startDate, endDate) {
-        this.exhibitionID = exhibitionID;
-        this.name = name;
-        this.artType = artType;
-        this.artStyle = artStyle;
-        this.description = description;
-        this.startDate = startDate;
-        this.endDate = endDate;
-    }
-
-    rating() {
-
-    }
-}
-
-
-getCapacity ()
-
-class Venue {
-    constructor(venueID, name, venueType, openingHours, geoLocation, contactInformation) {
-        this.venueID = venueID;
-        this.name = name;
-        this.venueType = venueType;
-        this.openingHours = openingHours;
-        this.geoLocation = geoLocation;
-        this.contactInformation = contactInformation;
-    }
-}
-
-
-
+// function which will be called onload within the body, so that exhibition tab is active by default through click()
 function init() {
     document.getElementById("defaultOpen").click();
 }
 
+// function to first hide all tab contents and then show selected 'active' one
 function openTab(event, listName) {
     // Declare all variables
     let i, tabcontent, tablinks;
