@@ -1,3 +1,56 @@
+// class exhibition
+class Exhibition {
+    constructor(exhibitionID, name, artType, artStyle, description, ratingExhibition, startDate, endDate) {
+        this.exhibitionID = exhibitionID;
+        this.name = name;
+        this.artType = artType;
+        this.artStyle = artStyle;
+        this.description = description;
+        this.ratingExhibition = ratingExhibition;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+    createExhibition() {
+        ...
+    }
+
+    editExhibition() {
+        ...
+    }
+
+    deleteExhibition() {
+        ...
+    }
+
+    addPick() {
+        ...
+    }
+
+    removePick() {
+        ...
+    }
+
+    search() {
+        ...
+    }
+}
+
+// class venues
+class Venue {
+    constructor(venueID, name, venueType, openingHours, geoLocation, contactInformation, ratingVenue) {
+        this.venueID = venueID;
+        this.name = name;
+        this.venueType = venueType;
+        this.openingHours = openingHours;
+        this.geoLocation = geoLocation;
+        this.contactInformation = contactInformation;
+        this.ratingVenue = ratingVenue;
+    }
+}
+
+
+
 function init() {
     document.getElementById("defaultOpen").click();
 }
