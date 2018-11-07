@@ -1,13 +1,6 @@
-class myPick {
-    constructor(exhibitionListItem) {
-        this.exhibitionListItem = exhibitionListItem;
-        this.pickDate = 0;
-    }
 
-    setPickDate() {
-        this.pickDate = Date.now();
-    }
-}
+
+
 
 var myPicks = [];
 
@@ -20,6 +13,9 @@ var exhibitionListItem = exhibitionList[i]
 function addPick() {
     myPicks.push(new myPick("exhibitionListItem"));
 }
+
+
+slice! 
 
 // or: ? 
 // var pick = document.getElementsByClassName("addPickButton");
