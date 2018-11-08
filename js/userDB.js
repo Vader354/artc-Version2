@@ -1,4 +1,6 @@
-/* var users = [{
+/* hard coded:
+
+var users = [{
     username: 'Marten',
     password: 'Sievers'
 },{
@@ -6,19 +8,33 @@
     password: 'Henkelmann'
 }] */
 
-// better way to do it, exercise 11.10.18
 
-const user = {
-    username: 'Marie',
-    password: 'Henkelmann'}
 
-let userString = JSON.stringify(user)
 
+// better way to do it => local storage
+
+var users = [{
+        username: 'Marie',
+        password: 'Henkelmann'
+    },{
+        username: 'Gustaf',
+        password: 'Lindström'
+    }
+]
+
+console.log(users)
+
+// taking an array as input and turns into a regular string
+let userString = JSON.stringify(users)
 console.log(userString)
 
-localStorage.setItem('User', userString)
+// use setItem to save our JSON.object in local Storage
+localStorage.setItem('Users', userString)
 
-localStorage.getItem('User')
+let retrieveFromLocalStorage = localStorage.getItem('Users')
+retrieveFromLocalStorage = JSON.parse(retrieveFromLocalStorage)
 
-console.log(JSON.parse(newUser))
+
+
+
 
