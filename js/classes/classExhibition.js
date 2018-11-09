@@ -31,26 +31,34 @@ var exhibition2 = exhibitions[1];
 var exhibition3 = exhibitions[2];
 
 
+
 // MY PICKS - WIP.
 
-var myPicks = [];
+var userPicks = [];
 
-addPick() {
+let myPicksString = JSON.stringify(userPicks)
+
+localStorage.setItem('Picks', userPicks)
+
+let retrievePicksFromLocalStorage = localStorage.getItem('Picks')
+retrievePicksFromLocalStorage = JSON.parse(retrievePicksFromLocalStorage) // back as object / array
+
+
+function addPick(exhibitions) {
     let i = 0;
     for (i = 0; i < exhibitions.length; i++) {
-        if (myPicks.includes.exhibitions[i]) {
+        if (retrievePicksFromLocalStorage.includes.exhibitions[i]) {
                 false
             } else {
-                myPicks.push.exhibitions[i];
-                alert(JSON.stingify(exhibitions[i]) + "has been added to your picks.");
+                userPicks.push.exhibitions[i];
+                alert(JSON.stringify(exhibitions[i]) + "has been added to your picks.");
         }
     }
 }
 
 
-removePick() {
+function removePick() {
     // myPicks.slice[i] 
 }
 
-
-
+// check out innerHTML for filtering
