@@ -10,7 +10,7 @@
 
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
-
+    <script src="../js/registration.js"></script>
     <title>Registration | ArtC</title>
 </head>
 <body>
@@ -23,7 +23,8 @@
 </ul>
     
 <h1>Registration Form</h1>
-    <form id="registrationForm">
+    <!-- have to send form value to object/class -->
+    <form id="registrationForm" name="registrationForm">
         <div>
             <input type="text" id="firstname" name="firstname" placeholder="Firstname e.g. John" required>
             <input type="text" id="lastname" name="lastname" placeholder="Lastname e.g. Smith" required>
@@ -54,13 +55,13 @@
         <div>
             <input type="text" id="street" name="address" placeholder="Street address" required>
             <!-- JS verification of PC needed -->
-            <input type="text" id="postal" name="address" placeholder="Postal code" pattern="[0-9]{4}" title="Postal code must be 4 digits" required>
+            <input type="text" id="postal" name="address" placeholder="Postal code" title="Postal code must be 4 digits" required>
             <!-- JS verification of PC match city -->
             <input type="text" id="city" name="address" placeholder="city" title="City must be located within entered postal code" required>
         </div>
 
         <div>
-        <!-- http://regexlib.com/Search.aspx?k=password&AspxAutoDetectCookieSupport=1 -->
+
         <!-- Password needs to be encrypted/hashed in JS -->
             <input type="password" id="password" name="password" placeholder="Password" title="Password must contain a special character, a capital letter and be at least 6 characters long."  required>
             <!-- Password must match between the two, needs to be done in javascript (?), the passwords can currently differ -->
@@ -72,7 +73,7 @@
             <!-- Should use J-query to input list with flags and countrycodes -->
             <!-- used "tel", because it allows keypad customization for mobile/phone users -->
             <!-- Pattern, check phonenumber for 8 digits without spacing,  -->
-            <input type="tel" id="phone" name="phone" placeholder="phone number" pattern="[0-9]{8}" title="Phone number must contain 8 digits and no spacing" required>
+            <input type="tel" id="phone" name="phone" placeholder="phone number" title="Phone number must contain 8 digits and no spacing" required>
         </div>
 
         <div>
@@ -81,19 +82,18 @@
         </div>
 
        
-        <button type="submit">Register</button>
-
+        <button type="button" id="onSubmitButton">Create account</button>
+        
         <!-- link to login page -->
         <div>
             <p>Already have an account? <a href="login.html">Sign in</a>.</p>
         </div>
-
     </form>
+        
 
+<!-- <script>
 
-<script>
-
-    document.getElementById('registration-form').addEventListener('submit', function(event) {
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
         event.preventDefault()
 
         let user = {
@@ -112,4 +112,4 @@
 </script>
 
 </body>
-</html>
+</html> -->
