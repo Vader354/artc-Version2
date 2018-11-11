@@ -7,6 +7,7 @@ class User {
       this.gender = gender;
       this.dateOfBirth = dateOfBirth;
       this.password = this.encryptPwd(password);
+      this.userPicks = userPicks;
       this.lastAccess = null;
     }
 
