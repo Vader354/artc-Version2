@@ -10,7 +10,6 @@
 
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
-    <script src="../js/registration.js"></script>
     <title>Registration | ArtC</title>
 </head>
 <body>
@@ -23,8 +22,8 @@
 </ul>
     
 <h1>Registration Form</h1>
-    <!-- have to send form value to object/class -->
-    <form id="registrationForm" name="registrationForm">
+
+    <form>
         <div>
             <input type="text" id="firstname" name="firstname" placeholder="Firstname e.g. John" required>
             <input type="text" id="lastname" name="lastname" placeholder="Lastname e.g. Smith" required>
@@ -32,22 +31,20 @@
         
         <div>
             <label for ="male">Male:</label>
-            <input type="radio" id="male" name="gender" value="Male">
+            <input type="radio" id="gender" name="gender" value="Male">
             <label for ="female">Female:</label>
-            <input type="radio" id="male" name="gender" value="Female">
+            <input type="radio" id="female" name="gender" value="Female">
             <label for ="other">Other:</label>
             <input type="radio" id="other" name="gender" value="Other" required>
         </div>
         
         <div>
             <!-- E-mail must be checked against local storage in JS -->
-            <!-- Improve verification needed -->
             <input type="email" id="email" name="email" placeholder="E-mail e.g. john.smith@artc.com" required>
         </div>
 
         <div>
-            <!-- Need to create custom verification in JS of CPR. Might not even be necessary to have, since we wanted it to be open for tourists as well -->
-            <!-- Pattern accepts numbers and a dash as separator -->
+            <!-- Should be validated in JS-->
             <input type="text" id="dateOfBirth" name="dateOfBirth" placeholder="DDMMYY" pattern="[0-9]{6}" title="Enter your date of birth" required>
         </div>
 
@@ -64,13 +61,12 @@
 
         <!-- Password needs to be encrypted/hashed in JS -->
             <input type="password" id="password" name="password" placeholder="Password" title="Password must contain a special character, a capital letter and be at least 6 characters long."  required>
-            <!-- Password must match between the two, needs to be done in javascript (?), the passwords can currently differ -->
+            <!-- Confirm password -->
             <input type="Password" id="confirmPass" name="confirmPass" placeholder="Confirm Password" title="Passwords need to match." required>
         </div>    
         
 
         <div>
-            <!-- Should use J-query to input list with flags and countrycodes -->
             <!-- used "tel", because it allows keypad customization for mobile/phone users -->
             <!-- Pattern, check phonenumber for 8 digits without spacing,  -->
             <input type="tel" id="phone" name="phone" placeholder="phone number" title="Phone number must contain 8 digits and no spacing" required>
@@ -81,13 +77,15 @@
             <input type="checkbox" id="terms" name="terms" title="You must approve the terms and conditions." required> 
         </div>
 
-       
-        <button type="button" id="onSubmitButton">Create account</button>
+        <!-- Do we need to do input -> button? -->
+        <button type="button" id="onSubmitButton" onclick="validateReg()">Create account</button>
         
         <!-- link to login page -->
         <div>
             <p>Already have an account? <a href="login.html">Sign in</a>.</p>
         </div>
+
+        <script src="../js/registration.js"></script>
     </form>
         
 

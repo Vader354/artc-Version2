@@ -5,15 +5,16 @@ class User {
       this.firstname = firstname;
       this.lastname = lastname;
       this.gender = gender;
+      this.email = email;
+      this.adress = this.setAdress();
       this.dateOfBirth = dateOfBirth;
       this.password = this.encryptPwd(password);
-      this.userPicks = userPicks;
       this.lastAccess = null;
     }
 
     // not sure here yet
     setAddress() {
-        this.address = new Address(this.email, this.phone, this.street, this.streetNr, this.postalCode, this.city, this.country, this.geolocation)
+        this.address = new Address(this.phone, this.street, this.streetNr, this.postalCode, this.city, this.geolocation);
     }
 
     encryptPwd() {

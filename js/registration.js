@@ -1,17 +1,16 @@
-// An empty array to store user input in, have to connect to localStorage. 
 var user = [];
 var userAdress = [];
 
-// Set user input value to registrationForm
-var registrationForm = document.forms.registrationForm;
-
 // Eventlistener for entire form, connected to form button
 var btn = document.getElementById("onSubmitButton");
-var message = document.getElementById("message");
+btn.addEventListener("keyup", validateReg());
+// Checking for user in localStorage
+// var existingUser = JSON.parse(localStorage.getItem("user"));
 
-btn.addEventListener("click", validateReg());
 
-var validateReg = function() {
+// var message = document.getElementById("message");
+
+function validateReg() {
         // If statements run through the validation functions for the registration form. If validation fails, boolean statement within the function will not store entered value. 
         if(!checkPc){
         alert("Postal code is not in Copenhagen");
@@ -35,18 +34,66 @@ var validateReg = function() {
             // Pushing registration info into users array
             // password needs to be hashed
             // Have not tested this
-            users.push(new user).document.getElementById("firstname, lastname, gender, email, dateOfBirth, password");
+            user.push(new user).document.getElementById("firstname, lastname, gender, email, dateOfBirth, password");
             // Pushing user adress into userAdress array
-            users.push(new useradress).document.getElementById("street, postal, city");
+            user.push(new useradress).document.getElementById("street, postal, city");
         }
     }
 
- 
+    // Enable button to run functions when "enter" is pressed
+        document.getElementById("firstname").addEventListener("keyup", function(event) {
+            if(event.keyCode == 13)
+                btn.click();
+        });
+        document.getElementById("lastname").addEventListener("keyup", function(event) {
+            if(event.keyCode == 13)
+                btn.click();
+        });
+        document.getElementById("gender").addEventListener("keyup", function(event) {
+            if(event.keyCode == 13)
+                btn.click();
+        });
+        document.getElementById("email").addEventListener("keyup", function(event) {
+            if(event.keyCode == 13)
+                btn.click();
+        });
+        document.getElementById("dateOfBirth").addEventListener("keyup", function(event) {
+            if(event.keyCode == 13)
+                btn.click();
+        });
+        document.getElementById("street").addEventListener("keyup", function(event) {
+            if(event.keyCode == 13)
+                btn.click();
+        });
+        document.getElementById("postal").addEventListener("keyup", function(event) {
+            if(event.keyCode == 13)
+                btn.click();
+        });
+        document.getElementById("city").addEventListener("keyup", function(event) {
+            if(event.keyCode == 13)
+                btn.click();
+        });
+        document.getElementById("password").addEventListener("keyup", function(event) {
+            if(event.keyCode == 13)
+                btn.click();
+        });
+        document.getElementById("confirmPass").addEventListener("keyup", function(event) {
+            if(event.keyCode == 13)
+                btn.click();
+        });
+        document.getElementById("phone").addEventListener("keyup", function(event) {
+            if(event.keyCode == 13)
+                btn.click();
+        });
+        document.getElementById("phone").addEventListener("keyup", function(validateReg) {
+        });
+
+    // Confirm birthday  
     
 
 var checkPc = function() {
     var postalCode = document.getElementById("postal").value;
-    // Super basic. Checks if the entered postal number is within the range of postal codes in copenhagen. Using this, because it would be time consuming to create an array of all postal codes and match them with the correct city
+    // Super basic. Checks if the entered postal number is within the range of postal codes in copenhagen.
         if(postalCode >= 1000 && postalCode <= 2990){
             alert("You live in Copenhagen");
             return true;
@@ -56,7 +103,7 @@ var checkPc = function() {
         }
     }
 
-// It would be nice to create a function that would check for the input city, but not with all "cities" within copenhagen, rather a select few. These would be matched against a range of numbers depending on how many postal codes exist within that city part.
+// It would be nice to create a function that would check for the input city
 var checkCity = function() {
     var city = document.getElementById("city").value;
 }
@@ -82,7 +129,6 @@ var checkPwd = function() {
     }
 
 // *** Password match variable ****
-// The variable is not attached to HTML
 // Is it possible to use password.value.match(""), would keep code DRY
 var confirmPwd = function() {
     if(document.getElementById("password").value == document.getElementById("confirmPass").value) {
@@ -95,8 +141,7 @@ var confirmPwd = function() {
      }
 
 
-// ***Validate email ***
-
+// *** Validate email ***
 // Function to check user against array
 var checkEmail = function() {
     var len = userEmails.length;
