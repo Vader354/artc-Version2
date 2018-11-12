@@ -10,10 +10,10 @@ var exhibition1 = exhibitions[0];
 var exhibition2 = exhibitions[1];
 var exhibition3 = exhibitions[2];
 
+
 // MY PICKS - WIP.
 
-
-// var userPicks = [];
+var userPicks = [];
 
 // simple version without local storage, works
 function addPick(exhibition) {
@@ -22,9 +22,20 @@ function addPick(exhibition) {
     console.log(userPicks);
 }
 
-
-console.log(userPicks)
-
+/* SOMETHING LIKE THIS
+function addPick(exhibition) {
+    var i;
+    for (i = 0; i < userPicks.length; i++) {
+        if (userPicks.contains(exhibition)) {
+            return false
+        } else {
+            userPicks.push(exhibition);
+            alert(JSON.stringify(exhibition.name) + " has been added to your picks!")
+            console.log(userPicks);
+        }
+    }
+}
+*/ 
 
 
 var userPicks = [{
@@ -36,17 +47,28 @@ var userPicks = [{
     }
 ];
 
+console.log(userPicks);
+
+
 let picksString = JSON.stringify(userPicks);
 console.log(picksString);
+
 localStorage.setItem("Picks", picksString);
+
 let retrievePicksFromLocalStorage = localStorage.getItem("Picks");
 retrievePicksFromLocalStorage = JSON.parse(retrievePicksFromLocalStorage) // back as object / array 
+
+
+
+
+
+
 
 /*
 // sobald mit local storage gearbeitet wird, soll erst gecheckt werden ob es schon in der Liste ist
 function addPickACTUALLY(exhibition) {
     let i;
-    for (i = 0; i < exhibitions.length; i++) {
+    for (i = 0; i < retrievePicksFromLocalStorage.length; i++) {
         if (retrievePicksFromLocalStorage.includes(exhibition)) {
                 false
             } else {
@@ -56,8 +78,6 @@ function addPickACTUALLY(exhibition) {
     }
 }
 */
-
-
 
 
 // eventListener ist wohl besser als onclick, aber funktioniert irgendwie nicht. onclick funktioniert mit myPicks
@@ -77,9 +97,9 @@ function addPickACTUALLY(exhibition) {
 
 
 
-function removePick() {
+// function removePick() {
     // myPicks.slice[i] 
-}
+// }
 
 
 // display myPicks

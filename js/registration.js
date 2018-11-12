@@ -3,7 +3,15 @@ var userAdress = [];
 
 // Eventlistener for entire form, connected to form button
 var btn = document.getElementById("onSubmitButton");
-btn.addEventListener("keyup", validateReg());
+// btn.addEventListener("keyup", validateReg()); THINK I WILL REMOVE THIS IF BELOW WORKS
+
+// Enables button and runs validation functions if enter is pressed
+document.getElementById("onSubmitButton").addEventListener("keyup", function(event) {
+    if(event.keyCode == 13)
+        btn.validateReg();
+        return true;
+});
+
 // Checking for user in localStorage
 // var existingUser = JSON.parse(localStorage.getItem("user"));
 
@@ -40,53 +48,53 @@ function validateReg() {
         }
     }
 
-    // Enable button to run functions when "enter" is pressed
-        document.getElementById("firstname").addEventListener("keyup", function(event) {
-            if(event.keyCode == 13)
-                btn.click();
-        });
-        document.getElementById("lastname").addEventListener("keyup", function(event) {
-            if(event.keyCode == 13)
-                btn.click();
-        });
-        document.getElementById("gender").addEventListener("keyup", function(event) {
-            if(event.keyCode == 13)
-                btn.click();
-        });
-        document.getElementById("email").addEventListener("keyup", function(event) {
-            if(event.keyCode == 13)
-                btn.click();
-        });
-        document.getElementById("dateOfBirth").addEventListener("keyup", function(event) {
-            if(event.keyCode == 13)
-                btn.click();
-        });
-        document.getElementById("street").addEventListener("keyup", function(event) {
-            if(event.keyCode == 13)
-                btn.click();
-        });
-        document.getElementById("postal").addEventListener("keyup", function(event) {
-            if(event.keyCode == 13)
-                btn.click();
-        });
-        document.getElementById("city").addEventListener("keyup", function(event) {
-            if(event.keyCode == 13)
-                btn.click();
-        });
-        document.getElementById("password").addEventListener("keyup", function(event) {
-            if(event.keyCode == 13)
-                btn.click();
-        });
-        document.getElementById("confirmPass").addEventListener("keyup", function(event) {
-            if(event.keyCode == 13)
-                btn.click();
-        });
-        document.getElementById("phone").addEventListener("keyup", function(event) {
-            if(event.keyCode == 13)
-                btn.click();
-        });
-        document.getElementById("phone").addEventListener("keyup", function(validateReg) {
-        });
+    // Enable button to run functions when "enter" is pressed for each element
+        // document.getElementById("firstname").addEventListener("keyup", function(event) {
+        //     if(event.keyCode == 13)
+        //         btn.click();
+        // });
+        // document.getElementById("lastname").addEventListener("keyup", function(event) {
+        //     if(event.keyCode == 13)
+        //         btn.click();
+        // });
+        // document.getElementById("gender").addEventListener("keyup", function(event) {
+        //     if(event.keyCode == 13)
+        //         btn.click();
+        // });
+        // document.getElementById("email").addEventListener("keyup", function(event) {
+        //     if(event.keyCode == 13)
+        //         btn.click();
+        // });
+        // document.getElementById("dateOfBirth").addEventListener("keyup", function(event) {
+        //     if(event.keyCode == 13)
+        //         btn.click();
+        // });
+        // document.getElementById("street").addEventListener("keyup", function(event) {
+        //     if(event.keyCode == 13)
+        //         btn.click();
+        // });
+        // document.getElementById("postal").addEventListener("keyup", function(event) {
+        //     if(event.keyCode == 13)
+        //         btn.click();
+        // });
+        // document.getElementById("city").addEventListener("keyup", function(event) {
+        //     if(event.keyCode == 13)
+        //         btn.click();
+        // });
+        // document.getElementById("password").addEventListener("keyup", function(event) {
+        //     if(event.keyCode == 13)
+        //         btn.click();
+        // });
+        // document.getElementById("confirmPass").addEventListener("keyup", function(event) {
+        //     if(event.keyCode == 13)
+        //         btn.click();
+        // });
+        // document.getElementById("phone").addEventListener("keyup", function(event) {
+        //     if(event.keyCode == 13)
+        //         btn.click();
+        // });
+        // document.getElementById("phone").addEventListener("keyup", function(validateReg) {
+        // });
 
     // Confirm birthday  
     
