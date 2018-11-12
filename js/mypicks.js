@@ -13,71 +13,58 @@ var exhibition3 = exhibitions[2];
 
 // MY PICKS - WIP.
 
+
+// LOCAL STORAGE
+
+// let picksString = JSON.stringify(userPicks);
+// console.log(picksString);
+// localStorage.setItem("Picks", picksString);
+// let retrievePicksFromLocalStorage = localStorage.getItem("Picks");
+// retrievePicksFromLocalStorage = JSON.parse(retrievePicksFromLocalStorage)
+// console.log(retrievePicksFromLocalStorage)
+
 var userPicks = [];
 
-// simple version without local storage, works
+/*
+// simple version with local storage, works
 function addPick(exhibition) {
     userPicks.push(exhibition);
+    localStorage.setItem("Picks", JSON.stringify(userPicks));
     alert(JSON.stringify(exhibition.name) + " has been added to your picks!")
     console.log(userPicks);
 }
-
-/* SOMETHING LIKE THIS
-function addPick(exhibition) {
-    var i;
-    for (i = 0; i < userPicks.length; i++) {
-        if (userPicks.contains(exhibition)) {
-            return false
-        } else {
-            userPicks.push(exhibition);
-            alert(JSON.stringify(exhibition.name) + " has been added to your picks!")
-            console.log(userPicks);
-        }
-    }
-}
-*/ 
-
-
-var userPicks = [{
-        name: "pickname1", 
-        age: "pickage1"
-    },{
-        name: "pickname2", 
-        age: "pickage2"
-    }
-];
-
-console.log(userPicks);
-
-
-let picksString = JSON.stringify(userPicks);
-console.log(picksString);
-
-localStorage.setItem("Picks", picksString);
-
-let retrievePicksFromLocalStorage = localStorage.getItem("Picks");
-retrievePicksFromLocalStorage = JSON.parse(retrievePicksFromLocalStorage) // back as object / array 
-
-
-
-
-
-
-
-/*
-// sobald mit local storage gearbeitet wird, soll erst gecheckt werden ob es schon in der Liste ist
-function addPickACTUALLY(exhibition) {
-    let i;
-    for (i = 0; i < retrievePicksFromLocalStorage.length; i++) {
-        if (retrievePicksFromLocalStorage.includes(exhibition)) {
-                false
-            } else {
-                userPicks.push(exhibition);
-                alert(JSON.stringify(exhibition.name) + "has been added to your picks.");
-        }
-    }
-}
 */
+
+
+
+// first check if item is already in local storage, if yes, it shouldnt be pushed
+function addPick(exhibition) {
+    let i;
+    let picksFromLS = localStorage.getItem("Picks");
+    console.log(picksFromLS);
+    picksFromLS = JSON.parse(picksFromLS);
+    console.log(picksFromLS);
+    // check if picks in local storage is empty, if yes push
+    if (picksFromLS == null) {
+            userPicks.push(exhibition);
+            localStorage.setItem("Picks", JSON.stringify(userPicks));
+            alert(JSON.stringify(exhibition.name) + "has been added to your picks.");
+            console.log(picksFromLS);
+    // if local storage is not empty, check if the selected exhibition is already in the storage
+    } else {
+        for (i = 0; i < picksFromLS.length; i++) {
+            if (picksFromLS.includes(exhibition)) {
+                    return false;
+                } else {
+                    userPicks.push(exhibition);
+                    localStorage.setItem("Picks", JSON.stringify(userPicks));
+                    alert(JSON.stringify(exhibition.name) + "has been added to your picks.");
+            }
+        }
+    }
+}
+
+
 
 
 // eventListener ist wohl besser als onclick, aber funktioniert irgendwie nicht. onclick funktioniert mit myPicks
