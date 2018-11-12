@@ -20,19 +20,19 @@ var users = [{
         username: 'Gustaf',
         password: 'Lindström'
     }
-]
+];
 
-console.log(users)
+// console.log(users)
 
 // taking an array as input and turns into a regular string
-let userString = JSON.stringify(users)
-console.log(userString)
+let userString = JSON.stringify(users);
+// console.log(userString)
 
 // use setItem to save our JSON.object in local Storage
-localStorage.setItem('Users', userString)
+localStorage.setItem('Users', userString);
 
-let retrieveFromLocalStorage = localStorage.getItem('Users')
-retrieveFromLocalStorage = JSON.parse(retrieveFromLocalStorage)
+let retrieveFromLocalStorage = localStorage.getItem('Users');
+retrieveFromLocalStorage = JSON.parse(retrieveFromLocalStorage);
 
 
 
