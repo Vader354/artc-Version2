@@ -1,7 +1,7 @@
 class User {
 
     // The constructor for our class, which will allow us to create new objects of our class
-    constructor (firstname, lastname, gender, dateOfBirth, password) {
+    constructor (firstname, lastname, gender, email, dateOfBirth, password) {
       this.firstname = firstname;
       this.lastname = lastname;
       this.gender = gender;
@@ -14,7 +14,7 @@ class User {
 
     // not sure here yet
     setAddress() {
-        this.address = new Address(this.phone, this.street, this.streetNr, this.postalCode, this.city, this.geolocation);
+        this.address = new Address(this.phone, this.street, this.postalCode, this.city, this.geolocation);
     }
 
     encryptPwd() {

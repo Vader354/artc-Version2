@@ -1,38 +1,30 @@
 var users = [];
-var userAdress = [];
+var usersAdress = [];
 
 
 // Eventlistener for entire form, connected to form button
 var btn = document.getElementById("onSubmitButton");
-
-// Enables button and runs validation functions if enter is pressed
-// document.getElementById("onSubmitButton").addEventListener("keyup", function(event) {
-//     if(event.keyCode == 13)
-//         btn.validateReg();
-//         return true;
-// });
 
 
 // Validation that will run onclick and if valid, push user into users array
 function validateReg() {
     console.log('onclick fired')
         // If statements run through the validation functions for the registration form. If validation fails, boolean statement within the function will not store entered value. 
-        // Should change from alert
-        if(checkEmail()) {
+        if(!checkEmail()) {
             console.log("checkEmail works")
-            alert("Email not valid");
+            alert("Email not valid or is used by another user");
             return false;
         }
         if(!checkPc()){
             console.log('checkPC works')
-        alert("Postal code is not in Copenhagen");
+            alert("Postal code is not in Copenhagen");
         }
         // if(!checkCity){
-        // alert("Password not valid");
+
         // }
         if(!checkPwd()){
             console.log("checkPwd works")
-        alert("Password not valid");
+            alert("Password not valid");
         return false;
         }
         if(!confirmPwd()){
@@ -53,6 +45,10 @@ function validateReg() {
             users.push(new User(form.firstname.value, form.lastname.value, form.male.value, form.email.value, form.dateOfBirth.value, form.password.value ))
             console.log("User pushed to users array")
             localStorage.setItem("Users", JSON.stringify(users));
+            
+            usersAdress.push(new Address(form.email.value, form.phone.value, form.street.value, form.postal.value, form.city.value))
+            console.log("user address pushed to classAdress array")
+            localStorage.setItem("UsersAdress", JSON.stringify(usersAdress));
         }
     }
     
@@ -77,6 +73,7 @@ function validateReg() {
 // }
 
 function checkPwd() {
+    return true;
     //first () indicates at least 1 special character requirement, second () indicates at least 1 capital letter, third() indicates that the password has to contain at least 6 characters
     var pwd = /^(?=(.*[\W]){1,})(?=(.*?[A-Z]){1,})(?!.*\s).{6,}$/;
     
@@ -105,27 +102,24 @@ function confirmPwd() {
 
 // *** Validate email ***
 // Function to check user against array
+// Need to check against localStorage, currently not working
 function checkEmail() {
-    console.log("Runs function")
     var len = users.length;
-    console.log("Sets len = users.length")
+    var storage = JSON.parse(localStorage.getItem("usersAdress", usersAdress));
     var email = document.getElementById("email").value;
-    console.log("Gets user input")
     for(var i = 0; i < len; i++){
-        console.log("Checks user input against array")
-        if (users[i] !== email) {
-            console.log("Checked for match")
+        if (storage[i] !== email) {
             return true;
         } else {
             return false;           
             }
         }
+        return true;
     }
 // *** Validate phone number ***
 
 function checkPhone() {
-    //first () indicates at least 1 special character requirement, second () indicates at least 1 capital letter, third() indicates that the password has to contain at least 6 characters
-   //  created this regEx and have not yet tested it
+    // The regex accepts 8 numbers, either written together, two and two or four and four
     var phone1 = /^((^\d{8})|(^\d{2}[ ]\d{2}[ ]\d{2}[ ]\d{2})|(^\d{4}[ ]\d{4}))$/;
    
     // Sets phone number variable equal to user input
@@ -141,6 +135,7 @@ function checkPhone() {
             return false;
         }
    }
+
 
 
 
