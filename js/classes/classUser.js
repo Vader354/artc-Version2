@@ -6,7 +6,7 @@ class User {
       this.lastname = lastname;
       this.gender = gender;
       this.email = email;
-      this.adress = this.setAdress();
+    //   this.adress = this.setAdress();
       this.dateOfBirth = dateOfBirth;
       this.password = this.encryptPwd(password);
       this.lastAccess = null;

@@ -24,5 +24,3 @@ venues.push(new Venue(321, "V1 Gallery", "gallery", "Mo-Fr 12-20, Sa-So 10-20"))
 venues[0].setAddress("louisiana@mail.com", 81818181, "Norrebrogade", 22, 2200, "København", "Denmark", 5555)
 venues[1].setAddress("kunsthalchar@mail.com", 6565656, "Osterbrogade", 33, 3300, "København", "Denmark", 6666)
 venues[2].setAddress("vone@mail.com", 32323232, "Vesterbrogade", 44, 4400, "København", "Denmark", 7777)
-
-console.log(venues)

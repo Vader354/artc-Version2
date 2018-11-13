@@ -10,6 +10,7 @@
 
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
+    <script src="../js/classes/classUser.js"></script>
     <title>Registration | ArtC</title>
 </head>
 <body>
@@ -23,7 +24,7 @@
     
 <h1>Registration Form</h1>
 
-    <form>
+    <form id="regForm">
         <div>
             <input type="text" id="firstname" name="firstname" placeholder="Firstname e.g. John" required>
             <input type="text" id="lastname" name="lastname" placeholder="Lastname e.g. Smith" required>
@@ -31,7 +32,7 @@
         
         <div>
             <label for ="male">Male:</label>
-            <input type="radio" id="gender" name="gender" value="Male">
+            <input type="radio" id="male" name="gender" value="Male">
             <label for ="female">Female:</label>
             <input type="radio" id="female" name="gender" value="Female">
             <label for ="other">Other:</label>

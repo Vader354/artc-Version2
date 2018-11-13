@@ -8,23 +8,12 @@ console.log("main.js has been called.")
  //   if(username.length == 0) || password.length == 0)
  //     
 
+// retrieving data from localStorage
+let receiveUsersFromLS = localStorage.getItem("Users");
+receiveUsersFromLS = JSON.parse(receiveUsersFromLS);
 
 
 
-
-// Henriks version:
-// We create a user class, so we have an easy way to create users and further implement features at a later stage
-class User {
-
-    // The constructor for our class, which will allow us to create new objects of our class
-    constructor(firstname, lastname, username, password) {
-      this.firstname = firstname;
-      this.lastname = lastname;
-      this.username = username;
-      this.password = this.hashPassword(password);
-      this.lastAccess = null;
-    }
-  
     // Function that allows us to set lastAccess to current time in unix time (Date.now())
     setLastAccess(){
       this.lastAccess = Date.now();
