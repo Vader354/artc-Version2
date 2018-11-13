@@ -1,12 +1,10 @@
 class Address {
-    constructor(email, phone, street, streetNr, postalCode, city, country, geolocation) {
+    constructor(email, phone, street, postalCode, city, geolocation) {
         this.email = email;
         this.phone = phone;
         this.street = street;
-        this.streetNr = streetNr;
         this.postalCode = postalCode;
         this.city = city;
-        this.country = country;
         this.geolocation = geolocation; 
     }
 
