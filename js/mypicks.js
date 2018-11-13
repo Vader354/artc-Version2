@@ -26,7 +26,7 @@ var exhibition3 = exhibitions[2];
 var userPicks = [];
 
 /*
-// simple version with local storage, works
+// simple version with local storage, works, but doesn't check if object already is in the myPicks list
 function addPick(exhibition) {
     userPicks.push(exhibition);
     localStorage.setItem("Picks", JSON.stringify(userPicks));
@@ -36,11 +36,9 @@ function addPick(exhibition) {
 */
 
 
-
 // first check if item is already in local storage, if yes, it shouldnt be pushed
 function addPick(exhibition) {
-    let i;
-    let picksFromLS = localStorage.getItem("Picks");
+    var picksFromLS = localStorage.getItem("Picks");
     console.log(picksFromLS);
     picksFromLS = JSON.parse(picksFromLS);
     console.log(picksFromLS);
@@ -48,23 +46,18 @@ function addPick(exhibition) {
     if (picksFromLS == null) {
         userPicks.push(exhibition);
         localStorage.setItem("Picks", JSON.stringify(userPicks));
-        alert(JSON.stringify(exhibition.name) + "has been added to your picks.");
-        console.log(picksFromLS);
-    // if local storage is not empty, check if the selected exhibition is already in the storage
+        alert(JSON.stringify(exhibition.name) + " has been added to your picks."); 
     } else {
-        for (i = 0; i < picksFromLS.length; i++) {
-            if (picksFromLS.includes(exhibition)) {
-                return false;
-            } else {
-                userPicks.push(exhibition);
-                localStorage.setItem("Picks", JSON.stringify(userPicks));
-                alert(JSON.stringify(exhibition.name) + "has been added to your picks.");
-            }
-        }
+        console.log(picksFromLS);
+        if (picksFromLS.includes(exhibition)) {
+            return false;
+        } else {
+            userPicks.push(exhibition);
+            localStorage.setItem("Picks", JSON.stringify(userPicks));
+            alert(JSON.stringify(exhibition.name) + " has been added to your picks.");
+        }  
     }
-}
-
-
+};
 
 
 // eventListener ist wohl besser als onclick, aber funktioniert irgendwie nicht. onclick funktioniert mit myPicks
@@ -82,11 +75,9 @@ function addPick(exhibition) {
 // und wenn man hovert man sieht "Remove from my Picks" ... addEventListener("hover", ... function style display bla)
 
 
-
-
-// function removePick() {
+function removePick() {
     // myPicks.splice[i] 
-// }
+}
 
 
 // display myPicks
