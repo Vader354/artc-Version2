@@ -26,6 +26,8 @@
 </head>
 <body onload="init()">
 
+<!-- **** Nav Bar **** -->
+
 <ul>
     <li><a href="../index.html">ArtC</a></li>
     <li><a href="overview.html">Overview</a></li>
@@ -47,41 +49,46 @@
 </div>
 
 <script src="../js/overview_tabs.js"></script>
+<script src="../js/mypicks.js"></script>
 
-<!-- tab content -->
+
+<!-- **** Tabs Content **** -->
+
+<!-- **** Exhibitions Tab **** -->
 <div id="CurrentExhibitions" class="tabcontent">
-
-    <!-- Search Function Exhibitions -->
-    <!-- Search function by ID works, but obviously only for one tab (since i used id). Need to work on the second tab, see below -->
-    <input type="text" class="searchbar" id="myInput" onkeyup="searchFunction()" placeholder="Search exhibitions...">
+    
+<!-- **** SEARCH FUNCTION Input Bar Exhibitions **** -->
+<input type="text" class="searchbar" id = "myInput" onkeyup="searchFunction()" placeholder="Search exhibitions...">
 
     <ul id="myUL">
         <li>
-            <a href="../html/exhibition1.html" style="padding:0"><h2>Luca Tombolini</h2></a>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque dignissimos quod dicta perferendis aliquam porro esse hic inventore necessitatibus magni sunt veritatis saepe voluptatibus distinctio, eveniet maiores corrupti earum quas. <br><br>
+            <a href="C:\Users\Ehler\Desktop\I2P\I2P Exam Project\artc\html\exhibition_subpages\exhibition1.html" style="padding:0"><h2 id="nameEx1">Exhibition 1</h2></a>
+            <p id = "desEx1"> Description Ex 1 </p>
+            <br><br>
             <button class="addPickButton" id="button1" onclick="addPick(exhibition1)">+ My Picks</button>
         </li>
         <li>
-            <a href="../html/exhibition2.html" style="padding:0"><h2>Frida Kahlo</h2></a>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo magnam in porro at ad voluptate quidem consequuntur rerum, excepturi iure vero quod culpa veniam, quis esse natus tenetur saepe quia. <br><br>
+            <a href="C:\Users\Ehler\Desktop\I2P\I2P Exam Project\artc\html\exhibition_subpages\exhibition2.html" style="padding:0"><h2 id="nameEx2">Exhibition 2</h2></a>
+            <p id = "desEx2"> Description Ex 2 </p>
+            <br><br>
             <button class="addPickButton" id="button2" onclick="addPick(exhibition2)">+ My Picks</button>
         </li>
         <li>
-            <a href="../html/exhibition3.html" style="padding:0"><h2>Lee Woodmann</h2></a>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero autem commodi minus deserunt magnam reprehenderit voluptatem? Laboriosam consequatur, doloribus placeat iure dignissimos aliquid, voluptatem asperiores eum obcaecati sed ipsam id. <br><br>
+            <a href="C:\Users\Ehler\Desktop\I2P\I2P Exam Project\artc\html\exhibition_subpages\exhibition3.html" style="padding:0"><h2 id="nameEx3">Exhibition 3</h2></a>
+            <p id = "desEx3"> Description Ex 3 </p>
+            <br><br>
             <button class="addPickButton" id="button3" onclick="addPick(exhibition3)">+ My Picks</button>
         </li>
     </ul>
 
 </div>
 
-<script src="../js/mypicks.js"></script>
+<!-- **** Venue Tab **** -->
       
 <div id="ArtVenues" class="tabcontent">
 
-    <!-- Search Function Venues -->
-    <!-- So far just copied the search function form above. Doesn't work (because of ID). didn't figure a better way out yet. -->
-    <input type="text" class="searchbar" onkeyup="searchFunction()" placeholder="Search venues...">
+<!-- **** SEARCH FUNCTION Input Bar Exhibitions **** -->
+<input type="text" class="searchbar" onkeyup="searchFunction()" placeholder="Search venues...">
 
     <ul>
         <li>
