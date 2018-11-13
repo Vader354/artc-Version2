@@ -70,7 +70,6 @@ var a;
 var i;
 
 // Loop through all list items, and hide those who don't match the search query
-// implement it for venue tab, Filter nach Venue Type, Filter nach Artstyle etc.
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
         if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -81,3 +80,54 @@ var i;
     }
 }
 
+// **** Filter for Art Type ****
+//TODO: Make the Filter to show everything when on "Filter Art Type"
+
+function filterArtType(){
+
+    //Set variables:
+    var inputArtType = document.getElementById("filterArtType")
+        console.log(inputArtType.value)
+    var ul = document.getElementById("myUL");
+    // Get specific list items
+    var li = ul.getElementsByTagName('li');
+    var b;
+    var i;
+
+    //Loop through all List Items
+
+for (i = 0; i < li.length; i++) {
+    b = li[i].getElementsByClassName("artType")[0]; 
+    if (b.innerHTML === inputArtType.value) {
+        li[i].style.display = "";
+    } else {
+        li[i].style.display = "none";
+    }
+}
+}
+
+// **** Filter for Art Style ****
+//TODO: Make the Filter work and show everything when on "Filter Art Style"
+
+function filterArtStyle(){
+
+    //Set variables:
+    var inputArtStyle = document.getElementById("filterArtStyle")
+        console.log(inputArtStyle.value)
+    var ul = document.getElementById("myUL");
+    // Get specific list items
+    var li = ul.getElementsByTagName('li');
+    var c;
+    var i;
+
+    //Loop through all List Items
+
+for (i = 0; i < li.length; i++) {
+    c = li[i].getElementsByClassName("artStyle")[0]; 
+    if (c.innerHTML === inputArtStyle.value) {
+        li[i].style.display = "";
+    } else {
+        li[i].style.display = "none";
+    }
+}
+}
