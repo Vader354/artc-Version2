@@ -46,19 +46,19 @@ function addPick(exhibition) {
     console.log(picksFromLS);
     // check if picks in local storage is empty, if yes push
     if (picksFromLS == null) {
-            userPicks.push(exhibition);
-            localStorage.setItem("Picks", JSON.stringify(userPicks));
-            alert(JSON.stringify(exhibition.name) + "has been added to your picks.");
-            console.log(picksFromLS);
+        userPicks.push(exhibition);
+        localStorage.setItem("Picks", JSON.stringify(userPicks));
+        alert(JSON.stringify(exhibition.name) + "has been added to your picks.");
+        console.log(picksFromLS);
     // if local storage is not empty, check if the selected exhibition is already in the storage
     } else {
         for (i = 0; i < picksFromLS.length; i++) {
             if (picksFromLS.includes(exhibition)) {
-                    return false;
-                } else {
-                    userPicks.push(exhibition);
-                    localStorage.setItem("Picks", JSON.stringify(userPicks));
-                    alert(JSON.stringify(exhibition.name) + "has been added to your picks.");
+                return false;
+            } else {
+                userPicks.push(exhibition);
+                localStorage.setItem("Picks", JSON.stringify(userPicks));
+                alert(JSON.stringify(exhibition.name) + "has been added to your picks.");
             }
         }
     }
@@ -85,7 +85,7 @@ function addPick(exhibition) {
 
 
 // function removePick() {
-    // myPicks.slice[i] 
+    // myPicks.splice[i] 
 // }
 
 
