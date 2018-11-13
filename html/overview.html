@@ -53,37 +53,46 @@
 <div id="CurrentExhibitions" class="tabcontent">
     
 <!-- **** SEARCH FUNCTION Input Bar Exhibitions **** -->
+
+
 <input type="text" class="searchbar" id = "myInput" onkeyup="searchFunction()" placeholder="Search exhibitions...">
 
-<script src="../js/overview_search.js"></script>
+<!-- Filter for ArtType und ArtStyle -->
 
     <ul id="myUL">
-        <li>
-            <a href="../html/exhibition_subpages/exhibition1.html" style="padding:0"><h2 id="nameEx2">Exhibition 1</h2></a>
-            <p id="desEx1"> Description Ex 1 </p>
-            <br><br>
+        <li class="ListItem">
+            <a href="../html/exhibition_subpages/exhibition1.html" style="padding:0"><h2 id="nameEx1"></h2></a>
+            <span id = "artType1"></span>
+            <span id = "artStyle1"></span> 
+            <p id = "desEx1"></p>
+<!-- TODO: Paragraphs are somehow not displayed properly -- ask in Class! -->
             <button class="addPickButton" id="buttonA1" onclick="addPick(exhibition1)">Add E1 to My Picks</button>
             <button class="removePickButton" id="buttonR1" onclick="removePick(exhibition1)">Remove E1 from My Picks</button>
         </li>
-        <li>
-            <a href="../html/exhibition_subpages/exhibition2.html" style="padding:0"><h2 id="nameEx2">Exhibition 2</h2></a>
-            <p id="desEx2"> Description Ex 2 </p>
-            <br><br>
+        <li class="ListItem">
+            <a href="../html/exhibition_subpages/exhibition2.html" style="padding:0"><h2 id="nameEx2"></h2></a>
+            <span id = "artType2"></span>
+            <span id = "artStyle2"></span>
+            <p id = "desEx2"></p>
             <button class="addPickButton" id="buttonA2" onclick="addPick(exhibition2)">Add E2 to My Picks</button>
             <button class="removePickButton" id="buttonR2" onclick="removePick(exhibition2)">Remove E2 from My Picks</button>
         </li>
-        <li>
-            <a href="../html/exhibition_subpages/exhibition3.html" style="padding:0"><h2 id="nameEx3">Exhibition 3</h2></a>
-            <p id="desEx3"> Description Ex 3 </p>
-            <br><br>
+        <li class="ListItem">
+            <a href="../html/exhibition_subpages/exhibition3.html" style="padding:0"><h2 id="nameEx3"></h2></a>
+            <span id = "artType3"></span>
+            <span id = "artStyle3"></span>
+            <p id = "desEx3"></p>
             <button class="addPickButton" id="buttonA3" onclick="addPick(exhibition3)">Add E3 to My Picks</button>
             <button class="removePickButton" id="buttonR3" onclick="removePick(exhibition3)">Remove E3 from My Picks</button>
         </li>
     </ul>
+<<<<<<< HEAD
 
     <script src="../js/mypicks.js"></script>
 
 
+=======
+>>>>>>> 518b4194af1b23a8856ec1bec615814ad69a7b35
 </div>
 
 <!-- **** Venue Tab **** -->
@@ -94,21 +103,23 @@
 <input type="text" class="searchbar" onkeyup="searchFunction()" placeholder="Search venues...">
 
     <ul>
-        <li>
-            <h2 class="Venue">Venue 1</h2></a>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero autem commodi minus deserunt magnam reprehenderit voluptatem? Laboriosam consequatur, doloribus placeat iure dignissimos aliquid, voluptatem asperiores eum obcaecati sed ipsam id.
+        <li class="ListItem">
+            <h2 id="nameVe1"></h2>
+            <span id = "venueType1"></span>
         </li>
-        <li>
-            <h2 class="Venue">Venue 2</h2></a>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eveniet tempore quibusdam quis, quae beatae eaque autem. Rerum aut vero ratione, quisquam illo sint ad, fuga itaque, eaque modi exercitationem!
+        <li class="ListItem">
+            <h2 id="nameVe2"></h2>
+            <span id = "venueType2"></span>
         </li>
-        <li>
-            <h2 class="Venue">Venue 3</h2></a>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam non harum sunt, itaque laboriosam eligendi quaerat ipsam exercitationem atque ipsum? Voluptates dolorum amet aut molestias explicabo animi modi aperiam officia.
+        <li class="ListItem">
+            <h2 id="nameVe3"></h2>
+            <span id = "venueType3"></span>
         </li>
     </ul>
      
 </div>
+
+<script src="../js/overview_search.js"></script>
 
 <!-- Filter List:  https://www.w3schools.com/howto/howto_js_filter_lists.asp -->   
 

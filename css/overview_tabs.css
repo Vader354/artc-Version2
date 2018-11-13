@@ -44,3 +44,8 @@
     position: relative;
     left: 50px;
 }
+
+/* Style the List items */
+.ListItem {
+    width: 100%
+}
