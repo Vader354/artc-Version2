@@ -13,16 +13,6 @@ var exhibition3 = exhibitions[2];
 
 // MY PICKS - WIP.
 
-
-// LOCAL STORAGE
-
-// let picksString = JSON.stringify(userPicks);
-// console.log(picksString);
-// localStorage.setItem("Picks", picksString);
-// let retrievePicksFromLocalStorage = localStorage.getItem("Picks");
-// retrievePicksFromLocalStorage = JSON.parse(retrievePicksFromLocalStorage)
-// console.log(retrievePicksFromLocalStorage)
-
 var userPicks = [];
 
 /*
@@ -34,7 +24,6 @@ function addPick(exhibition) {
     console.log(userPicks);
 }
 */
-
 
 // first check if item is already in local storage, if yes, it shouldnt be pushed
 function addPick(exhibition) {
@@ -75,10 +64,22 @@ function addPick(exhibition) {
 // und wenn man hovert man sieht "Remove from my Picks" ... addEventListener("hover", ... function style display bla)
 
 
-function removePick() {
-    // myPicks.splice[i] 
+function removePick(exhibition) {
+    var picksFromLS = localStorage.getItem("Picks");
+    console.log(picksFromLS);
+    picksFromLS = JSON.parse(picksFromLS);
+    console.log(picksFromLS);
+    var index = picksFromLS.indexOf(exhibition);
+    console.log(index);
+    if (index > -1) {
+        picksFromLS.splice(index, 1);
+    };
+    // also need to put it to userPicks
+    localStorage.setItem("Picks", JSON.stringify(picksFromLS))
 }
 
 
 // display myPicks
-// document.getElementById("displayMyPicks").innerHTML = userPicks; 
+var currentPicks = localStorage.getItem("Picks")
+currentPicks = JSON.parse(currentPicks);
+document.getElementById("displayMyPicks").innerHTML = JSON.stringify(currentPicks); 
