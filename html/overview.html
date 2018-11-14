@@ -41,6 +41,12 @@
         <button class="tablinks" onclick="openTab(event, 'ArtVenues')">Art Venues</button>
 </div>
 
+<!-- TBD: Tried to clear the search bars with the following as an onlick-action:
+document.getElementById('inputSearchVe').value = ''
+document.getElementById('inputSearchEx').value = ''
+It is working, but the prior input is still saved somehow and the list only displays the results from the search query.
+-->
+
 <script src="../js/overview_tabs.js"></script>
 
 
@@ -107,7 +113,7 @@
       
 <div id="ArtVenues" class="tabcontent">
 
-<!-- **** SEARCH FUNCTION Input Bar Exhibitions **** -->
+<!-- **** SEARCH FUNCTION Input Bar Venues **** -->
 <input type="text" class="searchbar" id="inputSearchVe" onkeyup="searchFunction()" placeholder="Search venues...">
 
 <!-- **** FILTER for VenueType **** -->
