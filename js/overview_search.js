@@ -90,7 +90,7 @@ function filterArtType(){
         console.log(inputArtType.value)
     var ul = document.getElementById("myUL");
     // Get specific list items
-    var li = ul.getElementsByTagName('li');
+    var li = ul.getElementsByTagName("li");
     var b;
     var i;
 
@@ -116,7 +116,7 @@ function filterArtStyle(){
         console.log(inputArtStyle.value)
     var ul = document.getElementById("myUL");
     // Get specific list items
-    var li = ul.getElementsByTagName('li');
+    var li = ul.getElementsByTagName("li");
     var c;
     var i;
 
