@@ -62,29 +62,16 @@ function searchFunction() {
     var buttons = document.getElementsByClassName("tablinks");
     
     if (buttons[0].classList.contains("active")) {
-        //Change all Letters to uppercase so upper/lower case doesn't matter
+        //All Letters to uppercase so upper/lower case doesn't matter; SearchEx
         var filter = inputSearchEx.value.toUpperCase();
         //Get elements from list
         var ul = document.getElementById("ExhibitionUL");
-        // Get specific list items
-        var li = ul.getElementsByTagName('li');
-        var a;
-        var i;
-
-        // Loop through all list items, and hide those who don't match the search query
-        for (i = 0; i < li.length; i++) {
-            a = li[i].getElementsByTagName("a")[0];
-            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-            } else {
-                li[i].style.display = "none";
-            }
-        }   
     } else if (buttons[1].classList.contains("active")) {
-        //Change all Letters to uppercase so upper/lower case doesn't matter
+        //All Letters to uppercase so upper/lower case doesn't matter; SearchVe
         var filter = inputSearchVe.value.toUpperCase();
         //Get elements from list
         var ul = document.getElementById("VenueUL");
+    }
         // Get specific list items
         var li = ul.getElementsByTagName('li');
         var h2;
@@ -98,11 +85,8 @@ function searchFunction() {
             } else {
                 li[i].style.display = "none";
             }
-        }          
-    } else {
-        console.log("else works")
-    }
-}
+        }   
+    } 
 
 // **** Filter Functions ****
 //TODO: Make both filter work together, e.g. show all exhibitions: sculptures, contemporary
