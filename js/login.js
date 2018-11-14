@@ -1,4 +1,4 @@
-console.log("main.js has been called.")
+
 
 
 // document.getElementById('submit').onclick = function()
