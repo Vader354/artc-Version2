@@ -57,17 +57,17 @@
 
 function searchFunction() {
 
-// Set variables
-//Get value from Input field
-var input = document.getElementById('myInput');
-//Change all Letters to uppercase so for search Upper/lower case doesn't matter
-var filter = input.value.toUpperCase();
-//Get elements from list
-var ul = document.getElementById("myUL");
-// Get specific list items
-var li = ul.getElementsByTagName('li');
-var a;
-var i;
+    // Set variables
+    //Get value from Input field
+    var input = document.getElementById('myInput');
+    //Change all Letters to uppercase so for search Upper/lower case doesn't matter
+    var filter = input.value.toUpperCase();
+    //Get elements from list
+    var ul = document.getElementById("myUL");
+    // Get specific list items
+    var li = ul.getElementsByTagName('li');
+    var a;
+    var i;
 
 // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
@@ -87,7 +87,6 @@ function filterArtType(){
 
     //Set variables:
     var inputArtType = document.getElementById("filterArtType")
-        console.log(inputArtType.value)
     var ul = document.getElementById("myUL");
     // Get specific list items
     var li = ul.getElementsByTagName("li");
@@ -98,12 +97,14 @@ function filterArtType(){
 
 for (i = 0; i < li.length; i++) {
     b = li[i].getElementsByClassName("artType")[0]; 
-    if (b.innerHTML === inputArtType.value) {
-        li[i].style.display = "";
-    } else {
-        li[i].style.display = "none";
+        if (b.innerHTML === inputArtType.value) {
+            li[i].style.display = "";
+        } else if (inputArtType.value === ""){
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
     }
-}
 }
 
 // **** Filter for Art Style ****
@@ -113,7 +114,7 @@ function filterArtStyle(){
 
     //Set variables:
     var inputArtStyle = document.getElementById("filterArtStyle")
-        console.log(inputArtStyle.value)
+        console.log(inputArtStyle.value);
     var ul = document.getElementById("myUL");
     // Get specific list items
     var li = ul.getElementsByTagName("li");
@@ -123,11 +124,13 @@ function filterArtStyle(){
     //Loop through all List Items
 
 for (i = 0; i < li.length; i++) {
-    c = li[i].getElementsByClassName("artStyle")[0]; 
-    if (c.innerHTML === inputArtStyle.value) {
-        li[i].style.display = "";
-    } else {
-        li[i].style.display = "none";
+    c = li[i].getElementsByClassName("artStyle")[0];
+        if (c.innerHTML === inputArtStyle.value) {
+            li[i].style.display = "";
+        } else if (inputArtStyle.value === ""){
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
     }
-}
 }
