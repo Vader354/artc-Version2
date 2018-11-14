@@ -80,8 +80,10 @@ function searchFunction() {
     }
 }
 
-// **** Filter for Art Type ****
-//TODO: Make the Filter to show everything when on "Filter Art Type"
+// **** Filter Functions ****
+//TODO: Make both filter work together, e.g. show all exhibitions: sculptures, contemporary
+
+// ** Filter for Art Type **
 
 function filterArtType(){
 
@@ -107,8 +109,7 @@ for (i = 0; i < li.length; i++) {
     }
 }
 
-// **** Filter for Art Style ****
-//TODO: Make the Filter work and show everything when on "Filter Art Style"
+// ** Filter for Art Style **
 
 function filterArtStyle(){
 
@@ -134,3 +135,9 @@ for (i = 0; i < li.length; i++) {
         }
     }
 }
+
+
+// **** VENUE TAB ****
+
+// ** FILTER for VenueType **
+// TODO!!!

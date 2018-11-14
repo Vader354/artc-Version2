@@ -57,7 +57,7 @@
 
 <input type="text" class="searchbar" id="myInput" onkeyup="searchFunction()" placeholder="Search exhibitions...">
 
-<!-- **** Filter for ArtType **** -->
+<!-- **** FILTER for ArtType **** -->
 
 <select required name="filterArtType" id="filterArtType" onchange="filterArtType()">
     <option value="">Choose Art-Type...</option>
@@ -66,7 +66,7 @@
     <option value="sculptures">sculptures</option>
 </select>
 
-<!-- **** Filter for ArtStyle **** -->
+<!-- **** FILTER for ArtStyle **** -->
 
 <select required name="filterArtStyle" id="filterArtStyle" onchange="filterArtStyle()">
     <option value="">Choose Art-Style...</option>
@@ -80,7 +80,6 @@
             <span class="artType" id="artType1"></span>
             <span class ="artStyle" id="artStyle1"></span> 
             <p id= "desEx1"></p>
-<!-- TODO: Paragraphs are somehow not displayed properly -- ask in Class! -->
             <button class="addPickButton" id="buttonA1" onclick="addPick(exhibition1)">Add E1 to My Picks</button>
             <button class="removePickButton" id="buttonR1" onclick="removePick(exhibition1)">Remove E1 from My Picks</button>
         </li>
@@ -112,6 +111,14 @@
 
 <!-- **** SEARCH FUNCTION Input Bar Exhibitions **** -->
 <input type="text" class="searchbar" onkeyup="searchFunction()" placeholder="Search venues...">
+
+<!-- **** FILTER for VenueType **** -->
+
+<select required name="filterVenueType" id="filterVenueType" onchange="filterVenueType()">
+    <option value="">Choose Venue-Type...</option>
+    <option value="museum">museum</option>
+    <option value="gallery">gallery</option>
+</select>
 
     <ul>
         <li class="ListItem">
