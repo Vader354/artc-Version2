@@ -60,3 +60,7 @@ input {
     top: 100px;
     left: 130px;
 }
+
+#loginbtn:hover {
+    cursor: pointer;
+}
