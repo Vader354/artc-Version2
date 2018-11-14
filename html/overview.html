@@ -15,9 +15,6 @@
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
 
-    <!-- link to search icon -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-
     <title>Overview | ArtC</title>
 </head>
 <body onload="init()">
@@ -44,6 +41,12 @@
         <button class="tablinks" onclick="openTab(event, 'ArtVenues')">Art Venues</button>
 </div>
 
+<!-- TBD: Tried to clear the search bars with the following as an onlick-action:
+document.getElementById('inputSearchVe').value = ''
+document.getElementById('inputSearchEx').value = ''
+It is working, but the prior input is still saved somehow and the list only displays the results from the search query.
+-->
+
 <script src="../js/overview_tabs.js"></script>
 
 
@@ -55,7 +58,7 @@
 <!-- **** SEARCH FUNCTION Input Bar Exhibitions **** -->
 
 
-<input type="text" class="searchbar" id="myInput" onkeyup="searchFunction()" placeholder="Search exhibitions...">
+<input type="text" class="searchbar" id="inputSearchEx" onkeyup="searchFunction()" placeholder="Search exhibitions...">
 
 <!-- **** FILTER for ArtType **** -->
 
@@ -74,35 +77,35 @@
     <option value="colonial">colonial</option>
 </select>
 
-    <ul id="myUL">
+<!-- LIST Exhibitions -->
+
+    <ul class="myList" id="ExhibitionUL">
         <li class="ListItem">
             <a href="../html/exhibition_subpages/exhibition1.html" style="padding:0"><h2 id="nameEx1"></h2></a>
             <span class="artType" id="artType1"></span>
-            <span class ="artStyle" id="artStyle1"></span> 
-            <p id= "desEx1"></p>
-<!-- TODO: Paragraphs are somehow not displayed properly -- ask in Class! -->
-            <button class="addPickButton" id="buttonA1">Add E1 to My Picks</button>
-            <button class="removePickButton" id="buttonR1">Remove E1 from My Picks</button>
+            <span class="artStyle" id="artStyle1"></span> 
+            <p id="desEx1"></p>
+            <button class="addPickButton" id="Luca Tombolini Exhibition">+ My Picks</button>
+            <button class="removePickButton" id="Luca Tombolini Exhibition">– My Picks</button>
         </li>
         <li class="ListItem">
             <a href="../html/exhibition_subpages/exhibition2.html" style="padding:0"><h2 id="nameEx2"></h2></a>
             <span class="artType" id="artType2"></span>
-            <span class ="artStyle" id="artStyle2"></span>
+            <span class="artStyle" id="artStyle2"></span>
             <p id="desEx2"></p>
-            <button class="addPickButton" id="buttonA2">Add E2 to My Picks</button>
-            <button class="removePickButton" id="buttonR2">Remove E2 from My Picks</button>
+            <button class="addPickButton" id="Frida Kahlo Exhibition">+ My Picks</button>
+            <button class="removePickButton" id="Frda Kahlo Exhibition">– My Picks</button>
         </li>
         <li class="ListItem">
             <a href="../html/exhibition_subpages/exhibition3.html" style="padding:0"><h2 id="nameEx3"></h2></a>
             <span class="artType" id="artType3"></span>
-            <span class ="artStyle" id="artStyle3"></span>
+            <span class="artStyle" id="artStyle3"></span>
             <p id="desEx3"></p>
-            <button class="addPickButton" id="buttonA3">Add E3 to My Picks</button>
-            <button class="removePickButton" id="buttonR3">Remove E3 from My Picks</button>
+            <button class="addPickButton" id="Lee Woodmann Exhibition">+ My Picks</button>
+            <button class="removePickButton" id="Lee Woodmann Exhibition">– My Picks</button>
         </li>
     </ul>
 
-    <script src="../js/mypicks.js"></script>
 
 </div>
 
@@ -110,8 +113,8 @@
       
 <div id="ArtVenues" class="tabcontent">
 
-<!-- **** SEARCH FUNCTION Input Bar Exhibitions **** -->
-<input type="text" class="searchbar" onkeyup="searchFunction()" placeholder="Search venues...">
+<!-- **** SEARCH FUNCTION Input Bar Venues **** -->
+<input type="text" class="searchbar" id="inputSearchVe" onkeyup="searchFunction()" placeholder="Search venues...">
 
 <!-- **** FILTER for VenueType **** -->
 
@@ -121,23 +124,26 @@
     <option value="gallery">gallery</option>
 </select>
 
-    <ul>
+<!-- LIST Venues -->
+
+    <ul class="myList" id="VenueUL">
         <li class="ListItem">
             <h2 id="nameVe1"></h2>
-            <span id="venueType1"></span>
+            <span class="venueType" id="venueType1"></span>
         </li>
         <li class="ListItem">
             <h2 id="nameVe2"></h2>
-            <span id="venueType2"></span>
+            <span class="venueType" id="venueType2"></span>
         </li>
         <li class="ListItem">
             <h2 id="nameVe3"></h2>
-            <span id="venueType3"></span>
+            <span class="venueType" id="venueType3"></span>
         </li>
     </ul>
      
 </div>
 
+<script src="../js/overview_picks.js"></script>
 <script src="../js/overview_search.js"></script>
 
 <!-- Filter List:  https://www.w3schools.com/howto/howto_js_filter_lists.asp -->   

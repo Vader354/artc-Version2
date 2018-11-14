@@ -5,7 +5,6 @@ exhibitions.push(new Exhibition(123, "Luca Tombolini Exhibition", "photography",
 exhibitions.push(new Exhibition(456, "Frida Kahlo Exhibition", "painting", "colonial", "A painting series from Mexico", "2018-02-01", "2018-06-01"))
 exhibitions.push(new Exhibition(789, "Lee Woodman Exhibition", "sculptures", "contemporary", "A creative director working 3D", "2018-05-05", "2018-07-07"))
 
-
 var exhibition1 = exhibitions[0];
 var exhibition2 = exhibitions[1];
 var exhibition3 = exhibitions[2];
@@ -54,47 +53,44 @@ function addPick(exhibition) {
 
 // ADD 
 var addPickButtons = document.getElementsByClassName("addPickButton");
-console.log(addPickButtons);
 
 function addPick() {
-    console.log("Hi");
     var picksFromLS = localStorage.getItem("Picks");
     var userPicks = JSON.parse(picksFromLS);
     // check if picks in local storage is empty, if yes push
     if (userPicks == null) {
-        console.log("userPicks was null.")
         userPicks = [];
-        console.log("empty array created!")
-        userPicks.push(this.name);
-        console.log("pusehd to the array.")
+        userPicks.push(this.id);
         localStorage.setItem("Picks", JSON.stringify(userPicks));
-        console.log("set to local storage.")
-        alert(JSON.stringify(this.name) + " has been added to your picks."); 
+        alert(JSON.stringify(this.id) + " has been added to your picks.");
     } else {
-        if (userPicks.includes(this.name)) {
-            console.log("already inside.")
+        if (userPicks.includes(this.id)) {
             return false;
         } else {
-            userPicks.push(this.name);
+            userPicks.push(this.id);
             localStorage.setItem("Picks", JSON.stringify(userPicks));
-            alert(JSON.stringify(this.name) + " has been added to your picks.");
+            alert(JSON.stringify(this.id) + " has been added to your picks.");
         }  
     }
 };
 
+// check which button was clicked, and execute addPick function
 for (var i = 0; i < addPickButtons.length; i++) {
     addPickButtons[i].addEventListener("click", addPick);
 }
+
+// HOVER BEFORE REMOVE
+
+
 
 
 // REMOVE
 var removePickButtons = document.getElementsByClassName("removePickButton")
 
 function removePick() {
-    console.log("ciao");
     var picksFromLS = localStorage.getItem("Picks");
     var userPicks = JSON.parse(picksFromLS);
-    var index = userPicks.indexOf(this.name);
+    var index = userPicks.indexOf(this.id);
     if (index > -1) {
         userPicks.splice(index, 1);
     };
@@ -107,10 +103,3 @@ for (var i = 0; i < removePickButtons.length; i++) {
 
 // => dass sich der button dann umwandelt in schwarz/aktiv mit Häckchen "Saved to my Picks"
 // und wenn man hovert man sieht "Remove from my Picks" ... addEventListener("hover", ... function style display bla)
-
-
-/*
-// display myPicks
-var currentPicks = localStorage.getItem("Picks")
-currentPicks = JSON.parse(currentPicks);
-document.getElementById("displayMyPicks").innerHTML = JSON.stringify(currentPicks);  */
