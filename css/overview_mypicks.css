@@ -1,4 +1,4 @@
-.addPickButton {
+.addPickButton, .removePickButton {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 15px;
     border-style: solid;
@@ -10,7 +10,7 @@
     transition: 0.4s;
 }
 
-.addPickButton:hover {
+.addPickButton:hover, .removePickButton:hover {
     background-color: black;
     color: white;
 }
