@@ -9,9 +9,10 @@ class Exhibition {
         this.endDate = endDate;
     }
 
+    /*
     // WIP ...
     getAddress() {
         this.address = document.getElementsByClassName(Address)
     }
-
+    */
 }
