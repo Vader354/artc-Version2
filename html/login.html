@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="../css/headings.css">
     <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/loginregistration.css">
 
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
@@ -22,19 +23,20 @@
         <li style="float:right"><a href="../html/login.html">Log-In</a></li>
     </ul>
 
-<h1>Log In</h1>
+<h1 id="hlogin">Log In</h1>
     <form id="login-form"> 
-        <label for ="username">Username: </label>
-            <input type="text" id="username" name="username" placeholder="Username">
+        <!-- Marie: I would propose we just exlude the label for the log in, not really needed, it kinda doubles 
+            <label for="username" id="username-lb">Username: </label> -->
+            <input type="text" id="username-inp" name="username" placeholder="Username"><br><br>
 
-        <label for ="password">Password: </label>
-            <input type="password" id="password" name="password" placeholder="Password">
+        <!-- <label for="password" id="username-lb">Password: </label> -->
+            <input type="password" id="password-inp" name="password" placeholder="Password">
 
-        <button>Login</button>
+        <button id="loginbtn">Login</button>
 
     </form>
 
-No user yet? Register <a href="registration.html">here</a>. 
+<div id="leadtoreg">No user yet? <a href="registration.html">Register here</a>.</div> 
     <script src="../JS/login.js"></script>
 </body>
 </html> 

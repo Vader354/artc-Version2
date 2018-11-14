@@ -53,25 +53,18 @@ function addPick(exhibition) {
 
 // ADD 
 var addPickButtons = document.getElementsByClassName("addPickButton");
-console.log(addPickButtons);
 
 function addPick() {
-    console.log("Hi");
     var picksFromLS = localStorage.getItem("Picks");
     var userPicks = JSON.parse(picksFromLS);
     // check if picks in local storage is empty, if yes push
     if (userPicks == null) {
-        console.log("userPicks was null.")
         userPicks = [];
-        console.log("empty array created!")
         userPicks.push(this.id);
-        console.log("pusehd to the array.")
         localStorage.setItem("Picks", JSON.stringify(userPicks));
-        console.log("set to local storage.")
-        alert(JSON.stringify(this.id) + " has been added to your picks."); 
+        alert(JSON.stringify(this.id) + " has been added to your picks.");
     } else {
         if (userPicks.includes(this.id)) {
-            console.log("already inside.")
             return false;
         } else {
             userPicks.push(this.id);
@@ -81,16 +74,20 @@ function addPick() {
     }
 };
 
+// check which button was clicked, and execute addPick function
 for (var i = 0; i < addPickButtons.length; i++) {
     addPickButtons[i].addEventListener("click", addPick);
 }
+
+// HOVER BEFORE REMOVE
+
+
 
 
 // REMOVE
 var removePickButtons = document.getElementsByClassName("removePickButton")
 
 function removePick() {
-    console.log("ciao");
     var picksFromLS = localStorage.getItem("Picks");
     var userPicks = JSON.parse(picksFromLS);
     var index = userPicks.indexOf(this.id);
@@ -106,10 +103,3 @@ for (var i = 0; i < removePickButtons.length; i++) {
 
 // => dass sich der button dann umwandelt in schwarz/aktiv mit Häckchen "Saved to my Picks"
 // und wenn man hovert man sieht "Remove from my Picks" ... addEventListener("hover", ... function style display bla)
-
-
-/*
-// display myPicks
-var currentPicks = localStorage.getItem("Picks")
-currentPicks = JSON.parse(currentPicks);
-document.getElementById("displayMyPicks").innerHTML = JSON.stringify(currentPicks);  */
