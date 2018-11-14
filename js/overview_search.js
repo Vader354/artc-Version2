@@ -59,8 +59,9 @@ function searchFunction() {
 
     var inputSearchEx = document.getElementById("inputSearchEx");
     var inputSearchVe = document.getElementById("inputSearchVe");
-
-    if (inputSearchEx.value !== "") {
+    var buttons = document.getElementsByClassName("tablinks");
+    
+    if (buttons[0].classList.contains("active")) {
         //Change all Letters to uppercase so upper/lower case doesn't matter
         var filter = inputSearchEx.value.toUpperCase();
         //Get elements from list
@@ -79,7 +80,7 @@ function searchFunction() {
                 li[i].style.display = "none";
             }
         }   
-    } else if (inputSearchVe.value !=="") {
+    } else if (buttons[1].classList.contains("active")) {
         //Change all Letters to uppercase so upper/lower case doesn't matter
         var filter = inputSearchVe.value.toUpperCase();
         //Get elements from list
