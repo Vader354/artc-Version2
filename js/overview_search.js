@@ -109,7 +109,7 @@ for (i = 0; i < li.length; i++) {
     b = li[i].getElementsByClassName("artType")[0]; 
         if (b.innerHTML === inputArtType.value) {
             li[i].style.display = "";
-        } else if (inputArtType.value === ""){
+        } else if (inputArtType.value === "") {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";

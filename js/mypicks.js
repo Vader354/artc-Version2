@@ -5,7 +5,6 @@ exhibitions.push(new Exhibition(123, "Luca Tombolini Exhibition", "photography",
 exhibitions.push(new Exhibition(456, "Frida Kahlo Exhibition", "painting", "colonial", "A painting series from Mexico", "2018-02-01", "2018-06-01"))
 exhibitions.push(new Exhibition(789, "Lee Woodman Exhibition", "sculptures", "contemporary", "A creative director working 3D", "2018-05-05", "2018-07-07"))
 
-
 var exhibition1 = exhibitions[0];
 var exhibition2 = exhibitions[1];
 var exhibition3 = exhibitions[2];
@@ -65,19 +64,19 @@ function addPick() {
         console.log("userPicks was null.")
         userPicks = [];
         console.log("empty array created!")
-        userPicks.push(this.name);
+        userPicks.push(this.id);
         console.log("pusehd to the array.")
         localStorage.setItem("Picks", JSON.stringify(userPicks));
         console.log("set to local storage.")
-        alert(JSON.stringify(this.name) + " has been added to your picks."); 
+        alert(JSON.stringify(this.id) + " has been added to your picks."); 
     } else {
-        if (userPicks.includes(this.name)) {
+        if (userPicks.includes(this.id)) {
             console.log("already inside.")
             return false;
         } else {
-            userPicks.push(this.name);
+            userPicks.push(this.id);
             localStorage.setItem("Picks", JSON.stringify(userPicks));
-            alert(JSON.stringify(this.name) + " has been added to your picks.");
+            alert(JSON.stringify(this.id) + " has been added to your picks.");
         }  
     }
 };
@@ -94,7 +93,7 @@ function removePick() {
     console.log("ciao");
     var picksFromLS = localStorage.getItem("Picks");
     var userPicks = JSON.parse(picksFromLS);
-    var index = userPicks.indexOf(this.name);
+    var index = userPicks.indexOf(this.id);
     if (index > -1) {
         userPicks.splice(index, 1);
     };
