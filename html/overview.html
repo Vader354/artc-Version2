@@ -15,9 +15,6 @@
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
 
-    <!-- link to search icon -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-
     <title>Overview | ArtC</title>
 </head>
 <body onload="init()">
@@ -55,7 +52,7 @@
 <!-- **** SEARCH FUNCTION Input Bar Exhibitions **** -->
 
 
-<input type="text" class="searchbar" id="myInput" onkeyup="searchFunction()" placeholder="Search exhibitions...">
+<input type="text" class="searchbar" id="inputSearchEx" onkeyup="searchFunction()" placeholder="Search exhibitions...">
 
 <!-- **** FILTER for ArtType **** -->
 
@@ -74,7 +71,9 @@
     <option value="colonial">colonial</option>
 </select>
 
-    <ul id="myUL">
+<!-- LIST Exhibitions -->
+
+    <ul class="myList" id="ExhibitionUL">
         <li class="ListItem">
             <a href="../html/exhibition_subpages/exhibition1.html" style="padding:0"><h2 id="nameEx1"></h2></a>
             <span class="artType" id="artType1"></span>
@@ -102,7 +101,6 @@
         </li>
     </ul>
 
-    <script src="../js/mypicks.js"></script>
 
 </div>
 
@@ -111,7 +109,7 @@
 <div id="ArtVenues" class="tabcontent">
 
 <!-- **** SEARCH FUNCTION Input Bar Exhibitions **** -->
-<input type="text" class="searchbar" onkeyup="searchFunction()" placeholder="Search venues...">
+<input type="text" class="searchbar" id="inputSearchVe" onkeyup="searchFunction()" placeholder="Search venues...">
 
 <!-- **** FILTER for VenueType **** -->
 
@@ -121,23 +119,26 @@
     <option value="gallery">gallery</option>
 </select>
 
-    <ul>
+<!-- LIST Venues -->
+
+    <ul class="myList" id="VenueUL">
         <li class="ListItem">
             <h2 id="nameVe1"></h2>
-            <span id="venueType1"></span>
+            <span class="venueType" id="venueType1"></span>
         </li>
         <li class="ListItem">
             <h2 id="nameVe2"></h2>
-            <span id="venueType2"></span>
+            <span class="venueType" id="venueType2"></span>
         </li>
         <li class="ListItem">
             <h2 id="nameVe3"></h2>
-            <span id="venueType3"></span>
+            <span class="venueType" id="venueType3"></span>
         </li>
     </ul>
      
 </div>
 
+<script src="../js/mypicks.js"></script>
 <script src="../js/overview_search.js"></script>
 
 <!-- Filter List:  https://www.w3schools.com/howto/howto_js_filter_lists.asp -->   

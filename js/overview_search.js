@@ -57,26 +57,50 @@
 
 function searchFunction() {
 
-    // Set variables
-    //Get value from Input field
-    var input = document.getElementById('myInput');
-    //Change all Letters to uppercase so for search Upper/lower case doesn't matter
-    var filter = input.value.toUpperCase();
-    //Get elements from list
-    var ul = document.getElementById("myUL");
-    // Get specific list items
-    var li = ul.getElementsByTagName('li');
-    var a;
-    var i;
+    var inputSearchEx = document.getElementById("inputSearchEx");
+    var inputSearchVe = document.getElementById("inputSearchVe");
+    var buttons = document.getElementsByClassName("tablinks");
+    
+    if (buttons[0].classList.contains("active")) {
+        //Change all Letters to uppercase so upper/lower case doesn't matter
+        var filter = inputSearchEx.value.toUpperCase();
+        //Get elements from list
+        var ul = document.getElementById("ExhibitionUL");
+        // Get specific list items
+        var li = ul.getElementsByTagName('li');
+        var a;
+        var i;
 
-// Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }   
+    } else if (buttons[1].classList.contains("active")) {
+        //Change all Letters to uppercase so upper/lower case doesn't matter
+        var filter = inputSearchVe.value.toUpperCase();
+        //Get elements from list
+        var ul = document.getElementById("VenueUL");
+        // Get specific list items
+        var li = ul.getElementsByTagName('li');
+        var h2;
+        var i;
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            h2 = li[i].getElementsByTagName("h2")[0];
+            if (h2.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }          
+    } else {
+        console.log("else works")
     }
 }
 
@@ -89,7 +113,7 @@ function filterArtType(){
 
     //Set variables:
     var inputArtType = document.getElementById("filterArtType")
-    var ul = document.getElementById("myUL");
+    var ul = document.getElementById("ExhibitionUL");
     // Get specific list items
     var li = ul.getElementsByTagName("li");
     var b;
@@ -116,7 +140,7 @@ function filterArtStyle(){
     //Set variables:
     var inputArtStyle = document.getElementById("filterArtStyle")
         console.log(inputArtStyle.value);
-    var ul = document.getElementById("myUL");
+    var ul = document.getElementById("ExhibitionUL");
     // Get specific list items
     var li = ul.getElementsByTagName("li");
     var c;
@@ -140,4 +164,28 @@ for (i = 0; i < li.length; i++) {
 // **** VENUE TAB ****
 
 // ** FILTER for VenueType **
-// TODO!!!
+
+function filterVenueType(){
+
+    //Set variables:
+    var inputVenueType = document.getElementById("filterVenueType")
+        console.log(inputVenueType.value);
+    var ul = document.getElementById("VenueUL");
+    // Get specific list items
+    var li = ul.getElementsByTagName("li");
+    var c;
+    var i;
+
+    //Loop through all List Items
+
+for (i = 0; i < li.length; i++) {
+    c = li[i].getElementsByClassName("venueType")[0];
+        if (c.innerHTML === inputVenueType.value) {
+            li[i].style.display = "";
+        } else if (inputVenueType.value === ""){
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
