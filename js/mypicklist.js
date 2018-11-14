@@ -2,6 +2,7 @@
 var currentPicks = localStorage.getItem("Picks");
 currentPicks = JSON.parse(currentPicks);
 
+
 function createTable(tableData) {
     var table = document.createElement('table');
     var tableBody = document.createElement('tbody');
@@ -15,5 +16,6 @@ function createTable(tableData) {
     table.appendChild(tableBody);
     document.body.appendChild(table);
 };
-  
-document.getElementById("displayMyPicks").innerHTML = createTable(currentPicks);
+
+
+document.getElementById("displayMyPicks").innerHTML = createTable(currentPicks); 

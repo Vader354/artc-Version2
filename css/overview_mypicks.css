@@ -15,10 +15,18 @@
     color: white;
 }
 
+#hpicks {
+    position: absolute;
+    top: 100px;
+    left: 90px;
+}
+
 #displayMyPicks {
     font-size: 18px;
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
-    position: relative;
+    position: absolute;
+    top: 180px;
+    left: 90px;
     line-height: 1.5;
 }

@@ -76,6 +76,7 @@
   background-color: #000000;
   color: white;
   border-color: black;
+  transition: 0.4s;
 }
 
 /* Caption text */
@@ -84,7 +85,7 @@
   font-size: 20px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 160px;
+  bottom: 120px;
   width: 100%;
   text-align: center;
 }
@@ -112,7 +113,7 @@
   border-color: #000000;
   display: inline-block;
   position: relative;
-  bottom: 60px;
+  bottom: 65px;
   transition: background-color 0.6s ease;
 }
 
