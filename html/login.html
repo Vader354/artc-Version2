@@ -10,7 +10,7 @@
 
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
-
+    <script src="../JS/classes/classUser.js"></script>
     <title>Login | ArtC</title>
 </head>
 <body>
@@ -23,14 +23,11 @@
     </ul>
 
 <h1>Log In</h1>
-    <form id="login-form"> 
-        <label for ="username">Username: </label>
-            <input type="text" id="username" name="username" placeholder="Username">
-
-        <label for ="password">Password: </label>
+    <form id="loginForm"> 
+            <input type="email" id="email" name="email" placeholder="email">
             <input type="password" id="password" name="password" placeholder="Password">
 
-        <button>Login</button>
+    <button type="button" id="submit">Login</button>
 
     </form>
 

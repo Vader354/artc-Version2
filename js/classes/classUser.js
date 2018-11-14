@@ -1,4 +1,4 @@
-class User {
+class Users {
 
     // The constructor for our class, which will allow us to create new objects of our class
     constructor (firstname, lastname, gender, email, dateOfBirth, password) {
@@ -8,8 +8,8 @@ class User {
       this.email = email;
     //   this.adress = this.setAdress();
       this.dateOfBirth = dateOfBirth;
-      this.password = this.encryptPwd(password);
-      this.lastAccess = null;
+      this.password = this.hashPwd(password);
+      this.lastAccess = this.setLastAccess();
     }
 
     // not sure here yet
@@ -17,7 +17,7 @@ class User {
         this.address = new Address(this.phone, this.street, this.postalCode, this.city, this.geolocation);
     }
 
-    encryptPwd() {
+    hashPwd() {
 
     }
 
