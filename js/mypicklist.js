@@ -1,24 +1,30 @@
-// display myPicks
+// get current picks from local storage
 var currentPicks = localStorage.getItem("Picks");
 currentPicks = JSON.parse(currentPicks);
-
-function createTable(tableData) {
-    var table = document.createElement('table');
-    var tableBody = document.createElement('tbody');
   
-    for (var i; i < tableData.length; i++) {
-        var row = document.createElement("tr");
-        row.appendChild(document.create)
+function createTable(tableArr) {
+    //create a Table Object
+    let table = document.createElement('table');
+    //iterate over every array(row) within tableArr
+    for (let row of tableArr) {
+        //Insert a new row element into the table element
+        table.insertRow();
+        //Iterate over every index(cell) in each array(row)
+        for (let cell of row) {
+            //While iterating over the index(cell)
+            //insert a cell into the table element
+            let newCell = table.rows[table.rows.length - 1].insertCell();
+            //add text to the created cell element
+            newCell.textContent = cell;
+        }
     }
-    
-    tableData.forEach(function(rowData) {
-        var row = document.createElement('tr');
-        row.appendChild(document.createTextNode(rowData));
-        tableBody.appendChild(row);
-    });
-  
-    table.appendChild(tableBody);
+    // append the compiled table to the DOM
     document.body.appendChild(table);
-};
-  
-document.getElementById("displayMyPicks").innerHTML = createTable(currentPicks);
+}
+
+// execute function to create table
+createTable(currentPicks);
+
+
+
+
