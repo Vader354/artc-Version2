@@ -1,11 +1,10 @@
-// Retrieving user input on login 
-// Create object with pass and email
-var usersTest = ["g@gmail.com"];
+
+
 // Not really necessary anymore
-var loginForm = document.getElementById("LoginForm");
+var loginForm = document.getElementById("loginForm");
 var submit = document.getElementById("submit")
 // Retrieving stored users from localStorage
-// var users = JSON.parse(localStorage.getItem("users"));
+var users = JSON.parse(localStorage.getItem("users"));
 
 // Creates a variable for maxium user login attempts
 var loginAttempts = 5;
@@ -14,32 +13,39 @@ var loginAttempts = 5;
 // Empty array to store user login in, to store that the user is logged in in... if that makes sense
 var currentUser = [];
 
-// Variable for user input email
-var username = document.getElementById("email");
-var password = document.getElementById("password");
 
 // var hashedInputPassword = users.hashPassword(inputPassword.value);
 
   // Eventlistener for clicking login. 
   submit.addEventListener("click", function(){
     console.log("Eventlistener fired on click");
-    if(username.value.length == 0 || password.value.length == 0){
+    // Variable for user input email
+    var username = loginForm.email.value;
+    console.log(loginForm.email.value);
+    var password = loginForm.password.value;
+    console.log(loginForm.password.value);
+    console.log(hashedPassword);
+    var hashedPassword = users.hashPassword(password)
+    if(username.length == 0 || password.length == 0){
       alert("Please enter a username and password");
       return false;
     } else {   
       console.log("first function finished")
     // Look through array to check if input password matches stored password
     // Need to get = hashedInputPassword aswell
-    for(var i = 0; i < usersTest.length; i++) {
+    for(var i = 0; i < users.length; i++) {
       console.log("for loop fired");
       // This is not working, tells me the password is wrong even with hardcoded users
-      if(username == usersTest[i] && password == usersTest[i]) {
-        // create this
-        currentUser.push(new CurrentUser)
+      if(username == users[i].email && password == users[i].hashedPassword) {
+
+        currentUser.push(new CurrentUser(loginForm.email.value))
+        console.log(currentUser)
         document.location.href = "../html/overview.html";
-        // var loggedinUser = JSON.stringify(userLogin);
-        // localStorage.setItem("userLogin", loggedinUser);
-        user.setLastAccess()
+        var loggedinUser = JSON.stringify(currentUser);
+        localStorage.setItem("currentUser", loggedinUser);
+        console.log(localStorage)
+        users.setLastAccess()
+        console.log(setLastAccess())
         return true;
       }
     
