@@ -1,11 +1,14 @@
 .searchbar {
     width: 200px; /* Full-width */
+    height: 40px;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 14px; /* Increase font-size */
-    padding: 12px 20px 12px 20px; /* Add some padding */
-    border: 2px solid darkgray; /* Add a grey border */
+    padding: 0px 0px 0px 10px; /* Add some padding */
+    border: 2px solid rgb(80, 77, 77); /* Add a grey border */
     margin-bottom: 10px; /* Add some space below the input */
 }
 
+/* Marie: what is this? */
 select:required:invalid {
     color: gray;
   }
@@ -15,3 +18,18 @@ select:required:invalid {
   option {
     color: black;
   }
+
+#filterArtType, #filterArtStyle, #filterVenueType {
+    width: 200px; /* Full-width */
+    height: 43px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px; /* Increase font-size */
+    background-color: white;
+    border: 2px solid rgb(80, 77, 77); /* Add a grey border */
+    border-radius: 0%; 
+}
+
+#filterArtType:hover, #filterArtStyle:hover, #filterVenueType:hover {
+  cursor: pointer;
+}
+
