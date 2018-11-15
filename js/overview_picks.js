@@ -50,9 +50,13 @@ function addPick(exhibition) {
 
 // eventListener ist wohl besser als onclick, aber funktioniert irgendwie nicht. onclick funktioniert mit myPicks
 
+// try to connect button array to exhibitions array
+
 
 // ADD 
 var addPickButtons = document.getElementsByClassName("addPickButton");
+console.log(addPickButtons);
+console.log(exhibitions);
 
 function addPick() {
     var picksFromLS = localStorage.getItem("Picks");
