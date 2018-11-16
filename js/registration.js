@@ -10,7 +10,7 @@ function validateReg() {
         // If statements run through the validation functions for the registration form. If validation fails, boolean statement within the function will not store entered value. 
         if(!checkGender()) {
             alert("You need to pick a gender");
-            return false;
+            return true;
         }
         if(!checkEmail(form.email.value)) {
             alert("Email not valid or is used by another user");
@@ -57,7 +57,7 @@ function validateReg() {
     function checkGender() {
         var male = form.male.value.checked;
         var female = form.female.value.checked;
-            if (male == null || female == null) {
+            if (male == null && female == null) {
                 return false;
             }
             else {
