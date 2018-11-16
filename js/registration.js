@@ -7,18 +7,15 @@ var form = document.getElementById('regForm');
 // Validation that will run on click and if valid, push user into users array
 function validateReg() {
 
-    console.log(form.email.value)
         // If statements run through the validation functions for the registration form. If validation fails, boolean statement within the function will not store entered value. 
         if(!checkGender()) {
-            alert("You need to pick a gender")
+            alert("You need to pick a gender");
             return false;
         }
-        
         if(!checkEmail(form.email.value)) {
             alert("Email not valid or is used by another user");
             return false;
         }
-        console.log("checkEmail run")
        
         if(!checkDateOfBirth()) {
             alert("You need to enter a valid Danish CPR number, e.g. DDMMYY-NNNN");
@@ -49,6 +46,7 @@ function validateReg() {
             usersAdress.push(new Address(form.email.value, form.phone.value, form.street.value, form.postal.value, form.city.value))
             console.log("user address pushed to classAdress array")
             localStorage.setItem("UsersAdress", JSON.stringify(usersAdress));
+            alert("You have successfully created an account and will be redirected to our login page");
             document.location.href = "../html/login.html";
             }
         } 
@@ -57,16 +55,17 @@ function validateReg() {
     // Check clicked gender, set gender = this.gender
     
     function checkGender() {
-        var male = form.male.value.checked;
-        var female = form.female.value.checked;
-            if( male == false || female == false) {
+        var male = document.getElementById("male");
+        var female = document.getElementById("female");
+            if( male == null && female == null) {
                 return false;
             }
             else {
                 return true;
-            }        
+            }           
     }
-        
+      
+
     
 
     // Confirm birthday  
@@ -103,14 +102,7 @@ function checkPwd() {
             return false;
         }
     }
-    // Need to include female false when male is true
-    function checkIsMale() {
-        if(form.male.value) {
-            this.isMale = true;
-        } else {
-            this.isMale = false; 
-        }
-    }
+
 // *** Password match variable ****
 // Is it possible to use password.value.match(""), would keep code DRY
 function confirmPwd() {
@@ -126,24 +118,17 @@ function confirmPwd() {
 // Function to check user against array
 // Need to check against localStorage, currently not working
 function checkEmail(email) {
-    console.log("1. check email runs");
-    var email = document.getElementById("email");
-    console.log("2. Email value is stored in variable");
-    var users = (localStorage.getItem("User") !== null) ? JSON.parse(localStorage.getItem("User")) : [];
-    console.log("3. Gets users from local storage");
-    console.log(users)
+    var email = document.getElementById("email").value;
+    var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
         for (var i = 0; i < users.length; i++) {
-            console.log("4. Loops through user array");
-            console.log(users[i].email)
-            console.log(email)
-            if (users[i].email == email.value) {
-                console.log("5. Checks for match in array");
+            if (users[i].email == email) {
             return false;               
-            } console.log("Returns false");
+            }
         }
         return true;
-    }         
+    }     
     
+
 
 
 // *** Validate phone number ***
