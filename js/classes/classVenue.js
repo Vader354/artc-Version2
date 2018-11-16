@@ -10,6 +10,10 @@ class Venue {
         this.address = new Address
         // new Address(this.email, this.phone, this.street, this.streetNr, this.postalCode, this.city, this.country, this.geolocation)
     }
+
+    createHTML(){
+        return '<li class="ListItem">' + '<h2 id="nameVe1">' + this.name + '</h2>' + '<span class="venueType" id="venueType1">' + this.venueType + '</span>' +  '</li>'
+    }
 }
 
 

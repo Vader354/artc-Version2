@@ -58,11 +58,12 @@ It is working, but the prior input is still saved somehow and the list only disp
 <!-- **** SEARCH FUNCTION Input Bar Exhibitions **** -->
 
 
-<input type="text" class="searchbar" id="inputSearchEx" onkeyup="searchFunction()" placeholder="Search exhibitions...">
+<input type="text" class="searchbar" id="inputSearchEx" placeholder="Search exhibitions...">
 
 <!-- **** FILTER for ArtType **** -->
+<!-- TODO FIlters: Automatically change options for select if new arttype/artstyle is available -->
 
-<select required name="filterArtType" id="filterArtType" onchange="filterArtType()">
+<select required name="filterArtType" id="filterArtType">
     <option value="">Choose Art-Type...</option>
     <option value="photography">photography</option>
     <option value="painting">painting</option>
@@ -71,7 +72,7 @@ It is working, but the prior input is still saved somehow and the list only disp
 
 <!-- **** FILTER for ArtStyle **** -->
 
-<select required name="filterArtStyle" id="filterArtStyle" onchange="filterArtStyle()">
+<select required name="filterArtStyle" id="filterArtStyle">
     <option value="">Choose Art-Style...</option>
     <option value="contemporary">contemporary</option>
     <option value="colonial">colonial</option>
@@ -79,7 +80,12 @@ It is working, but the prior input is still saved somehow and the list only disp
 
 <!-- LIST Exhibitions -->
 
-    <ul class="myList" id="ExhibitionUL">
+<ul class="myList" id="ExhibitionUL">
+</ul>
+
+
+
+    <!-- <ul class="myList" id="ExhibitionUL">
         <li class="ListItem">
             <a href="../html/exhibition_subpages/exhibition1.html" style="padding:0"><h2 id="nameEx1"></h2></a>
             <span class="artType" id="artType1"></span>
@@ -104,7 +110,7 @@ It is working, but the prior input is still saved somehow and the list only disp
             <button class="addPickButton" id="Lee Woodmann Exhibition">+ My Picks</button>
             <button class="removePickButton" id="Lee Woodmann Exhibition">– My Picks</button>
         </li>
-    </ul>
+    </ul> -->
 
 
 </div>
@@ -114,11 +120,11 @@ It is working, but the prior input is still saved somehow and the list only disp
 <div id="ArtVenues" class="tabcontent">
 
 <!-- **** SEARCH FUNCTION Input Bar Venues **** -->
-<input type="text" class="searchbar" id="inputSearchVe" onkeyup="searchFunction()" placeholder="Search venues...">
+<input type="text" class="searchbar" id="inputSearchVe" placeholder="Search venues...">
 
 <!-- **** FILTER for VenueType **** -->
 
-<select required name="filterVenueType" id="filterVenueType" onchange="filterVenueType()">
+<select required name="filterVenueType" id="filterVenueType">
     <option value="">Choose Venue-Type...</option>
     <option value="museum">museum</option>
     <option value="gallery">gallery</option>
@@ -126,6 +132,9 @@ It is working, but the prior input is still saved somehow and the list only disp
 
 <!-- LIST Venues -->
 
+    <ul class="myList" id="VenueUL">
+    </ul>
+<!-- 
     <ul class="myList" id="VenueUL">
         <li class="ListItem">
             <h2 id="nameVe1"></h2>
@@ -139,7 +148,7 @@ It is working, but the prior input is still saved somehow and the list only disp
             <h2 id="nameVe3"></h2>
             <span class="venueType" id="venueType3"></span>
         </li>
-    </ul>
+    </ul> -->
      
 </div>
 
