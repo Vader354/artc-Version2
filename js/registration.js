@@ -55,9 +55,9 @@ function validateReg() {
     // Check clicked gender, set gender = this.gender
     
     function checkGender() {
-        var male = document.getElementById("male");
-        var female = document.getElementById("female");
-            if( male == null && female == null) {
+        var male = form.male.value.checked;
+        var female = form.female.value.checked;
+            if (male == null || female == null) {
                 return false;
             }
             else {
