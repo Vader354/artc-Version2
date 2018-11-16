@@ -57,7 +57,7 @@ function validateReg() {
     function checkGender() {
         var male = form.male.value.checked;
         var female = form.female.value.checked;
-            if (male == null && female == null) {
+            if (male == false && female == false) {
                 return false;
             }
             else {
@@ -118,7 +118,6 @@ function confirmPwd() {
 // Function to check user against array
 // Need to check against localStorage, currently not working
 function checkEmail(email) {
-    var email = document.getElementById("email").value;
     var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
         for (var i = 0; i < users.length; i++) {
             if (users[i].email == email) {
