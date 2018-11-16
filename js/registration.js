@@ -40,11 +40,9 @@ function validateReg() {
         else{
             // How do we handle the gender, since they all have different id's, do we look for all of them?
             users.push(new User(form.firstname.value, form.lastname.value, form.gender.value, form.email.value, form.cpr.value, form.password.value ))
-            console.log("User pushed to users array")
             localStorage.setItem("Users", JSON.stringify(users));
             
             usersAdress.push(new Address(form.email.value, form.phone.value, form.street.value, form.postal.value, form.city.value))
-            console.log("user address pushed to classAdress array")
             localStorage.setItem("UsersAdress", JSON.stringify(usersAdress));
             alert("You have successfully created an account and will be redirected to our login page");
             document.location.href = "../html/login.html";
@@ -108,10 +106,10 @@ function validateReg() {
         }
 
 
-// It would be nice to create a function that would check for the input city
-// var checkCity = function() {
-//     var city = document.getElementById("city").value;
-// }
+    // It would be nice to create a function that would check for the input city
+    // var checkCity = function() {
+    //     var city = document.getElementById("city").value;
+    // }
 
     function checkPwd() {
         return true;
@@ -140,9 +138,6 @@ function validateReg() {
             }
         }
     
-
-
-
     // *** Validate phone number ***
         function checkPhone() {
             // The regex accepts 8 numbers, either written together, two and two or four and four
