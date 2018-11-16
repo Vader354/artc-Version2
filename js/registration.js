@@ -59,7 +59,7 @@ function validateReg() {
     function checkGender() {
         var male = form.male.value.checked;
         var female = form.female.value.checked;
-            if( male == false || female == false) {
+            if (male == null || female == null) {
                 return false;
             }
             else {
