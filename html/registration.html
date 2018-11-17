@@ -7,48 +7,46 @@
 
     <link rel="stylesheet" href="../css/headings.css">
     <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/loginregistration.css">
 
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
+    
+    <!-- links to classes -->
     <script src="../js/classes/classUser.js"></script>
     <script src="../js/classes/classAddress.js"></script>
     <title>Registration | ArtC</title>
 </head>
 <body>
 
-<ul>
-    <li><a href="../index.html">ArtC</a></li>
-    <li><a href="overview.html">Overview</a></li>
-    <li><a href="../html/mypicklist.html">My Picks</a></li>
-    <li style="float:right"><a href="../html/login.html">Log-In</a></li>
-</ul>
+    <!-- navigation bar -->
+    <ul>
+        <li><a href="../index.html">ArtC</a></li>
+        <li><a href="overview.html">Overview</a></li>
+        <li><a href="../html/mypicklist.html">My Picks</a></li>
+        <li style="float:right"><a href="../html/login.html">Log-In</a></li>
+    </ul>
     
-<h1>Registration Form</h1>
-
+    <h1>Registration Form</h1>
     <form id="regForm">
         <div>
             <input type="text" id="firstname" name="firstname" placeholder="Firstname e.g. John" required>
             <input type="text" id="lastname" name="lastname" placeholder="Lastname e.g. Smith" required>
         </div>
-        
         <div>
-                <label for ="male">Male:</label>
-                <input type="radio" id="male" name="gender" value="Male">
-                <label for ="female">Female:</label>
-                <input type="radio" id="female" name="gender" value="Female">
+            <label for ="male">Male:</label>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for ="female">Female:</label>
+            <input type="radio" id="female" name="gender" value="Female">
         </div>
-        
         <div>
-            <!-- E-mail must be checked against local storage in JS -->
+        <!-- E-mail must be checked against local storage in JS -->
             <input type="email" id="email" name="email" placeholder="E-mail e.g. john.smith@artc.com" required>
         </div>
-
         <div>
-            <!-- Should be validated in JS-->
+        <!-- Should be validated in JS-->
             <input type="text" id="cpr" name="cpr" placeholder="DDMMYY-NNNN" title="Enter your CPR number" required>
         </div>
-
-     
         <div>
             <input type="text" id="street" name="address" placeholder="Street address" required>
             <!-- JS verification of PC needed -->
@@ -56,30 +54,23 @@
             <!-- JS verification of PC match city -->
             <input type="text" id="city" name="address" placeholder="city" title="City must be located within entered postal code" required>
         </div>
-
         <div>
-
-        <!-- Password needs to be encrypted/hashed in JS -->
+            <!-- Password needs to be encrypted/hashed in JS -->
             <input type="password" id="password" name="password" placeholder="Password" title="Password must contain a special character, a capital letter and be at least 6 characters long."  required>
             <!-- Confirm password -->
             <input type="Password" id="confirmPass" name="confirmPass" placeholder="Confirm Password" title="Passwords need to match." required>
         </div>    
-        
-
         <div>
             <!-- used "tel", because it allows keypad customization for mobile/phone users -->
             <!-- Pattern, check phonenumber for 8 digits without spacing,  -->
             <input type="tel" id="phone" name="phone" placeholder="phone number" title="Phone number must contain 8 digits and no spacing" required>
         </div>
-
         <div>
             <label for="terms">I have read and agree to the terms and conditions.</label>
             <input type="checkbox" id="terms" name="terms" title="You must approve the terms and conditions." required> 
         </div>
-
         <!-- Do we need to do input -> button? -->
         <button type="button" id="onSubmitButton" onclick="validateReg()">Create account</button>
-        
         <!-- link to login page -->
         <div>
             <p>Already have an account? <a href="login.html">Sign in</a>.</p>
@@ -87,27 +78,5 @@
 
         <script src="../js/registration.js"></script>
     </form>
-        
-
-<!-- <script>
-
-    document.getElementById('registrationForm').addEventListener('submit', function(event) {
-        event.preventDefault()
-
-        let user = {
-            Email: event.target.email.value,
-            Password: event.target.password.value,
-            Gender: event.target.gender.value
-        };
-
-        // something like array.push(user) to add to current user data base
-
-        console.log(user)
-
-        event.target.reset()
-    })
-
-</script>
-
 </body>
-</html> -->
+</html>

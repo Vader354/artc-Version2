@@ -1,3 +1,5 @@
+/* LOG IN STYLES */
+
 #hlogin {
     text-align: center;
     position: relative;
@@ -52,3 +54,7 @@ input {
 #submit:hover {
     cursor: pointer;
 }
+
+
+/* REGISTRATION STYLES */
+
