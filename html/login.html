@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="../css/headings.css">
     <link rel="stylesheet" href="../css/navigation.css">
-
+    <link rel="stylesheet" href="../css/loginregistration.css">
 
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
@@ -16,26 +16,26 @@
 
     <title>Login | ArtC</title>
 </head>
+
 <body>
-   
+    <!-- navigation bar -->
     <ul>
         <li><a href="../index.html">ArtC</a></li>
         <li><a href="overview.html">Overview</a></li>
         <li><a href="../html/mypicklist.html">My Picks</a></li>
-        <li style="float:right"><a href="../html/login.html">Log-In</a></li>
+        <li style="float:right"><a href="../html/registration.html">Register</a></li>
     </ul>
 
-<h1 id="hlogin">Log In</h1>
-    <form id="loginForm"> 
-            <input type="email" id="email" name="email" placeholder="email">
-            <input type="password" id="password" name="password" placeholder="Password">
-
-            <button type="button" id="submit">Login</button>
-    </form>
-
-<div id="leadtoreg">No user yet? <a href="registration.html">Register here</a>.</div> 
+    <h1 id="hlogin">Log In</h1>
+        <!-- log in form -->
+        <div class="centered-form">
+            <form id="loginForm"> 
+                <div><input type="email" name="email" placeholder="Email"></div>
+                <div><input type="password" name="password" placeholder="Password"></div>
+                <button type="button" id="submit">Login</button>
+            </form>
+        </div>
+    <div id="leadtoreg">No user yet? <a href="registration.html">Register here</a>.</div> 
     <script src="../JS/login.js"></script>
 </body>
-</html> 
- 
-
+</html>
