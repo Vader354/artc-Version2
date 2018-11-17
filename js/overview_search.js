@@ -1,9 +1,9 @@
-//**** Import Exhibition Object Properties ****/
+//**** Import Object Information for Exhibitions and venues Properties ****/
 // Initial Render, UL List is empty
 var htmlEx = '';
 var htmlVe = '';
 
-// Loop through the exhibitions-array and display the respective html
+// Loop through the exhibitions/venue-array and display the respective html
 for (var i=0; i < exhibitions.length; i++) {
     htmlEx += exhibitions[i].createHTML();
 }
@@ -11,20 +11,37 @@ for (var i=0; i < venues.length; i++) {
     htmlVe += venues[i].createHTML();
 }
 
-// Output all imported exhibitions:
+// Output all imported exhibition and venuess:
 document.getElementById('ExhibitionUL').innerHTML = htmlEx;
 document.getElementById('VenueUL').innerHTML = htmlVe;
 
-// **** SEARCH and Filter function ****
+// **** SEARCH and Filter functions ****
+
+
+
+
 // Define all search variables:
 
 var searchQuerys = {
     searchText: '',
     searchArtType: '',
-    searchArtStyle: ''
+    searchArtStyle: '',
 }
 
-//**Search Function Search Bar */
+// ** Search/Filter Exhibitions **
+//**Search Function Search Bar ***
+
+//TODO: Compress the code, one function for venues and arttype, make filters/search work together
+
+
+
+// console.log(buttons)
+
+// if (buttons[0].classList.contains("active") === false) {
+//     console.log("buttons if works");
+// } else {
+//     console.log("else works")
+// }
 
 document.getElementById('inputSearchEx').addEventListener('input', function(e) {
     var html = ''
@@ -94,62 +111,12 @@ document.getElementById('filterArtStyle').addEventListener('change', function(e)
 
 })
 
+// Ve
+
 
 //###### FIRST TRY SEARCH + FILTER ############
 
-// //**** Import Exhibition Object Properties ****/ CHANGE TO createHTML in Progress
-// //** Exhibition Name: **/
 
-//     var nameEx1 = document.getElementById("nameEx1");
-//         nameEx1.textContent = exhibition1.name;
-//     var nameEx2 = document.getElementById("nameEx2");
-//         nameEx2.textContent = exhibition2.name;
-//     var nameEx3 = document.getElementById("nameEx3");
-//         nameEx3.textContent = exhibition3.name;
-
-// // //** Exhibition ArtType: **/
-//     var artType1 = document.getElementById("artType1");
-//         artType1.textContent = exhibition1.artType;
-//     var artType2 = document.getElementById("artType2");
-//         artType2.textContent = exhibition2.artType;
-//     var artType3 = document.getElementById("artType3");
-//         artType3.textContent = exhibition3.artType;
-
-    
-// // //** Exhibition ArtStyle: **/
-//     var artStyle1 = document.getElementById("artStyle1");
-//         artStyle1.textContent = exhibition1.artStyle;    
-//     var artStyle2 = document.getElementById("artStyle2");
-//         artStyle2.textContent = exhibition2.artStyle;
-//     var artStyle3 = document.getElementById("artStyle3");
-//         artStyle3.textContent = exhibition3.artStyle;
-
-// // //** Exhibition Description: **/
-//     var desEx1 = document.getElementById("desEx1");
-//         desEx1.textContent = exhibition1.description;    
-//     var desEx2 = document.getElementById("desEx2");
-//         desEx2.textContent = exhibition2.description;
-//     var desEx3 = document.getElementById("desEx3");
-//         desEx3.textContent = exhibition3.description;
-
-// //**** Import Venue Object Properties ****/
-// //** Venue Name: **/
-
-//     var nameVe1 = document.getElementById("nameVe1");
-//         nameVe1.textContent = venues[0].name;        
-//     var nameVe2 = document.getElementById("nameVe2");
-//         nameVe2.textContent = venues[1].name;
-//     var nameVe3 = document.getElementById("nameVe3");
-//         nameVe3.textContent = venues[2].name;
-
-// //** Venue Type: **/
-
-//     var venueType1 = document.getElementById("venueType1");
-//         venueType1.textContent = venues[0].venueType;
-//     var venueType2 = document.getElementById("venueType2");
-//         venueType2.textContent = venues[1].venueType;
-//     var venueType3 = document.getElementById("venueType3");
-//         venueType3.textContent = venues[2].venueType;
 
 //**** SEARCH + FILTER ****/
 
