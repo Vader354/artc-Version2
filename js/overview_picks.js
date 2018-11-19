@@ -1,3 +1,6 @@
+// check if picks in local storage is empty, if true create empty userPicks array, if false get stored elements
+var userPicks = (localStorage.getItem("Picks") == null) ? [] : JSON.parse(localStorage.getItem("Picks"));
+
 
 // ADD 
 
@@ -10,29 +13,15 @@ for (var i = 0; i < addPickButtons.length; i++) {
 }
 
 function addPick() {
-    // get picks from local storage
-    // Gustaf: think this could be rewritten to save space: var userPicks = JSON.parse(localStorage.getItem("picks"));
-    // Gustaf: Here I think you could create something similar to what I have in the registration: (localStorage.getItem("Users"!==null) ? JSON.parse(localStorage.getItem("Users")) : []; and then use a for loop. Don't know if it is best practice thoughCouldpotentially make it shorter.  
-    var picksFromLS = localStorage.getItem("Picks");
-    var userPicks = JSON.parse(picksFromLS);
-    // check if picks in local storage is empty, if true create empty userPicks array and push selected element
- 
-    if (userPicks == null) {
-        userPicks = [];
+    // check if the clicked element is already stored to prevent to be added multiple times
+    if (userPicks.includes(this.id)) {
+        return false;
+    } else {
         userPicks.push(this.id);
         localStorage.setItem("Picks", JSON.stringify(userPicks));
         alert(JSON.stringify(this.id) + " has been added to your picks.");
-    } else {
-        // local storage is not empty. check if the clicked element is already stored to prevent to be added multiple times
-        if (userPicks.includes(this.id)) {
-            return false;
-        } else {
-            userPicks.push(this.id);
-            localStorage.setItem("Picks", JSON.stringify(userPicks));
-            alert(JSON.stringify(this.id) + " has been added to your picks.");
-        }  
-    }
-};
+    }  
+}
 
 
 // HOVER BEFORE REMOVE
@@ -51,9 +40,6 @@ for (var i = 0; i < removePickButtons.length; i++) {
 }
 
 function removePick() {
-    // Gustaf: You are getting the picks from localStorage twice in this sheet. Could be better to create a global variable that wors through-out the whole sheet :) 
-    var picksFromLS = localStorage.getItem("Picks");
-    var userPicks = JSON.parse(picksFromLS);
     var index = userPicks.indexOf(this.id);
     // check if the id is included at all (-1 means not included) otherwise there's nothing to be removed 
     if (index > -1) {
