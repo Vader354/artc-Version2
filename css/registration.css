@@ -1,0 +1,77 @@
+/* REGISTRATION STYLES */
+
+#hreg {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+}
+
+.regform {
+    position: absolute;
+    top: 170px;
+    left: 60px;
+}
+
+label {
+    display: block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    color: rgb(94, 94, 94);
+    margin: 10px 0px 5px 0px;
+}
+
+.divinline {
+    display: inline;
+}
+
+a {
+    text-decoration: underline;
+}
+
+input {
+    margin: 0px 0px 10px 0px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: black; 
+    text-align: left;
+    font-size: 14px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(206, 206, 212);
+    width: 250px;
+    padding: 10px 10px 10px 10px;
+}
+
+::placeholder {
+    color: rgb(206, 206, 212);
+}
+
+#terms {
+    display: inline;
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 100;
+    line-height: 1.5;
+    position: relative;
+    top: 0px;
+}
+
+#termscheck {
+    width: 20px;
+}
+
+#onSubmitButton {
+    margin: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    background-color: black;
+    color: white;
+    width: 270px;
+    padding: 10px 10px 10px 10px;
+}
+
+#onSubmitButton:hover {
+    cursor: pointer;
+}
