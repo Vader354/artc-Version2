@@ -4,7 +4,7 @@
 var loginForm = document.getElementById("loginForm");
 var submit = document.getElementById("submit")
 // Retrieving stored users from localStorage
-var users = JSON.parse(localStorage.getItem("users"));
+var users = JSON.parse(localStorage.getItem("Users"));
 
 // Creates a variable for maxium user login attempts
 var loginAttempts = 5;
@@ -25,7 +25,7 @@ var currentUser = [];
     var password = loginForm.password.value;
     console.log(loginForm.password.value);
     console.log(hashedPassword);
-    var hashedPassword = users.hashPassword(password)
+    var hashedPassword = users[0].hashPassword(password)
     if(username.length == 0 || password.length == 0){
       alert("Please enter a username and password");
       return false;

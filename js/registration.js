@@ -1,4 +1,4 @@
-var users = [];
+var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
 var usersAdress = [];
 // var btn = document.getElementById("onSubmitButton");
 var form = document.getElementById('regForm');
@@ -16,7 +16,6 @@ function validateReg() {
             alert("Email not valid or is used by another user");
             return false;
         }
-       
         if(!checkDateOfBirth()) {
             alert("You need to enter a valid Danish CPR number, e.g. DDMMYY-NNNN");
             return false;
@@ -24,7 +23,6 @@ function validateReg() {
         if(!checkPc()){
             alert("Postal code is not in Copenhagen");
         }
-
         if(!checkPwd()){
             alert("Password not valid");
         return false;
@@ -68,7 +66,7 @@ function validateReg() {
 
     // *** Validate email ***
     function checkEmail(email) {
-        var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
+        // var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
             for (var i = 0; i < users.length; i++) {
                 if (users[i].email == email) {
                 return false;               
