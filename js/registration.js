@@ -1,5 +1,5 @@
 var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
-var usersAdress = [];
+var usersAdress = (localStorage.getItem("UsersAdress") !== null) ? JSON.parse(localStorage.getItem("UsersAdress")) : [];
 // var btn = document.getElementById("onSubmitButton");
 var form = document.getElementById('regForm');
 
@@ -64,7 +64,6 @@ function checkGender() {
 
 // Checks if email is already used by checking if it's already in local storage
 function checkEmail(email) {
-    var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
     for (var i = 0; i < users.length; i++) {
         if (users[i].email == email) {
         return false;               
