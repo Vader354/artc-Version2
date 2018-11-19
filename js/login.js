@@ -5,7 +5,7 @@ var loginForm = document.getElementById("loginForm");
 var submit = document.getElementById("submit")
 // Retrieving stored users from localStorage
 var users = JSON.parse(localStorage.getItem("Users"));
-
+console.log(users)
 // Creates a variable for maxium user login attempts
 var loginAttempts = 5;
 
@@ -22,21 +22,20 @@ var currentUser = [];
     // Variable for user input email
     var username = loginForm.email.value;
     console.log(loginForm.email.value);
-    var password = loginForm.password.value;
+    var inputPassword = loginForm.password.value;
     console.log(loginForm.password.value);
-    console.log(hashedPassword);
-    var hashedPassword = users[0].hashPassword(password)
-    if(username.length == 0 || password.length == 0){
+    if(username.length == 0 || inputPassword.length == 0){
       alert("Please enter a username and password");
       return false;
     } else {   
       console.log("first function finished")
     // Look through array to check if input password matches stored password
+    var hashedInputPassword = users[i].hashPassword(inputPassword);
     // Need to get = hashedInputPassword aswell
     for(var i = 0; i < users.length; i++) {
       console.log("for loop fired");
       // This is not working, tells me the password is wrong even with hardcoded users
-      if(username == users[i].email && password == users[i].hashedPassword) {
+      if(username == users[i].email && hashedInputPassword == users[i].password) {
 
         currentUser.push(new CurrentUser(loginForm.email.value))
         console.log(currentUser)
@@ -44,7 +43,7 @@ var currentUser = [];
         var loggedinUser = JSON.stringify(currentUser);
         localStorage.setItem("currentUser", loggedinUser);
         console.log(localStorage)
-        users.setLastAccess()
+        users.setLastAccess();
         console.log(setLastAccess())
         return true;
       }
