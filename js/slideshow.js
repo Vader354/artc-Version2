@@ -1,26 +1,33 @@
 var slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
+// functions to control through dots
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-  var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1} 
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
+  // if last element of slides array is reached it jumpes back to the first one
+  if (n > slides.length) { 
+      slideIndex = 1
+  } 
+  // ?
+  if (n < 1) {
+    slideIndex = slides.length
+  }
+  // loop through slides array and hide all elements by default
+  for (var i = 0; i < slides.length; i++) {
       slides[i].style.display = "none"; 
   }
-  for (i = 0; i < dots.length; i++) {
+  // loop through slides dots and only display the active one by adding active to the class 
+  for (var i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block"; 
