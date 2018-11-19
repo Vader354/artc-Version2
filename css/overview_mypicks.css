@@ -8,6 +8,7 @@
     float: center;
     padding: 14px 30px;
     transition: 0.4s;
+    margin: 30px 10px 0px 0px;
 }
 
 .addPickButton:hover, .removePickButton:hover {
