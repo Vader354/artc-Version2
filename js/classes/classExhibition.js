@@ -12,7 +12,7 @@ class Exhibition {
     //TODO: Add property: Link, in order to import the link into html as well
 
     createHTML(){
-        return '<li class="ListItem">' + '<a href="../html/exhibition_subpages/exhibition1.html" style="padding:0">' + '<h2>' + this.name + '</h2>' + '</a>' + '<span class="artType">' + this.artType + '</span>' + '    ' + '<span class="artStyle">' + this.artStyle + '</span>' + '<p>' + this.description + '</p>' + '<button class="addPickButton" id="' + this.name + '">' + '+ My Picks' + '</button>' + '<button class="removePickButton" id="' + this.name + '">' + '– My Picks' + '</button>' + '</li>'
+        return '<li class="ListItem">' + '<a href="../html/exhibition_subpages/exhibition1.html" style="padding:0">' + '<h2>' + this.name + '</h2>' + '</a>' + '<p>' + this.description + '</p>' + '<span class="artType">' + this.artType + '</span>' + '    ' + '<span class="artStyle">' + this.artStyle + '</span>' + '<div>' + '<button class="addPickButton" id="' + this.name + '">' + '+ My Picks' + '</button>' + '<button class="removePickButton" id="' + this.name + '">' + '– My Picks' + '</button>' + '</div>' + '</li>'
     }
 
     /*
