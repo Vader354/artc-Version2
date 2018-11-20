@@ -2,17 +2,19 @@ class Venue {
     constructor(venueID, name, venueType, openingHours) {
         this.venueID = venueID;
         this.name = name;
-        this.venueType = venueType;
+        this.type = venueType;
         this.openingHours = openingHours;
     }
 
+
+// EHLER: Not working yet, do we need this?
     setAddress() {
         this.address = new Address
         // new Address(this.email, this.phone, this.street, this.streetNr, this.postalCode, this.city, this.country, this.geolocation)
     }
 
     createHTML(){
-        return '<li class="ListItem">' + '<h2 id="nameVe1">' + this.name + '</h2>' + '<span class="venueType" id="venueType1">' + this.venueType + '</span>' +  '</li>'
+        return '<li class="ListItem">' + '<h2 id="nameVe1">' + this.name + '</h2>' + '<span class="venueType" id="venueType1">' + this.type + '</span>' +  '</li>'
     }
 }
 
