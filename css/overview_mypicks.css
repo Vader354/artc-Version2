@@ -1,4 +1,4 @@
-.addPickButton, .removePickButton {
+.pickButton {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 15px;
     border-style: solid;
@@ -11,18 +11,18 @@
     margin: 30px 10px 0px 0px;
 }
 
-.addPickButton:hover, .removePickButton:hover {
+.pickButton:hover {
     background-color: black;
     color: white;
     cursor: pointer;
 }
 
-.addPickButton.active {
+.pickButton.active {
     background-color: black;
     color: white;
 }
 
-.addPickButton.active:hover {
+.pickButton.active:hover {
     cursor: pointer;
 }
 

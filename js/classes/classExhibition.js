@@ -10,14 +10,11 @@ class Exhibition {
         this.link = "../html/exhibition_subpages/" + this.exhibitionID + ".html"
     }
 
-    //TODO: Add property: Link, in order to import the link into html as well
-
     createHTML(){
-        return '<li class="ListItem">' + '<a href="' + this.link + '" style="padding:0">' + '<h2>' + this.name + '</h2>' + '</a>' + '<p>' + this.description + '</p>' + '<span class="artType">' + this.artType + '</span>' + '    ' + '<span class="artStyle">' + this.artStyle + '</span>' + '<div>' + '<button class="addPickButton" id="' + this.name + '">' + '+ My Picks' + '</button>' + '</div>' + '</li>'
+        return '<li class="ListItem">' + '<a href="' + this.link + '" style="padding:0">' + '<h2>' + this.name + '</h2>' + '</a>' + '<p>' + this.description + '</p>' + '<span class="artType">' + this.artType + '</span>' + '    ' + '<span class="artStyle">' + this.artStyle + '</span>' + '<div>' + '<button class="pickButton" id="' + this.name + '">' + '+ My Picks' + '</button>' + '</div>' + '</li>'
     }
 
     /*
-    // WIP ...
     getAddress() {
         this.address = document.getElementsByClassName(Address)
     }
