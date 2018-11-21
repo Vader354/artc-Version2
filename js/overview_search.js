@@ -17,7 +17,38 @@ document.getElementById('VenueUL').innerHTML = htmlVe;
 
 // **** SEARCH and Filter functions ****
 
+//** Import filter Options for dropdowns **
+//ArtType
+
+var selectArtType = document.getElementById('chooseArtType');
+// for (var j = 0; j < selectArtType.options.length; j++) {
+//     for (var i = 0; i < exhibitions.length; i++) {
+//         if (exhibitions[i].type !== document.getElementById('chooseArtType').options[j]) {
+//             exhibitions[i].createTypeOption();
+//         }
+//     }
+// }
+
+// TODO: Only one option created for each NEW artType. RIght now for every exhibition one option is created
+for (var i=0; i < exhibitions.length; i++) {
+    if (exhibitions[i].type !== selectArtType.options[i]) {
+        exhibitions[i].createTypeOption();
+    } else {
+        console.log("else works")        
+    }
+}
+//ArtStyle
+for (var i=0; i < exhibitions.length; i++) {
+    exhibitions[i].createStyleOption();
+}
+
+//VenueType
+for (var i=0; i < venues.length; i++) {
+    venues[i].createTypeOption();
+}
+
 //General Filter Function
+// TODO: If none of the items in the list match ALL criteria, display nothing!
 
 var searchFilters = {
     searchText: '',

@@ -23,6 +23,19 @@ class Exhibition {
         return '<li class="ListItem">' + '<a href="' + this.link + '" style="padding:0">' + '<h2>' + this.name + '</h2>' + '</a>' + '<p>' + this.description + '</p>' + '<span class="artType">' + this.type + '</span>' + '    ' + '<span class="artStyle">' + this.artStyle + '</span>' + '<div>' + '<button class="pickButton" id="' + this.name + '">' + '+ My Picks' + '</button>' + '</div>' + '</li>'
     }
 
+    createTypeOption(){
+        var select = document.getElementById("chooseArtType");
+        var newOption = document.createElement("option");
+        newOption.text = this.type;
+        select.options.add(newOption);
+    }
+
+    createStyleOption(){
+        var select = document.getElementById("chooseArtStyle");
+        var newOption = document.createElement("option");
+        newOption.text = this.artStyle;
+        select.options.add(newOption);
+    }
 }
 
 var exhibitions = []

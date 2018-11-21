@@ -22,6 +22,7 @@ function validateReg() {
     }
     if (!checkPc()) {
         alert("Postal code is not in Copenhagen.");
+        return false;
     }
     if (!checkPwd()) {
         alert("Password not valid.");

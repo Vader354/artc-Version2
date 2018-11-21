@@ -4,8 +4,8 @@
 var loginForm = document.getElementById("loginForm");
 var submit = document.getElementById("submit")
 // Retrieving stored users from localStorage
-var users = JSON.parse(localStorage.getItem("Users"));
-console.log(users)
+var users =  JSON.parse(localStorage.getItem("Users"));
+// var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : alert("There is no user with that username");
 // Creates a variable for maxium user login attempts
 var loginAttempts = 5;
 
@@ -18,6 +18,7 @@ var currentUser = [];
 
   // Eventlistener for clicking login. 
   submit.addEventListener("click", function(){
+
     console.log("Eventlistener fired on click");
     // Variable for user input email
     var username = loginForm.email.value;
