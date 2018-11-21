@@ -33,7 +33,7 @@ class Exhibition {
                     + '<div class="venuename">' + this.getVenueName() + '</div>'
                     + '<div class="dates">' + this.startDate + " – " + this.endDate
                     + '<p>' + this.description + '</p>' 
-                    + '<span class="artType">' + this.type + '</span>' + '    ' 
+                    + '<span class="artType">' + this.type + '</span>'
                     + '<span class="artStyle">' + this.artStyle + '</span>' 
                     + '<div>' + '<button class="pickButton" id="' + this.name + '">' + '+ My Picks' + '</button>' + '</div>' 
                 + '</li>'

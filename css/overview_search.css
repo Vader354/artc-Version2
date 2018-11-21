@@ -37,5 +37,6 @@ select:required:invalid {
   color: rgb(155, 154, 154);
   font-size: 15px;
   font-family: 'Josefin Sans', sans-serif;
+  margin: 0px 10px 0px 0px;
 }
 
