@@ -45,5 +45,3 @@ class User {
 // addPick() {
 //     document.getElementsByClassName 
 // }
-
-// add some users

@@ -36,7 +36,7 @@ function validateReg() {
         return false;
     } else {
         // How do we handle the gender, since they all have different id's, do we look for all of them?
-        users.push(new User(form.firstname.value, form.lastname.value, form.gender.value, form.email.value, form.cpr.value, form.password.value ))
+        users.push(new User(form.firstname.value, form.lastname.value, form.gender.value, form.email.value, form.cpr.value, form.password.value))
         localStorage.setItem("Users", JSON.stringify(users));
             
         usersAdress.push(new Address(form.email.value, form.phone.value, form.street.value, form.postal.value, form.city.value))
