@@ -28,9 +28,6 @@ class User {
         c = a & 266338304;
         a = c!==0?a^c>>21:a;
       }
-    } else {
-      // If the password is not valid, we'll throw and error we're able to catch
-      throw new Error("The password supplied is not valid");
     }
       return String(a);
   }
