@@ -48,3 +48,15 @@
 .ListItem {
     width: 100%
 }
+
+.venuename {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgb(172, 172, 172); 
+    margin: 20px 0px 10px 0px; 
+}
+
+.dates {
+
+}
