@@ -86,7 +86,7 @@ for (var i=0; i < venues.length; i++) {
     }
 }
 
-//General Filter Function
+//** General Filter Function **
 // TODO: If none of the items in the list match ALL criteria, display Error Message!
 
 //Create Object with all filter options
