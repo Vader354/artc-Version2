@@ -52,7 +52,7 @@ function hashPassword(password) {
       else {
         // Displays alert with number of attempts left before being shut out
         loginAttempts--;
-        alert("Incorrect username and/or password " + loginAttempts + "attempts remaining.");
+        alert("Incorrect username and/or password " + loginAttempts + " attempts remaining.");
         loginForm.disabled = true;
         alert("Please register as a new user in order to continue");
       }
