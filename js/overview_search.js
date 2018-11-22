@@ -18,6 +18,7 @@ document.getElementById('VenueUL').innerHTML = htmlVe;
 // **** SEARCH and Filter functions ****
 
 //** Import filter Options for dropdowns from Exhibition and Venue List **
+//FOR REVIEW: Maybe better/More compressed way to do it?
 
 //ArtType
 //Create an Array for all current Options in the Dropdown
@@ -86,7 +87,7 @@ for (var i=0; i < venues.length; i++) {
 }
 
 //General Filter Function
-// TODO: If none of the items in the list match ALL criteria, display nothing!
+// TODO: If none of the items in the list match ALL criteria, display Error Message!
 
 //Create Object with all filter options
 var searchFilters = {
@@ -113,20 +114,17 @@ function renderResults (list, query) {
         return isTextMatch && isTypeMatch && isStyleMatch
     });
 
-// console.log(filteredResults.length) 
-
-// if (filteredResults.length === 0) {
-//     console.log("if works")
-//     var para = document.createElement("p");
-//     var node = document.createTextNode("Sorry, there are no search results for these critera... :(");
-//     para.appendChild(node);
-//     if (filteredResults[i] instanceof Exhibition) {
-//         var ExUL = document.getElementById("ExhibitionUL");
-//         ExUL.appendChild(para);
-//     } else if (filteredResults[i] instanceof Venue) {
-//         document.getElementById("VenueUL").innerHTML = html
-//     }    
-// } else {
+if (filteredResults.length === 0) {
+//Create Error Message
+    function createError() {
+        return '<li class="ListItem">' 
+                    + '<p>' + "We are sorry, there are no search results matching your criteria... :("+ '</p>' 
+                + '</li>'
+    }
+console.log("if works")
+//TODO: Make error message only appear on the respective list, tried a few things but nothing is working the way i want it to work. Need to look over it tomorrow/over the weekend
+    
+} else {
     //Loop through list of filtered items and display them 
     for (let i=0; i < filteredResults.length; i++) {
         //update html variable for every result
