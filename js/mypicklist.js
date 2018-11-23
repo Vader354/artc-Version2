@@ -22,14 +22,14 @@ function createTable(tableArr) {
     document.body.appendChild(table);
 }
 
-// Hide myPicks when no user in current user
-window.addEventListener("load", function(e) {
+// Hide myPicks when no user in current user, currently no ID to get from in HTML
+// window.addEventListener("load", function(e) {
     
-	if (localStorage.getItem("currentUser") == null) {
-	document.getElementById("myPickList").style.display = "none"
-	}
+// 	if (localStorage.getItem("currentUser") == null) {
+// 	document.getElementById("myPickList").style.display = "none"
+// 	}
 	
-})
+// })
 
 // execute function to create table
 createTable(currentPicks);
