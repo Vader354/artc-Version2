@@ -6,6 +6,22 @@ var userAddresses = (localStorage.getItem("UserAddresses") !== null) ? JSON.pars
 var currentUser = (localStorage.getItem("CurrentUser") !== null) ? JSON.parse(localStorage.getItem("CurrentUser")) : [];
 
 
+// currently, users is now the object we get from local storage
+
+// find current user in generic (unpacked from local storage) users array
+// function hi() {
+//     for (let i = 0; i < users.length; i++) {
+//     if (currentUser.email == users[i].email) {
+//         currentUser = new CurrentUser(user[i].email);
+//         console.log("done");
+//         // currentUser[i].getInformation()
+//     } 
+// }}
+
+// hi();
+
+// console.log(currentUser.getInformation());
+
 // list of venues
 var venues = []
 

@@ -35,7 +35,7 @@ class Exhibition {
                     + '<p>' + this.description + '</p>' 
                     + '<span class="artType">' + this.type + '</span>'
                     + '<span class="artStyle">' + this.artStyle + '</span>' 
-                    + '<div>' + '<button class="pickButton" id="' + this.name + '">' + '+ My Picks' + '</button>' + '</div>' 
+                    + '<div class="hiddenElement">' + '<button class="pickButton" id="' + this.name + '">' + '+ My Picks' + '</button>' + '</div>' 
                 + '</li>'
     }
 

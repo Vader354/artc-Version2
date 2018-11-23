@@ -13,9 +13,6 @@
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
 
-    <!-- Link to hide mypicks if not logged in -->
-    <script src="../artc/JS/mypicklist.js"></script>
-
     <title>Home | ArtC</title>
 </head>
 <body>
@@ -24,9 +21,10 @@
 <ul>
         <li><a href="index.html">ArtC</a></li>
         <li><a href="html/overview.html">Overview</a></li>
-        <li><a href="html/mypicklist.html">My Picks</a></li>
-        <li style="float:right"><a href="html/login.html">Log-In</a></li>
+        <li><a id="myPickList" href="html/mypicklist.html">My Picks</a></li>
+        <li style="float:right"><a id="logInNav" href="html/login.html">Log-In</a></li>
     </ul>
+
     <br>
     <!-- slideshow container -->
     <div class="slideshow-container">
@@ -68,6 +66,8 @@
     
         <!-- js script for slideshow -->
         <script src="js/slideshow.js"></script>
+        <!-- flashes, WHY -->
+        <script src="js/currentUserFunctions.js"></script>
 
     </div>
 
