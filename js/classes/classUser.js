@@ -11,8 +11,8 @@ class User {
   }
 
   getAddress() {
-    for (var i = 0; i < addresses.length; i++) {
-      if (this.email == addresses[i].ownerID) {
+    for (var i = 0; i < userAddresses.length; i++) {
+      if (this.email == userAddresses[i].ownerID) {
           return addresses[i];
       } 
     }

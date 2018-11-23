@@ -35,11 +35,9 @@ function validateReg() {
         // How do we handle the gender, since they all have different id's, do we look for all of them?
         users.push(new User(form.firstname.value, form.lastname.value, form.gender.value, form.email.value, form.cpr.value, form.password.value))
         localStorage.setItem("Users", JSON.stringify(users));
-        console.log(users);
             
         userAddresses.push(new Address(form.email.value, form.email.value, form.phone.value, form.street.value, form.postal.value, form.city.value))
         localStorage.setItem("UserAddresses", JSON.stringify(userAddresses));
-        console.log(userAddresses);
         alert("You have successfully created an account and will be redirected to our login page.");
         document.location.href = "../html/login.html";
     }

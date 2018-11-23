@@ -67,7 +67,6 @@ function pick() {
         event.currentTarget.textContent = "– My Picks";
         event.currentTarget.style.background = "black";
         event.currentTarget.style.color = "white";
-        console.log(pickButtons);
     // if button active (= element already in picks list)
     } else {
         // find index of clicked element
