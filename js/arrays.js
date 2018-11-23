@@ -1,8 +1,10 @@
 // this file contains all the global variables
 
-// create users array
+// create users array, userAddresses and currentUser
 var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
 var userAddresses = (localStorage.getItem("UserAddresses") !== null) ? JSON.parse(localStorage.getItem("UserAddresses")) : [];
+var currentUser = (localStorage.getItem("CurrentUser") !== null) ? JSON.parse(localStorage.getItem("CurrentUser")) : [];
+
 
 // list of venues
 var venues = []
@@ -11,12 +13,14 @@ venues.push(new Venue("V1", "Louisiana Museum Of Modern Art", "museum", "Mo-Fr 1
 venues.push(new Venue("V2", "Kunsthal Charlottenborg", "museum", "Mo-Fr 9-19, Sa-So 10-16"))
 venues.push(new Venue("V3", "V1 Gallery", "gallery", "Mo-Fr 12-20, Sa-So 10-20"))
 
+
 // list of venueAddresses
 var venueAddresses = []
 
 venueAddresses.push(new Address("V1", "louisiana@mail.com", 81818181, "Norrebrogade 22", 2200, "København", "Denmark", 5555));
 venueAddresses.push(new Address("V2", "kunsthalchar@mail.com", 6565656, "Osterbrogade 33", 3300, "København", "Denmark", 6666));
 venueAddresses.push(new Address("V3", "vone@mail.com", 32323232, "Vesterbrogade 44", 4400, "København", "Denmark", 7777));
+
 
 // list of exhibitions
 var exhibitions = []

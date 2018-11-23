@@ -1,16 +1,7 @@
-
-
-// Not really necessary anymore
 var loginForm = document.getElementById("loginForm");
-var submit = document.getElementById("submit")
-// Retrieving stored users from localStorage
-var users =  JSON.parse(localStorage.getItem("Users"));
-// Creates a variable for maxium user login attempts
+var submit = document.getElementById("submit");
+// variable for maxium user login attempts
 var loginAttempts = 5;
-
-
-// Empty array to store user login in, to store that the user is logged in in... if that makes sense
-var currentUser = [];
 
 function hashPassword(password) {
   var a = 1, c = 0, h, o;
@@ -27,38 +18,33 @@ function hashPassword(password) {
     return String(a);
 }
 
-// var hashedInputPassword = users.hashPassword(inputPassword.value);
-
-  // Eventlistener for clicking login. 
-  submit.addEventListener("click", function(){
-    // Variable for user input email
-    var username = loginForm.email.value;
-    var inputPassword = loginForm.password.value;
+// eventlistener for clicking login. 
+submit.addEventListener("click", function() {
+  // variable for user input email
+  var username = loginForm.email.value;
+  var inputPassword = loginForm.password.value;
     
-    if(username.length == 0 || inputPassword.length == 0){
-      alert("Please enter a username and password");
-      return false;
-    } else { 
-        for(var i = 0; i < users.length; i++) {
-            if(username == users[i].email && hashPassword(inputPassword) == users[i].password) {
-                currentUser.push(new CurrentUser(loginForm.email.value))
-                document.location.href = "../html/overview.html";
-                var loggedinUser = JSON.stringify(currentUser);
-                localStorage.setItem("currentUser", loggedinUser);
-                users.setLastAccess();
-                return true;
-            }
-    
-      else {
-        // Displays alert with number of attempts left before being shut out
-        loginAttempts--;
-        alert("Incorrect username and/or password " + loginAttempts + " attempts remaining.");
-        loginForm.disabled = true;
-        alert("Please register as a new user in order to continue");
-      }
+  if (username.length == 0 || inputPassword.length == 0) {
+    alert("Please enter a username and password");
+    return false;
+  } else { 
+      for (var i = 0; i < users.length; i++) {
+        if (username == users[i].email && hashPassword(inputPassword) == users[i].password) {
+          currentUser.push(new CurrentUser(loginForm.email.value));
+          document.location.href = "../html/overview.html";
+          var loggedinUser = JSON.stringify(currentUser);
+          localStorage.setItem("CurrentUser", loggedinUser);
+          users.setLastAccess();
+          return true;
+        } else {
+          // displays alert with number of attempts left before being shut out
+          loginAttempts--;
+          alert("Incorrect username and/or password " + loginAttempts + " attempts remaining.");
+          loginForm.disabled = true;
+          alert("Please register as a new user in order to continue");
+        }
       // prevent user from doing anything further
       return false;
-    }
+      }
   }
 });
-
