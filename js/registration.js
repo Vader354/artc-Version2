@@ -1,8 +1,4 @@
-// var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
-var userAddresses = (localStorage.getItem("UserAddresses") !== null) ? JSON.parse(localStorage.getItem("UserAddresses")) : [];
-// var btn = document.getElementById("onSubmitButton");
 var form = document.getElementById('regForm');
-
 
 // Validation that will run on click and if valid, push user into users array
 function validateReg() {
@@ -45,7 +41,7 @@ function validateReg() {
         localStorage.setItem("UserAddresses", JSON.stringify(userAddresses));
         console.log(userAddresses);
         alert("You have successfully created an account and will be redirected to our login page.");
-        // document.location.href = "../html/login.html";
+        document.location.href = "../html/login.html";
     }
 };
 

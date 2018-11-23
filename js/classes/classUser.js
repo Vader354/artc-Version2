@@ -35,10 +35,6 @@ class User {
   }
 }
 
-var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : []; 
-console.log(users[0].getAddress());
-
-
 // setLastAccess() {
 //     this.lastAccess = Date.now();  
 // }
