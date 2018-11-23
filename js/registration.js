@@ -1,5 +1,5 @@
-var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
-var usersAdress = (localStorage.getItem("UsersAdress") !== null) ? JSON.parse(localStorage.getItem("UsersAdress")) : [];
+// var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
+var userAddresses = (localStorage.getItem("UserAddresses") !== null) ? JSON.parse(localStorage.getItem("UserAddresses")) : [];
 // var btn = document.getElementById("onSubmitButton");
 var form = document.getElementById('regForm');
 
@@ -39,11 +39,13 @@ function validateReg() {
         // How do we handle the gender, since they all have different id's, do we look for all of them?
         users.push(new User(form.firstname.value, form.lastname.value, form.gender.value, form.email.value, form.cpr.value, form.password.value))
         localStorage.setItem("Users", JSON.stringify(users));
+        console.log(users);
             
-        usersAdress.push(new Address(form.email.value, form.phone.value, form.street.value, form.postal.value, form.city.value))
-        localStorage.setItem("UsersAdress", JSON.stringify(usersAdress));
+        userAddresses.push(new Address(form.email.value, form.email.value, form.phone.value, form.street.value, form.postal.value, form.city.value))
+        localStorage.setItem("UserAddresses", JSON.stringify(userAddresses));
+        console.log(userAddresses);
         alert("You have successfully created an account and will be redirected to our login page.");
-        document.location.href = "../html/login.html";
+        // document.location.href = "../html/login.html";
     }
 };
 

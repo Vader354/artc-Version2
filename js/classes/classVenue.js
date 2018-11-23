@@ -7,9 +7,9 @@ class Venue {
     }
 
     getAddress() {
-        for (var i = 0; i < addresses.length; i++) {
-            if (this.venueID == addresses[i].ownerID) {
-                return addresses[i];
+        for (var i = 0; i < venueAddresses.length; i++) {
+            if (this.venueID == venueAddresses[i].ownerID) {
+                return venueAddresses[i];
             } 
         }
     }
@@ -36,4 +36,4 @@ venues.push(new Venue("V3", "V1 Gallery", "gallery", "Mo-Fr 12-20, Sa-So 10-20")
 
 
 // example :) 
-console.log("Address for venue with index 0 is: " + JSON.stringify(venues[0].getAddress()));
+// console.log("Address for venue with index 0 is: " + JSON.stringify(venues[0].getAddress()));

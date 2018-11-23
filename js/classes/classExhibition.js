@@ -20,9 +20,9 @@ class Exhibition {
     }
 
     getAddress() {
-        for (var i = 0; i < addresses.length; i++) {
-            if (this.venueID == addresses[i].ownerID) {
-                return addresses[i];
+        for (var i = 0; i < venueAddresses.length; i++) {
+            if (this.venueID == venueAddresses[i].ownerID) {
+                return venueAddresses[i];
             } 
         }
     }
@@ -106,4 +106,4 @@ exhibitions.push(new Exhibition(
 // exhibitions.push(new Exhibition("E4", "V3", "Luca Tombolini Exhibition", "sculptures", "contemporary", "SCULPTURE TEST", "22 Jan 2018", "14 Mar 2018"))
 
 // example :)
-console.log("Address for exhibition with index 0 is: " + JSON.stringify(exhibitions[0].getAddress()))
+// console.log("Address for exhibition with index 0 is: " + JSON.stringify(exhibitions[0].getAddress()))

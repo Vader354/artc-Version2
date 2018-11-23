@@ -5,15 +5,17 @@ class User {
   this.lastname = lastname;
   this.gender = gender;
   this.email = email;
-  // this.adress = this.setAdress();
   this.cpr = cpr;
   this.password = this.hashPassword(password);
   // this.lastAccess = this.setLastAccess();
   }
 
-  // not sure here yet
-  setAddress() {
-    this.address = new Address(this.phone, this.street, this.postalCode, this.city, this.geolocation);
+  getAddress() {
+    for (var i = 0; i < addresses.length; i++) {
+      if (this.email == addresses[i].ownerID) {
+          return addresses[i];
+      } 
+    }
   }
 
   // Need to figure out how this works hehe, Henrik is a sneaky, smart man
@@ -33,7 +35,9 @@ class User {
   }
 }
 
-// }
+var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : []; 
+console.log(users[0].getAddress());
+
 
 // setLastAccess() {
 //     this.lastAccess = Date.now();  

@@ -89,7 +89,9 @@ function pick() {
 
 
 // SEARCH 
-
+console.log(exhibitions[0].getAddress());
+console.log(users);
+console.log(users[0].getAddress());
 
 
 // FILTER 
