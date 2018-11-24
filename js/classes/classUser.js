@@ -11,18 +11,6 @@ class User {
   // this.lastAccess = this.setLastAccess();
   }
 
-  getAddress() {
-    for (var i = 0; i < userAddresses.length; i++) {
-      if (this.email == userAddresses[i].ownerID) {
-          return userAddresses[i];
-      } 
-    }
-  }
-
-  hi() {
-    console.log("hi");
-  }
-
   // Need to figure out how this works hehe, Henrik is a sneaky, smart man
   hashPassword(password) {
     var a = 1, c = 0, h, o;
@@ -40,10 +28,15 @@ class User {
   }
 }
 
+// doesn't work for our programm because class gets lost after unpacking from local storage
+getAddress() {
+  for (var i = 0; i < userAddresses.length; i++) {
+    if (this.email == userAddresses[i].ownerID) {
+        return userAddresses[i];
+    } 
+  }
+}
+
 // setLastAccess() {
 //     this.lastAccess = Date.now();  
-// }
-
-// pick() {
-//     document.getElementsByClassName 
 // }

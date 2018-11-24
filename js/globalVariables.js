@@ -1,4 +1,4 @@
-// this file contains all the global variables
+// this file contains all global variables
 
 // create users array, userAddresses and currentUser
 var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : [];
@@ -6,36 +6,60 @@ var userAddresses = (localStorage.getItem("UserAddresses") !== null) ? JSON.pars
 var currentUser = (localStorage.getItem("CurrentUser") !== null) ? JSON.parse(localStorage.getItem("CurrentUser")) : [];
 
 
-// currently, users is now the object we get from local storage
-
-// find current user in generic (unpacked from local storage) users array
-// function hi() {
-//     for (let i = 0; i < users.length; i++) {
-//     if (currentUser.email == users[i].email) {
-//         currentUser = new CurrentUser(user[i].email);
-//         console.log("done");
-//         // currentUser[i].getInformation()
-//     } 
-// }}
-
-// hi();
-
-// console.log(currentUser.getInformation());
-
 // list of venues
 var venues = []
 
-venues.push(new Venue("V1", "Louisiana Museum Of Modern Art", "museum", "Mo-Fr 10-20, Sa-So 10-18"))
-venues.push(new Venue("V2", "Kunsthal Charlottenborg", "museum", "Mo-Fr 9-19, Sa-So 10-16"))
-venues.push(new Venue("V3", "V1 Gallery", "gallery", "Mo-Fr 12-20, Sa-So 10-20"))
+venues.push(new Venue(
+    /* venueID */                   "V1"
+    /* name */                      , "Louisiana Museum Of Modern Art"
+    /* type */                      , "museum"
+    /* opening hours */             , "Mo-Fr 10-20, Sa-So 10-18"));
+
+venues.push(new Venue(
+    /* venueID */                   "V2"
+    /* name */                      , "Kunsthal Charlottenborg"
+    /* type */                      , "museum"
+    /* opening hours */             , "Mo-Fr 9-19, Sa-So 10-16"));
+
+venues.push(new Venue(
+    /* venueID */                   "V3"
+    /* name */                      , "V1 Gallery"
+    /* type */                      , "gallery"
+    /* opening hours */             , "Mo-Fr 12-20, Sa-So 10-20"));
 
 
 // list of venueAddresses
 var venueAddresses = []
 
-venueAddresses.push(new Address("V1", "louisiana@mail.com", 81818181, "Norrebrogade 22", 2200, "København", "Denmark", 5555));
-venueAddresses.push(new Address("V2", "kunsthalchar@mail.com", 6565656, "Osterbrogade 33", 3300, "København", "Denmark", 6666));
-venueAddresses.push(new Address("V3", "vone@mail.com", 32323232, "Vesterbrogade 44", 4400, "København", "Denmark", 7777));
+venueAddresses.push(new Address(
+    /* ownerID */                   "V1"
+    /* email */                     , "louisiana@mail.com"
+    /* phone */                     , 81818181
+    /* street */                    , "Norrebrogade 22"
+    /* postal */                    , 2200
+    /* city */                      , "København"
+    /* country */                   , "Denmark"
+    /* geolocation */               , 5555));
+
+venueAddresses.push(new Address(
+    /* ownerID */                   "V2"
+    /* email */                     , "kunsthalchar@mail.com"
+    /* phone */                     , 29292929
+    /* street */                    , "Osterbrogade 22"
+    /* postal */                    , 3300
+    /* city */                      , "København"
+    /* country */                   , "Denmark"
+    /* geolocation */               , 6666));
+
+venueAddresses.push(new Address(
+    /* ownerID */                   "V3"
+    /* email */                     , "vone@mail.com"
+    /* phone */                     , 32323232
+    /* street */                    , "Vesterbrogade 22"
+    /* postal */                    , 4400
+    /* city */                      , "København"
+    /* country */                   , "Denmark"
+    /* geolocation */               , 7777));
 
 
 // list of exhibitions
@@ -81,3 +105,23 @@ exhibitions.push(new Exhibition(
     /* description */               , "Sculptures Test. A photoseries shot in the US. Based in Milan, Luca studied communication sciences and Italian cinema, picking up a camera while at university. Since 2011 he’s focused on large-format film photography, lugging his kit (plus essentials like food and camping equipment) to some of the most untouched and desolate places on earth, often for weeks at a time. Luca first scouts locations using Google Earth and, once he’s found a place that appeals to him, spends considerable time on travel logistics. “I like the whole story of being there to photograph,” says Luca. “The journey, the arrival, the fact I’m camping and living in the area for some days and the time spent alone and far away from everyday life. While doing so, I also like to try to get a different perspective on the landscape, relying more on the feelings rather than pure aesthetics.”"
     /* startDate */                 , "22 Jan 2018"
     /* endDate */                   , "14 Mar 2018"));
+
+
+
+
+// PUT IN REPORT => PICKS ISSUE
+// currently, users is now the object we get from local storage
+
+// find current user in generic (unpacked from local storage) users array
+// function hi() {
+//     for (let i = 0; i < users.length; i++) {
+//     if (currentUser.email == users[i].email) {
+//         currentUser = new CurrentUser(user[i].email);
+//         console.log("done");
+//         // currentUser[i].getInformation()
+//     } 
+// }}
+
+// hi();
+
+// console.log(currentUser.getInformation());
