@@ -18,7 +18,6 @@ document.getElementById('VenueUL').innerHTML = htmlVe;
 // **** SEARCH and Filter functions ****
 
 //** Import filter Options for dropdowns from Exhibition and Venue List **
-//FOR REVIEW: Maybe better/More compressed way to do it?
 
 //ArtType
 //Create an Array for all current Options in the Dropdown
@@ -121,11 +120,11 @@ if (filteredResults.length === 0) {
                     + '<p>' + "We are sorry, there are no search results matching your criteria... :("+ '</p>' 
                 + '</li>'
     }
- 
-html = createError();
-document.getElementById("ExhibitionUL").innerHTML = html; 
 
-//TODO: Make error message only appear on the respective list, tried a few things but nothing is working the way i want it to work. Need to look over it tomorrow/over the weekend
+//Set error message as output for respective list
+html = createError();
+document.getElementById("ExhibitionUL").innerHTML = html;
+document.getElementById("VenueUL").innerHTML = html;  
     
 } else {
     //Loop through list of filtered items and display them 
@@ -181,3 +180,33 @@ document.getElementById('chooseVenueType').addEventListener('change', function(e
     //Call function with the right input
     renderResults(venues, searchFilters);
     });
+
+//Reset the searches when changing the tabs
+//Exhibitions tab
+document.getElementById('defaultOpen').addEventListener('click', function(){
+    console.log("onclick 1 works");
+    searchFilters.searchText = '';
+    searchFilters.searchType = '';
+    searchFilters.searchStyle= '';
+    renderResults(exhibitions, searchFilters);
+    })
+//clear Input Fields
+document.getElementById('defaultOpen').addEventListener('click', function(){
+    document.getElementById('textSearchEx').value = "";
+    document.getElementById('chooseArtType').value = "";
+    document.getElementById('chooseArtStyle').value = "";
+});
+
+//Venues Tab
+document.getElementById('venueButton').addEventListener('click', function(){
+    console.log("onclick 2 works");
+    searchFilters.searchText = '';
+    searchFilters.searchType = '';
+    searchFilters.searchStyle= '';
+    renderResults(venues, searchFilters);
+    })
+//clear Input Fields
+document.getElementById('venueButton').addEventListener('click', function(){
+    document.getElementById('textSearchVe').value = "";
+    document.getElementById('chooseVenueType').value = "";
+});
