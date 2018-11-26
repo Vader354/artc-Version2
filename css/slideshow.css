@@ -54,7 +54,7 @@
     color: #000000;
     font-size: 50px;
     position: relative;
-    top: -580px;
+    top: -610px;
     width: 100%;
     text-align: center;
 }
@@ -62,7 +62,7 @@
 .centered-button {
   text-align: center;
   position: relative;
-  top: -550px;
+  top: -580px;
 }
 
 button {
