@@ -1,6 +1,6 @@
 
 
-// Not really necessary anymore
+// variable to get user input value
 var loginForm = document.getElementById("loginForm");
 var submit = document.getElementById("submit")
 // Retrieving stored users from localStorage
@@ -45,7 +45,6 @@ function hashPassword(password) {
                 document.location.href = "../html/overview.html";
                 var loggedinUser = JSON.stringify(currentUser);
                 localStorage.setItem("currentUser", loggedinUser);
-                users.setLastAccess();
                 return true;
             }
     
