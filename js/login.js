@@ -37,13 +37,18 @@ submit.addEventListener("click", function() {
           return true;
         } else {
           // displays alert with number of attempts left before being shut out
-          loginAttempts--;
-          alert("Incorrect username and/or password " + loginAttempts + " attempts remaining.");
-          loginForm.disabled = true;
-          alert("Please register as a new user in order to continue");
+        
         }
-      // prevent user from doing anything further
-      return false;
+
+
       }
+      // prevent user from doing anything further
+      loginAttempts--;
+      alert("Incorrect username and/or password " + loginAttempts + " attempts remaining.");
+      if (loginAttempts === 0) {
+        submit.disabled = true;
+      }
+      alert("Please register as a new user in order to continue");
+      return false;
   }
 });
