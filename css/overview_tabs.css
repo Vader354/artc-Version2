@@ -1,16 +1,13 @@
-/* Style the tab */
+/* style the tab */
 .tab {
     float: center;
     text-align: center;
     width: 100%;
     position: relative;
     top: 20px; 
-    /* display: inline-block; */
-    /* border: none;
-    background-color: white; */
 }
 
-/* Style the buttons that are used to open the tab content */
+/* style the buttons that are used to open the tab content */
 .tab button {
     display: inline-block;
     font-family: 'Josefin Sans', sans-serif;
@@ -55,8 +52,4 @@
     font-family: 'Josefin Sans', sans-serif;
     color: rgb(172, 172, 172); 
     margin: 20px 0px 10px 0px; 
-}
-
-.dates {
-
 }
