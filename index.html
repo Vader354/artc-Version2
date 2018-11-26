@@ -13,20 +13,18 @@
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
 
-    <!-- Link to hide mypicks if not logged in -->
-    <script src="../artc/JS/mypicklist.js"></script>
-
     <title>Home | ArtC</title>
 </head>
 <body>
 
-<!-- navigation bar -->
-<ul>
+    <!-- navigation bar -->
+    <ul>
         <li><a href="index.html">ArtC</a></li>
         <li><a href="html/overview.html">Overview</a></li>
-        <li><a href="html/mypicklist.html">My Picks</a></li>
-        <li style="float:right"><a href="html/login.html">Log-In</a></li>
+        <li><a id="myPickList" href="html/mypicklist.html">My Picks</a></li>
+        <li style="float:right"><a id="logInNav" href="html/login.html">Log-In</a></li>
     </ul>
+
     <br>
     <!-- slideshow container -->
     <div class="slideshow-container">
@@ -68,14 +66,15 @@
     
         <!-- js script for slideshow -->
         <script src="js/slideshow.js"></script>
-
+        <!-- flashes, WHY -->
+        <script src="js/currentUserFunctions.js"></script>
     </div>
-
-    <br>
     
-    <h1 style="position:absolute; top:770px; left:20px">Welcome.</h1>
-    <br>
-    <p style="position:absolute; top:810px; left:50px; text-align:left">Little welcome text and explanation that when you become a member you can create your own pick list - whoop.</p>
-    <br> 
+    <div>
+        <h1 style="position:absolute; top:770px; left:20px">Welcome.</h1>
+    </div>
+    <div> 
+        <p style="position:absolute; top:810px; left:50px; text-align:left">Little welcome text and explanation that when you become a member you can create your own pick list - whoop.</p>
+    </div>
 </body>
 </html>

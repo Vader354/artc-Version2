@@ -53,6 +53,14 @@ for (var i = 0; i < pickButtons.length; i++) {
     pickButtons[i].addEventListener("click", pick);
 }
 
+// use getInformation method to check which user were in and get all the information, store it in var
+// problem: with unpacking from local storage class gets lost somehow, method cant be called
+// for (let i = 0; i < users.length; i++) {
+// if (currentUser.email == users[i].email) {
+
+// aim: pick() function should add to the empty array / property of user[i] = current user
+
+
 function pick() {
     // check if button is active i.e. element is already in the pick list
     // if button not active, push to pick list and change button appearing 
@@ -67,7 +75,6 @@ function pick() {
         event.currentTarget.textContent = "– My Picks";
         event.currentTarget.style.background = "black";
         event.currentTarget.style.color = "white";
-        console.log(pickButtons);
     // if button active (= element already in picks list)
     } else {
         // find index of clicked element
@@ -89,9 +96,5 @@ function pick() {
 
 
 // SEARCH 
-console.log(exhibitions[0].getAddress());
-console.log(users);
-console.log(users[0].getAddress());
-
 
 // FILTER 

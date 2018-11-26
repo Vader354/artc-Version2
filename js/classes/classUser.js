@@ -7,15 +7,8 @@ class User {
   this.email = email;
   this.cpr = cpr;
   this.password = this.hashPassword(password);
+  this.mypicks = [];
   // this.lastAccess = this.setLastAccess();
-  }
-
-  getAddress() {
-    for (var i = 0; i < addresses.length; i++) {
-      if (this.email == addresses[i].ownerID) {
-          return addresses[i];
-      } 
-    }
   }
 
   // Need to figure out how this works hehe, Henrik is a sneaky, smart man
@@ -35,14 +28,15 @@ class User {
   }
 }
 
-var users = (localStorage.getItem("Users") !== null) ? JSON.parse(localStorage.getItem("Users")) : []; 
-console.log(users[0].getAddress());
-
+// doesn't work for our programm because class gets lost after unpacking from local storage
+getAddress() {
+  for (var i = 0; i < userAddresses.length; i++) {
+    if (this.email == userAddresses[i].ownerID) {
+        return userAddresses[i];
+    } 
+  }
+}
 
 // setLastAccess() {
 //     this.lastAccess = Date.now();  
-// }
-
-// addPick() {
-//     document.getElementsByClassName 
 // }

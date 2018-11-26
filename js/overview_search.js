@@ -121,7 +121,11 @@ if (filteredResults.length === 0) {
                     + '<p>' + "We are sorry, there are no search results matching your criteria... :("+ '</p>' 
                 + '</li>'
     }
-console.log("if works")
+ 
+html = createError();
+document.getElementById("ExhibitionUL").innerHTML = html;
+document.getElementById("VenueUL").innerHTML = html;
+
 //TODO: Make error message only appear on the respective list, tried a few things but nothing is working the way i want it to work. Need to look over it tomorrow/over the weekend
     
 } else {
