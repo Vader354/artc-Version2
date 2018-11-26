@@ -26,7 +26,7 @@ class User {
     }
       return String(a);
   }
-}
+
 
 // doesn't work for our programm because class gets lost after unpacking from local storage
 getAddress() {
@@ -35,6 +35,7 @@ getAddress() {
         return userAddresses[i];
     } 
   }
+}
 }
 
 // setLastAccess() {
