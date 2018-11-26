@@ -102,7 +102,6 @@ function checkPc() {
 
 // Checks if password meets certain criteria
 function checkPwd() {
-    return true;
     // first () indicates at least 1 special character requirement, second () indicates at least 1 capital letter, third() indicates that the password has to contain at least 6 characters
     var pwd = /^(?=(.*[\W]){1,})(?=(.*?[A-Z]){1,})(?!.*\s).{6,}$/;
         
