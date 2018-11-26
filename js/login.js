@@ -34,7 +34,6 @@ submit.addEventListener("click", function() {
           document.location.href = "../html/overview.html";
           var loggedinUser = JSON.stringify(currentUser);
           localStorage.setItem("CurrentUser", loggedinUser);
-          users.setLastAccess();
           return true;
         } else {
           // displays alert with number of attempts left before being shut out
