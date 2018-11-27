@@ -1,19 +1,4 @@
 //**** Import Object Information for Exhibitions and venues Properties ****/
-// Initial Render, UL List is empty
-var htmlEx = '';
-var htmlVe = '';
-
-// Loop through the exhibitions/venue-array and display the respective html
-for (var i=0; i < exhibitions.length; i++) {
-    htmlEx += exhibitions[i].createHTML();
-}
-for (var i=0; i < venues.length; i++) {
-    htmlVe += venues[i].createHTML();
-}
-
-// Output all imported exhibition and venuess:
-document.getElementById('ExhibitionUL').innerHTML = htmlEx;
-document.getElementById('VenueUL').innerHTML = htmlVe;
 
 // **** SEARCH and Filter functions ****
 
@@ -86,7 +71,6 @@ for (var i=0; i < venues.length; i++) {
 }
 
 //** General Filter Function **
-// TODO: If none of the items in the list match ALL criteria, display Error Message!
 
 //Create Object with all filter options
 var searchFilters = {
@@ -138,10 +122,7 @@ document.getElementById("VenueUL").innerHTML = html;
                 document.getElementById("VenueUL").innerHTML = html
             }
         }
-        
     }
-
-
 }
 
 //Eventlistener for every input field so search function is called by input/change
@@ -184,29 +165,24 @@ document.getElementById('chooseVenueType').addEventListener('change', function(e
 //Reset the searches when changing the tabs
 //Exhibitions tab
 document.getElementById('defaultOpen').addEventListener('click', function(){
-    console.log("onclick 1 works");
     searchFilters.searchText = '';
     searchFilters.searchType = '';
     searchFilters.searchStyle= '';
+// We figured out that this is the part that keeps the other Eventlistener from running
     renderResults(exhibitions, searchFilters);
-    })
-//clear Input Fields
-document.getElementById('defaultOpen').addEventListener('click', function(){
+    //clear input fields
     document.getElementById('textSearchEx').value = "";
     document.getElementById('chooseArtType').value = "";
     document.getElementById('chooseArtStyle').value = "";
-});
+    });
 
 //Venues Tab
 document.getElementById('venueButton').addEventListener('click', function(){
-    console.log("onclick 2 works");
     searchFilters.searchText = '';
     searchFilters.searchType = '';
     searchFilters.searchStyle= '';
     renderResults(venues, searchFilters);
-    })
 //clear Input Fields
-document.getElementById('venueButton').addEventListener('click', function(){
     document.getElementById('textSearchVe').value = "";
     document.getElementById('chooseVenueType').value = "";
-});
+}); 
