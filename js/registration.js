@@ -9,7 +9,7 @@ function validateReg() {
         alert("You need to pick a gender.");
         return true;
     }
-    if (!checkEmail(form.email.value)) {
+    if (!checkEmail()) {
         alert("Email not valid or is used by another user.");
         return false;
     }
