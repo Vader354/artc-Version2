@@ -8,15 +8,13 @@ class User {
   this.cpr = cpr;
   this.password = this.hashPassword(password);
   this.mypicks = [];
-  // this.lastAccess = this.setLastAccess();
   }
 
-  // Need to figure out how this works hehe, Henrik is a sneaky, smart man
+  // Method to hash the user registration input for the password. Done to not store input password in clear text
   hashPassword(password) {
     var a = 1, c = 0, h, o;
     if (password) {
       a = 0;
-      /*jshint plusplus:false bitwise:false*/
       for (h = password.length - 1; h >= 0; h--) {
         o = password.charCodeAt(h);
         a = (a<<6&268435455) + o + (o<<14);
@@ -37,7 +35,3 @@ getAddress() {
   }
 }
 }
-
-// setLastAccess() {
-//     this.lastAccess = Date.now();  
-// }
