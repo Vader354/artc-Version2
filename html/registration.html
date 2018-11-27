@@ -27,21 +27,23 @@
     <!-- navigation bar -->
     <ul>
         <li><a href="../index.html">ArtC</a></li>
-        <li><a href="overview.html">Overview</a></li>
-        <li><a id="myPickList" href="mypicklist.html">My Picks</a></li>
-        <li style="float:right"><a id="logInNav" href="login.html">Log-In</a></li>
+        <li><a href="../html/overview.html">Overview</a></li>
+        <li><a id="myPickList" href="../html/mypicklist.html">My Picks</a></li>
+        <li style="float:right"><a id="logInNav" href="../html/login.html">Log-In</a></li>
     </ul>
     
     <h1 id="hreg">Sign Up</h1>
     <div class="regform">
         <form id="regForm">
             <div class="divinline">
+                <!-- first name and last name -->
                 <label for="firstname">First name*</label>
                 <input type="text" id="firstname" name="firstname" placeholder="e.g. Sarah" required> 
                 <label for="lastname">Last name*</label>
                 <input type="text" id="lastname" name="lastname" placeholder="e.g. Andersson" required>
             </div>
             <div>
+                <!-- Gender, validated in JS -->
                 <label>Gender*</label>
                 <label for="male">Male:</label>
                 <input type="radio" id="male" name="gender" value="Male">
@@ -49,27 +51,28 @@
                 <input type="radio" id="female" name="gender" value="Female">
             </div>
             <div>
-            <!-- E-mail must be checked against local storage in JS -->
+            <!-- E-mail must be properly formatted based on the input type. Checks for matches in localStorage via JS -->
                 <label for="email">E-Mail*</label>
                 <input type="email" id="email" name="email" placeholder="e.g. sarah.andersson@artc.com" required>
             </div>
             <div>
-            <!-- Should be validated in JS-->
+            <!-- CPR validated using JS-->
             <label for="cpr">CPR Number*</label>
                 <input type="text" id="cpr" name="cpr" placeholder="DDMMYY-NNNN" title="Enter your CPR number" required>
             </div>
             <div>
+                <!-- Street -->
                 <label for="street">Street, Number*</label>
                 <input type="text" id="street" name="address" placeholder="e.g. Vesterbrogade 1" required><br>
-                <!-- JS verification of PC needed -->
+                <!-- Postal code is verified using JS-->
                 <label for="postal">Postal Code*</label>
                 <input type="text" id="postal" name="address" placeholder="e.g. 1620" title="Postal code must be 4 digits and within greater Copenhagen" required><br>
-                <!-- JS verification of PC match city -->
+                <!-- City -->
                 <label for="city">City*</label>
                 <input type="text" id="city" name="address" placeholder="e.g. Copenhagen" title="City must be located within entered postal code" required>
             </div>
             <div>
-                <!-- Password needs to be encrypted/hashed in JS -->
+                <!-- Password -->
                 <label for="password">Password*</label>
                 <input type="password" id="password" name="password" placeholder="Password" title="Password must contain a special character, a capital letter and be at least 6 characters long."  required><br>
                 <!-- Confirm password -->
@@ -78,23 +81,25 @@
             </div>    
             <div>
                 <!-- used "tel", because it allows keypad customization for mobile/phone users -->
-                <!-- Pattern, check phonenumber for 8 digits without spacing,  -->
+                <!-- Phone number has to be Danish, is validated in JS  -->
                 <label for="phone">Phone number*</label>
                 <input type="tel" id="phone" name="phone" placeholder="e.g. 88888888" title="Phone number must contain 8 digits and no spacing" required>
             </div>
             <label>* required</label>
             <div>
+                <!-- Terms and conditions, no function, all user has to do is click the box -->
                 <input type="checkbox" id="termscheck" name="terms" title="You must approve the terms and conditions." required> 
                 <label for="termscheck" id="terms">I have read and agreed to the terms and conditions.</label>
             </div>
-            <!-- Do we need to do input -> button? -->
+
+            <!-- When submit button is clicked, JS will run validateReg function on all input-->
             <button type="button" id="onSubmitButton" onclick="validateReg()">SIGN UP</button>
-            <!-- link to login page -->
 
             <script src="../js/registration.js"></script>
         </form>
         <div>
-            <p>Already have an account? <a href="login.html">Log in here</a>.</p>
+            <!-- Link to login page -->
+            <p>Already have an account? <a href="../html/login.html">Log in here</a>.</p>
         </div>
     </div>
     <script src="../js/currentUserFunctions.js"></script>
