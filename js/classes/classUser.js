@@ -7,7 +7,7 @@ class User {
   this.email = email;
   this.cpr = cpr;
   this.password = this.hashPassword(password);
-  this.mypicks = [];
+  this.myPicks = [];
   }
 
   // Method to hash the user registration input for the password. Done to not store input password in clear text
