@@ -1,9 +1,6 @@
-//**** Import Object Information for Exhibitions and venues Properties ****/
-
 // **** SEARCH and Filter functions ****
 
 //** Import filter Options for dropdowns from Exhibition and Venue List **
-
 //ArtType
 //Create an Array for all current Options in the Dropdown
 var selectArtType = document.getElementById('chooseArtType');
@@ -71,7 +68,6 @@ for (var i=0; i < venues.length; i++) {
 }
 
 //** General Filter Function **
-
 //Create Object with all filter options
 var searchFilters = {
     searchText: '',

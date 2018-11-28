@@ -69,7 +69,7 @@ function checkGender() {
 
 // Checks if email is already used by checking if it's already in local storage
 function checkEmail(email) {
-    // loop throguh users, which are unpacked from localStorage, in order to check for match
+    // loop through users, which are unpacked from localStorage, in order to check for match
     for (var i = 0; i < users.length; i++) {
         // if there is a match within localStorage, the program will stop running
         if (users[i].email == email) {
@@ -80,7 +80,7 @@ function checkEmail(email) {
 }    
 
 function checkDateOfBirth() {
-    // The regex accepts 10 numbers, ddmmyy-nnnn. Does not check whether the last for digits are correct or not. 
+    // The regex accepts 10 numbers, ddmmyy-nnnn. Does not check whether the last four digits are correct or not. 
     var cpr1 = /^[0-3][0-9][0-1]\d{3}-\d{4}?/;
     
     // Sets var cpr equal to user input

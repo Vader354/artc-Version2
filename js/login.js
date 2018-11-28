@@ -39,7 +39,7 @@ submit.addEventListener("click", function() {
   } else { 
       // loop to check for input matching users in localStorage
       for (var i = 0; i < users.length; i++) {
-        // checks for mathces in localStorage, both have to be a match
+        // checks for matches in localStorage, both have to be a match
         // the user login input password is hashed to be able to check it against saved passwords in localStorage, since we cannot unhash an already hashed password.
         if (username == users[i].email && hashPassword(inputPassword) == users[i].password) {
           // if both input matches a new object is created through the CurrentUser class constructor. This is done to make the system understand if a user is logged on. It only stores username/email. 
@@ -56,7 +56,7 @@ submit.addEventListener("click", function() {
       // prevent user from doing anything further
       loginAttempts--;
       // each time the user enters a faulty input an alert will pop up displaying remaining attempts
-      alert("Incorrect username and/or password " + loginAttempts + " attempts remaining.");
+      alert("Incorrect username and/or password. " + loginAttempts + " attempts remaining.");
       // if  loginAttempts reaches zero, the submit button will be disabled and the user will not be able to log in. The function is limited, since all the user have to do to try again is to refresh the page.
       if (loginAttempts === 0) {
         // disables submit button 

@@ -50,7 +50,7 @@ function openTab(event, listName) {
 
 // loop through the array to check which button was clicked, and execute pick() function
 for (var i = 0; i < pickButtons.length; i++) {
-// PROBLEM: his Eventlistener does not fire for some reason.
+// PROBLEM: this Eventlistener does not fire for some reason.
     pickButtons[i].addEventListener("click", pick);
 }
 
