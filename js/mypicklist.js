@@ -25,7 +25,3 @@ function createTable(tableArr) {
 
 // execute function to create table
 createTable(currentPicks);
-
-
-
-
