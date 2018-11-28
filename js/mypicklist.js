@@ -2,19 +2,20 @@
 var currentPicks = localStorage.getItem("Picks");
 currentPicks = JSON.parse(currentPicks);
   
+// cells are not really necessary for us now but maybe in the future when we work with real objects and want to display more than the name
 function createTable(tableArr) {
-    //create a Table Object
+    // create a table object
     let table = document.createElement('table');
-    //iterate over every array(row) within tableArr
+    // iterate over every array(row) within tableArr
     for (let row of tableArr) {
-        //Insert a new row element into the table element
+        // insert a new row element into the table element
         table.insertRow();
-        //Iterate over every index(cell) in each array(row)
+        // iterate over every index(cell) in each array(row)
         for (let cell of row) {
-            //While iterating over the index(cell)
-            //insert a cell into the table element
+            // while iterating over the index(cell)
+            // insert a cell into the table element
             let newCell = table.rows[table.rows.length - 1].insertCell();
-            //add text to the created cell element
+            // add text to the created cell element
             newCell.textContent = cell;
         }
     }

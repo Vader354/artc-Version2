@@ -125,3 +125,17 @@ exhibitions.push(new Exhibition(
 // hi();
 
 // console.log(currentUser.getInformation());
+
+// use getInformation method to check which user were in and get all the information, store it in var
+// problem: with unpacking from local storage class gets lost somehow, method cant be called
+// for (let i = 0; i < users.length; i++) {
+// if (currentUser.email == users[i].email) {
+
+// aim: pick() function should add to the empty array / property of user[i] = current user
+
+//Create Object with all filter options
+var searchFilters = {
+    searchText: '',
+    searchType: '',
+    searchStyle: ''
+};
