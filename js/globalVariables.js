@@ -105,37 +105,3 @@ exhibitions.push(new Exhibition(
     /* description */               , "Sculptures Test. A photoseries shot in the US. Based in Milan, Luca studied communication sciences and Italian cinema, picking up a camera while at university. Since 2011 he’s focused on large-format film photography, lugging his kit (plus essentials like food and camping equipment) to some of the most untouched and desolate places on earth, often for weeks at a time. Luca first scouts locations using Google Earth and, once he’s found a place that appeals to him, spends considerable time on travel logistics. “I like the whole story of being there to photograph,” says Luca. “The journey, the arrival, the fact I’m camping and living in the area for some days and the time spent alone and far away from everyday life. While doing so, I also like to try to get a different perspective on the landscape, relying more on the feelings rather than pure aesthetics.”"
     /* startDate */                 , "22 Jan 2018"
     /* endDate */                   , "14 Mar 2018"));
-
-
-
-
-// PUT IN REPORT => PICKS ISSUE
-// currently, users is now the object we get from local storage
-
-// find current user in generic (unpacked from local storage) users array
-// function hi() {
-//     for (let i = 0; i < users.length; i++) {
-//     if (currentUser.email == users[i].email) {
-//         currentUser = new CurrentUser(user[i].email);
-//         console.log("done");
-//         // currentUser[i].getInformation()
-//     } 
-// }}
-
-// hi();
-
-// console.log(currentUser.getInformation());
-
-// use getInformation method to check which user were in and get all the information, store it in var
-// problem: with unpacking from local storage class gets lost somehow, method cant be called
-// for (let i = 0; i < users.length; i++) {
-// if (currentUser.email == users[i].email) {
-
-// aim: pick() function should add to the empty array / property of user[i] = current user
-
-//Create Object with all filter options
-var searchFilters = {
-    searchText: '',
-    searchType: '',
-    searchStyle: ''
-};
