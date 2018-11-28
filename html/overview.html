@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="../css/overview_mypicks.css">
     <link rel="stylesheet" href="../css/overview_search.css">
 
+    <!-- loading all the classes -->
+    <script src="../js/classes/classAddress.js"></script>
+    <script src="../js/classes/classUser.js"></script>
+    <script src="../js/classes/classCurrentUser.js"></script>
+    <script src="../js/classes/classExhibition.js"></script>
+    <script src="../js/classes/classVenue.js"></script>
+    <script src="../js/globalVariables.js"></script>
+
     <!-- links to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto+Slab:100,300,400" rel="stylesheet">
 
@@ -19,75 +27,61 @@
 </head>
 <body onload="init()">
 
-<!-- **** Nav Bar **** -->
-
-<ul>
-    <li><a href="../index.html">ArtC</a></li>
-    <li><a href="overview.html">Overview</a></li>
-    <li><a id="myPickList" href="mypicklist.html">My Picks</a></li>
-    <li style="float:right"><a id="logInNav" href="login.html">Log-In</a></li>
-</ul>
-
-<!-- loading all the classes -->
-<script src="../js/classes/classAddress.js"></script>
-<script src="../js/classes/classUser.js"></script>
-<script src="../js/classes/classCurrentUser.js"></script>
-<script src="../js/classes/classExhibition.js"></script>
-<script src="../js/classes/classVenue.js"></script>
-<script src="../js/globalVariables.js"></script>
-
-<!-- https://www.w3schools.com/howto/howto_js_tabs.asp  -->
-<!-- creating two different tabs for venues and current exhibitions -->
-<div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'CurrentExhibitions')" id="defaultOpen">Exhibitions</button>
-        <button id="venueButton" class="tablinks" onclick="openTab(event, 'ArtVenues')">Art Venues</button>
-</div>
-
-
-<!-- **** Tabs Content **** -->
-
-<!-- **** Exhibitions Tab **** -->
-<div id="CurrentExhibitions" class="tabcontent">
-    
-<!-- ** SEARCH FUNCTION Input Bar Exhibitions ** -->
-<input type="text" class="searchbar" id="textSearchEx" placeholder="Search exhibitions...">
-
-<!-- ** FILTER for ArtType ** -->
-<select required name="filterArtType" id="chooseArtType">
-    <option value="">Choose Art-Type...</option>
-</select>
-
-<!-- ** FILTER for ArtStyle ** -->
-<select required name="filterArtStyle" id="chooseArtStyle">
-    <option value="">Choose Art-Style...</option>
-</select>
-
-<!-- LIST Exhibitions -->
-<ul class="myList" id="ExhibitionUL">
-</ul>
-
-</div>
-
-<!-- **** Venue Tab **** -->     
-<div id="ArtVenues" class="tabcontent">
-
-<!-- ** SEARCH FUNCTION Input Bar Venues ** -->
-<input type="text" class="searchbar" id="textSearchVe" placeholder="Search venues...">
-
-<!-- ** FILTER for VenueType ** -->
-<select required name="filterVenueType" id="chooseVenueType">
-    <option value="">Choose Venue-Type...</option>
-</select>
-
-<!-- LIST Venues -->
-    <ul class="myList" id="VenueUL">
+    <!-- navigation bar -->
+    <ul>
+        <li><a href="../index.html">ArtC</a></li>
+        <li><a href="overview.html">Overview</a></li>
+        <li><a id="myPickList" href="mypicklist.html">My Picks</a></li>
+        <li style="float:right"><a id="logInNav" href="login.html">Log-In</a></li>
     </ul>
-     
-</div>
 
-<script src="../js/overview_search.js"></script>
-<script src="../js/overview_tabs_picks.js"></script>
-<script src="../js/currentUserFunctions.js"></script>
+    <!-- creating two different tabs for venues and current exhibitions -->
+    <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'CurrentExhibitions')" id="defaultOpen">Exhibitions</button>
+            <button id="venueButton" class="tablinks" onclick="openTab(event, 'ArtVenues')">Art Venues</button>
+    </div>
 
+
+    <!-- tabs content -->
+
+    <!-- exhibitions tab -->
+    <div id="CurrentExhibitions" class="tabcontent">
+        
+        <!-- search function input bar -->
+        <input type="text" class="searchbar" id="textSearchEx" placeholder="Search exhibitions...">
+
+        <!-- filter for ArtType -->
+        <select required name="filterArtType" id="chooseArtType">
+            <option value="">Choose Art-Type...</option>
+        </select>
+
+        <!-- filter for ArtStyle -->
+        <select required name="filterArtStyle" id="chooseArtStyle">
+            <option value="">Choose Art-Style...</option>
+        </select>
+
+        <!-- list of exhibitions -->
+        <ul class="myList" id="ExhibitionUL"></ul>
+
+    </div>
+
+    <!-- venue tab -->     
+    <div id="ArtVenues" class="tabcontent">
+
+        <!-- search function input bar -->
+        <input type="text" class="searchbar" id="textSearchVe" placeholder="Search venues...">
+
+        <!-- filter for venue type -->
+        <select required name="filterVenueType" id="chooseVenueType">
+            <option value="">Choose Venue-Type...</option>
+        </select>
+
+        <!-- list of venues -->
+        <ul class="myList" id="VenueUL"></ul>
+        
+    </div>
+
+    <script src="../js/overview_tabs_picks.js"></script>
+    <script src="../js/currentUserFunctions.js"></script>
 </body>
 </html>

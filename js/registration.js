@@ -46,7 +46,6 @@ function validateReg() {
     }
 };
 
-    
 // Checks if one of the gender radio buttons is selected 
 function checkGender() { 
     // Set variable for user input/check 
