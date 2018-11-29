@@ -8,7 +8,8 @@ class Exhibition {
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.link = "../../html/exhibition_subpages/" + this.exhibitionID + ".html"
+        // link is not used in the current program, but as soon as subpages for each exhibition will be implemented this will come in handy
+        this.link = "../html/exhibition_subpages/" + this.exhibitionID + ".html"
     }
 
     getVenueName() {
@@ -31,7 +32,7 @@ class Exhibition {
     // method that creates HTML, in this case a list item for the respective object, including specific object information and the mypicks button.
     createHTML(){
         return '<li class="ListItem">' 
-                    + '<a href="' + this.link + '" style="padding:0">' + '<h2>' + this.name + '</h2>' + '</a>' 
+                    + '<h2>' + this.name + '</h2>'
                     + '<div class="venuename">' + this.getVenueName() + '</div>'
                     + '<div class="dates">' + this.startDate + " – " + this.endDate
                     + '<p>' + this.description + '</p>' 
