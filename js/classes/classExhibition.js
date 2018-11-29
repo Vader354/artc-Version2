@@ -8,7 +8,7 @@ class Exhibition {
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.link = "../html/exhibition_subpages/" + this.exhibitionID + ".html"
+        this.link = "../../html/exhibition_subpages/" + this.exhibitionID + ".html"
     }
 
     getVenueName() {
