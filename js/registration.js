@@ -22,7 +22,7 @@ function validateReg() {
         return false;
     }
     if (!checkPwd()) {
-        alert("Password not valid.");
+        alert("Password needs to contain a special character, one capital letter and be at least 6 characters long.");
         return false;
     }
     if (!confirmPwd()) {
