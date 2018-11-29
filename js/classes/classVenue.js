@@ -16,7 +16,7 @@ class Venue {
 
     //creates HTML, in this case a list item for the venue list for the respective object, including information about the venue
     createHTML(){
-        return '<li class="ListItem">' + '<h2 id="nameVe1">' + this.name + '</h2>' + '<span class="venueType" id="venueType1">' + this.type + '</span>' +  '</li>'
+        return '<li class="ListItem">' + '<h2>' + this.name + '</h2>' + '<span class="venueType" id="venueType1">' + this.type + '</span>' +  '</li>'
     }
 
     //Creates a venuetype option for the filter dropdown on the overview page. 

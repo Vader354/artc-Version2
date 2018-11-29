@@ -95,13 +95,3 @@ exhibitions.push(new Exhibition(
     /* description */               , "A creative director working 3D. I am a creative who works in various media including steel, wood, concrete, paper, pencil, acrylic, ink and charcoal. Visit each sub page to see works in charcoal and pencil on paper, also acrylic on canvas and constructed objects. Go to exhibitions tab to see my installations, to see a chronological blog of my works on paper visit my Tumblr. I am open to gallery and exhibition invites and currently do not have any dealer gallery representing my work."
     /* startDate */                 , "05 May 2018"
     /* endDate */                   , "07 Jul 2018")); 
-    
-exhibitions.push(new Exhibition(
-    /* exhibitionID */              "E4"                                
-    /* venueID */                   , "V3"                                 
-    /* name */                      , "Luca Tombolini Exhibition"
-    /* type */                      , "#sculptures"
-    /* artStyle */                  , "#contemporary"
-    /* description */               , "Sculptures Test. A photoseries shot in the US. Based in Milan, Luca studied communication sciences and Italian cinema, picking up a camera while at university. Since 2011 he’s focused on large-format film photography, lugging his kit (plus essentials like food and camping equipment) to some of the most untouched and desolate places on earth, often for weeks at a time. Luca first scouts locations using Google Earth and, once he’s found a place that appeals to him, spends considerable time on travel logistics. “I like the whole story of being there to photograph,” says Luca. “The journey, the arrival, the fact I’m camping and living in the area for some days and the time spent alone and far away from everyday life. While doing so, I also like to try to get a different perspective on the landscape, relying more on the feelings rather than pure aesthetics.”"
-    /* startDate */                 , "22 Jan 2018"
-    /* endDate */                   , "14 Mar 2018"));
