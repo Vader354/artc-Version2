@@ -78,7 +78,7 @@
         if (event.currentTarget.className !== "pickButton active") {
             userPicks.push(this.id);
             localStorage.setItem("Picks", JSON.stringify(userPicks));
-            // localStorage ... set for buttons or just take the load thing from userPicks
+            // INSERT NEW COMMENT MARIE :D 
             alert(JSON.stringify(this.id) + " has been added to your picks.");
             // change class to active
             event.currentTarget.className += " active";

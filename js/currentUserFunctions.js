@@ -1,5 +1,5 @@
 // Hide myPicks when no user in current user, currently no ID to get from in HTML
-// the window object lets us access the don document loaded in the window and handle the event
+// the window object lets us access the DOM document loaded in the window and handle the event. Further, it ensures that the below functions will always be run first - as it is the first thing that gets loaded into the browser
 // When the document is loaded the following function will run
 window.addEventListener("load", function() {
     // checks if the localStorage contains a currentUser/loggedIn user

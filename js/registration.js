@@ -7,7 +7,8 @@ function validateReg() {
     // If validation fails, boolean statement within the function will not store entered value and system will stop running. 
     if (!checkGender()) {
         alert("You need to pick a gender.");
-        return true;
+        return false;
+        // Changed to return false... Working the same. 
     }
     if (!checkEmail()) {
         alert("Email not valid or is used by another user.");
@@ -85,7 +86,7 @@ function checkDateOfBirth() {
     // Sets var cpr equal to user input
     var cpr = form.cpr.value;
     
-    // Checks if phone1 (pattern) number matches criteria of variable phone
+    // Checks if cpr matches criteria of cpr1 (pattern)
     if (cpr.match(cpr1)) {
         return true; 
     } else {

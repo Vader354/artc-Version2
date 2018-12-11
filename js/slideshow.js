@@ -18,7 +18,7 @@ function showSlides(n) {
   if (n > slides.length) { 
       slideIndex = 1
   } 
-  // ? EHLER: WHat does this do?
+  // if previous arrow is pressed for the first image, jump to the last image of slideshow
   if (n < 1) {
     slideIndex = slides.length
   }
@@ -30,6 +30,7 @@ function showSlides(n) {
   for (var i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
+  //slideIndex-1 is used to reach the first element of the slides array (Index position 0)
   slides[slideIndex-1].style.display = "block"; 
   dots[slideIndex-1].className += " active";
 } 
