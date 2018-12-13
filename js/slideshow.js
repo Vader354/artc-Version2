@@ -6,7 +6,7 @@ function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-setInterval(function () {document.getElementById("nextButton").click();}, 5000);
+setInterval(function () {document.getElementById("nextButton").click();}, 4000);
 
 // functions to control through dots
 function currentSlide(n) {
