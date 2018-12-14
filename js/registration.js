@@ -47,10 +47,14 @@ function validateReg() {
     }
 };
 
+    // Adds an event that executes a function when a key is released on the keybord
     form.addEventListener("keyup", function(event) {
+        // cancels the default action if needed
         event.preventDefault();
+            // number 13 corresponds to enter on a keybord
             if(event.keyCode === 13){
-                document.getElementById("onSubmitButton").click();
+                // If enter is pressed the submit button will be pressed as well
+                form.onSubmitButton.click();
             }
     })
 
