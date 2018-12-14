@@ -4,7 +4,7 @@
 window.addEventListener("load", function() {
     // checks if the localStorage contains a currentUser/loggedIn user
 	if (localStorage.getItem("CurrentUser") == null) {
-        // if localStorage is empty myPickList will be hidden from the user
+    // if localStorage is empty myPickList will be hidden from the user
     document.getElementById("myPickList").style.display = "none";
     // if localStorage is empty the buttons under overview will be hidden from the user
     var hiddenButtons = document.getElementsByClassName("hiddenElement")
