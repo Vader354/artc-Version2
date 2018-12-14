@@ -59,6 +59,8 @@ submit.addEventListener("click", function() {
       alert("Incorrect username and/or password. " + loginAttempts + " attempts remaining.");
       // if  loginAttempts reaches zero, the submit button will be disabled and the user will not be able to log in. The function is limited, since all the user have to do to try again is to refresh the page.
       if (loginAttempts === 0) {
+        // Changes the bakcground color to grey if loginAttempts === 0
+        submit.style.backgroundColor = "grey";
         // disables submit button 
         submit.disabled = true;
         // Alert the user that he/she needs to create a user in order to continue
