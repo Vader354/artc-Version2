@@ -67,3 +67,10 @@ submit.addEventListener("click", function() {
       return false;
   }
 });
+
+loginForm.addEventListener("keyup", function(event) {
+  event.preventDefault();
+      if(event.keyCode === 13){
+          submit.click();
+      }
+})  

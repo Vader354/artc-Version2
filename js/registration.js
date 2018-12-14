@@ -47,6 +47,13 @@ function validateReg() {
     }
 };
 
+    form.addEventListener("keyup", function(event) {
+        event.preventDefault();
+            if(event.keyCode === 13){
+                document.getElementById("onSubmitButton").click();
+            }
+    })
+
 // Checks if one of the gender radio buttons is selected 
 function checkGender() { 
     // Set variable for user input/check 
