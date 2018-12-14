@@ -1,12 +1,14 @@
 var slideIndex = 1;
 showSlides(slideIndex);
 
+var interval = setInterval(function () {plusSlides(1)}, 4000);
+
 // next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
+  clearInterval(interval);
+  interval = setInterval(function () {plusSlides(1)}, 4000);
 }
-
-setInterval(function () {document.getElementById("nextButton").click();}, 4000);
 
 // functions to control through dots
 function currentSlide(n) {
