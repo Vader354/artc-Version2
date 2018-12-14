@@ -64,7 +64,9 @@ submit.addEventListener("click", function() {
         // disables submit button 
         submit.disabled = true;
         // Alert the user that he/she needs to create a user in order to continue
-        alert("Please register as a new user in order to continue");
+        setTimeout(function() {
+          alert("Please register as a new user in order to continue");
+        },10)
       }
       return false;
   }
