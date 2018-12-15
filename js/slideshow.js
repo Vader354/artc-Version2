@@ -13,6 +13,8 @@ function plusSlides(n) {
 // functions to control through dots
 function currentSlide(n) {
   showSlides(slideIndex = n);
+  clearInterval(interval);
+  interval = setInterval(function () {plusSlides(1)}, 4000);
 }
 
 function showSlides(n) {
