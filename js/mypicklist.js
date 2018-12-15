@@ -7,6 +7,8 @@ function createTable(tableArr) {
     // create a table object
     let table = document.createElement('table');
     // iterate over every array(row) within tableArr
+    // the for...of loop is the same (but shorter) as:
+    // for (let row = 0; row <= tableArr.length; row++)
     for (let row of tableArr) {
         // insert a new row element into the table element
         table.insertRow();
