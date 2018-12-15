@@ -259,7 +259,7 @@
 //     // create error message
 //         function createError() {
 //             return '<li class="ListItem">' 
-//                         + '<p>' + "We are sorry, there are no search results matching your criteria... :("+ '</p>' 
+//                     + '<p>' + "We are sorry, there are no search results matching your criteria... :("+ '</p>' 
 //                     + '</li>'
 //         }
     
