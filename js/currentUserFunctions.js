@@ -27,7 +27,7 @@ window.addEventListener("load", function() {
 })
 
 // log out, change the functionality of the log-in button
-// Adds and eventListener to the login button, which will respond to a click
+// Adds an eventListener to the login button, which will respond to a click
 document.getElementById("logInNav").addEventListener("click", function() {
     // checks if there is a user in local storage
     if (localStorage.getItem("CurrentUser") !== null) {
