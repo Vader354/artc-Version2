@@ -5,6 +5,10 @@ var form = document.getElementById('regForm');
 function validateReg() {
     // If statements run through the validation functions for the registration form. 
     // If validation fails, boolean statement within the function will not store entered value and system will stop running. 
+    if (!checkName()){
+        alert("You need to to enter a first and last name")
+        return false;
+    }
     if (!checkGender()) {
         alert("You need to pick a gender.");
         return false;
@@ -56,6 +60,15 @@ form.addEventListener("keyup", function(event) {
         }
 })
 
+function checkName() {
+    var first = form.firstname.value;
+    var last = form.lastname.value;
+    if(first.length == 0 || last.length == 0) {
+        return false;
+    }
+        return true;
+}
+
 // Checks if one of the gender radio buttons is selected 
 function checkGender() { 
     // Set variable for user input/check 
@@ -78,15 +91,23 @@ function checkGender() {
 
 // Checks if email is already used by checking if it's already in local storage
 function checkEmail(email) {
+    var inputEmail = form.email.value
+    var reqEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
     // loop through users, which are unpacked from localStorage, in order to check for match
     for (var i = 0; i < users.length; i++) {
         // if there is a match within localStorage, the program will stop running
         if (users[i].email == email) {
-        return false;               
+            return false;               
+            } 
+        } if (inputEmail == 0){
+            return false;  
+        } if (inputEmail.match(reqEmail)){
+            return true;
         }
-    }
-    return true;
-}    
+            return true; 
+}  
+    
 
 function checkDateOfBirth() {
     // The regex accepts 10 numbers, ddmmyy-nnnn. Does not check whether the last four digits are correct or not. 
