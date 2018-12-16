@@ -217,15 +217,27 @@
                         document.getElementById("VenueUL").innerHTML = html
                     }
                 }
+            //Taken from before pick()-function, adds eventlisteners to buttons again
             for (var i = 0; i < pickButtons.length; i++) {
                 pickButtons[i].addEventListener("click", pick);
             }
+            //Taken from init()-function, checks if button is already selected (i.e. element is already in myPicks)
             for (var i = 0; i < pickButtons.length; i++) {
                 for (var j = 0; j < userPicks.length; j++) {
                     if (userPicks[j] == pickButtons[i].id) {
                     pickButtons[i].className += " active";
                     pickButtons[i].textContent = "– My Picks";
                     }
+                }
+            }
+            //Taken from currentUserFunctions, hides newly rendered buttons if no user is logged in
+            if (localStorage.getItem("CurrentUser") == null) {
+                // if localStorage is empty the buttons under overview will be hidden from the user
+                var hiddenButtons = document.getElementsByClassName("hiddenElement")
+                // loop to hide all buttons from user
+                for (var i = 0; i < hiddenButtons.length; i++) {
+                    // hides the buttons from the user
+                    hiddenButtons[i].style.display = "none";
                 }
             }
         }
