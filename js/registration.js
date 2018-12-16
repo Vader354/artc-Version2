@@ -101,7 +101,7 @@ function checkGender() {
 // Checks if email is already used by checking if it's already in local storage
 function checkEmail() {
     var inputEmail = form.email.value
-    var reqEmail = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    var reqEmail = /^[\w-]+@([\w-]+\.)+[\w-]+/;
 
     // loop through users, which are unpacked from localStorage, in order to check for match
     for (var i = 0; i < users.length; i++) {
