@@ -113,7 +113,7 @@ function checkDateOfBirth() {
     // The regex accepts 10 numbers, ddmmyy-nnnn. Does not check whether the last four digits are correct or not. 
     var cpr1 = /^[0-3][0-9][0-1]\d{3}-\d{4}?/;
     
-    // Sets var cpr equal to user input
+    // Sets var cpr equal to user input 
     var cpr = form.cpr.value;
     
     // Checks if cpr matches criteria of cpr1 (pattern)
