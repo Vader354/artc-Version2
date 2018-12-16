@@ -1,21 +1,5 @@
 // CREATE LISTS ON OVERVIEW PAGE
-
-    // initial render, UL list is empty   
-    var htmlEx = '';   
-    var htmlVe = '';   
-
-    // loop through the exhibitions-array and display the respective html   
-    for (var i=0; i < exhibitions.length; i++) {   
-        htmlEx += exhibitions[i].createHTML();   
-    }   
-    for (var i=0; i < venues.length; i++) {   
-        htmlVe += venues[i].createHTML();   
-    }   
-    // output all imported exhibitions:   
-    document.getElementById('ExhibitionUL').innerHTML = htmlEx;   
-    document.getElementById('VenueUL').innerHTML = htmlVe; 
-
-
+// Initital Render deleted, because the reset function at the bottom does it already.
 
 // ONLOAD / DEFAULT WHEN LOADING THE OVERVIEW PAGE
 
