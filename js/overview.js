@@ -204,6 +204,8 @@
                 return isTextMatch && isTypeMatch && isStyleMatch
             });
 
+            console.log(filteredResults);
+
         // loop through list of filtered items and display them 
             for (let i = 0; i < filteredResults.length; i++) {
                 // update html variable for every result
@@ -215,6 +217,17 @@
                         document.getElementById("VenueUL").innerHTML = html
                     }
                 }
+            for (var i = 0; i < pickButtons.length; i++) {
+                pickButtons[i].addEventListener("click", pick);
+            }
+            for (var i = 0; i < pickButtons.length; i++) {
+                for (var j = 0; j < userPicks.length; j++) {
+                    if (userPicks[j] == pickButtons[i].id) {
+                    pickButtons[i].className += " active";
+                    pickButtons[i].textContent = "– My Picks";
+                    }
+                }
+            }
         }
 
         // eventlistener for every input field so search function is called by input/change
