@@ -25,6 +25,10 @@ function validateReg() {
     if (!checkPc()) {
         alert("Postal code is not in Copenhagen.");
         return false;
+    } 
+    if(!checkCity()) {
+        alert("You need to input a city")
+        return false;
     }
     if (!checkPwd()) {
         alert("Password needs to contain a special character, one capital letter and be at least 6 characters long.");
@@ -139,6 +143,14 @@ function checkPc() {
     } else {
         return false;
     }
+}
+
+function checkCity() {
+    var city = form.city.value;
+    if(city.length == 0) {
+        return false;
+    }
+        return true;
 }
 
 // Checks if password meets certain criteria
