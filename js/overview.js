@@ -206,6 +206,18 @@
 
             console.log(filteredResults);
 
+            if (filteredResults.length === 0) {
+                // create error message
+                    function createError() {
+                        return '<li class="ListItem">' 
+                                + '<p>' + "We are sorry, there are no search results matching your criteria... :("+ '</p>' 
+                                + '</li>'
+                    }
+                // set error message as output for respective list
+                html = createError();
+                document.getElementById("ExhibitionUL").innerHTML = html;
+                document.getElementById("VenueUL").innerHTML = html;      
+                } else {
         // loop through list of filtered items and display them 
             for (let i = 0; i < filteredResults.length; i++) {
                 // update html variable for every result
@@ -241,6 +253,7 @@
                 }
             }
         }
+    }
 
         // eventlistener for every input field so search function is called by input/change
         document.getElementById('textSearchEx').addEventListener('input', function(e){
@@ -278,45 +291,26 @@
             renderResults(venues, searchFilters);
             });
 
+// reset the searches when changing the tabs
+// exhibitions tab
+document.getElementById('defaultOpen').addEventListener('click', function(){
+    searchFilters.searchText = '';
+    searchFilters.searchType = '';
+    searchFilters.searchStyle= '';
+    renderResults(exhibitions, searchFilters);
+    //clear input fields
+    document.getElementById('textSearchEx').value = "";
+    document.getElementById('chooseArtType').value = "";
+    document.getElementById('chooseArtStyle').value = "";
+    });
 
-// ERROR MESSAGE AND RESET FILTER
-// if (filteredResults.length === 0) {
-//     // create error message
-//         function createError() {
-//             return '<li class="ListItem">' 
-//                     + '<p>' + "We are sorry, there are no search results matching your criteria... :("+ '</p>' 
-//                     + '</li>'
-//         }
-    
-//     // set error message as output for respective list
-//     html = createError();
-//     document.getElementById("ExhibitionUL").innerHTML = html;
-//     document.getElementById("VenueUL").innerHTML = html;  
-        
-//     } else { //put for loop here 
-//     }
-
-// // reset the searches when changing the tabs
-// // exhibitions tab
-// document.getElementById('defaultOpen').addEventListener('click', function(){
-//     searchFilters.searchText = '';
-//     searchFilters.searchType = '';
-//     searchFilters.searchStyle= '';
-// // we figured out that this is the part that keeps the other Eventlistener from running
-//     renderResults(exhibitions, searchFilters);
-//     //clear input fields
-//     document.getElementById('textSearchEx').value = "";
-//     document.getElementById('chooseArtType').value = "";
-//     document.getElementById('chooseArtStyle').value = "";
-//     });
-
-// // Venues Tab
-// document.getElementById('venueButton').addEventListener('click', function(){
-//     searchFilters.searchText = '';
-//     searchFilters.searchType = '';
-//     searchFilters.searchStyle= '';
-//     renderResults(venues, searchFilters);
-// // clear input fields
-//     document.getElementById('textSearchVe').value = "";
-//     document.getElementById('chooseVenueType').value = "";
-// }); 
+// Venues Tab
+document.getElementById('venueButton').addEventListener('click', function(){
+    searchFilters.searchText = '';
+    searchFilters.searchType = '';
+    searchFilters.searchStyle= '';
+    renderResults(venues, searchFilters);
+// clear input fields
+    document.getElementById('textSearchVe').value = "";
+    document.getElementById('chooseVenueType').value = "";
+}); 

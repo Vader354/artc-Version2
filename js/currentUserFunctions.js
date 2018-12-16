@@ -14,7 +14,7 @@ window.addEventListener("load", function() {
             hiddenButtons[i].style.display = "none";
         }
     } // changes log in to log out 
-    else if (localStorage.getItem("CurrentUser") !== null) {
+    else {
         // if there is a currentUser in localStorage, the text of the log in button will be changed to log out
         document.getElementById("logInNav").textContent = "Log Out";
         // log out, change the functionality of the log-in button
