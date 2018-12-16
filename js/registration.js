@@ -37,7 +37,12 @@ function validateReg() {
     if (!checkPhone()) {
         alert("You must enter a Danish phone number.");
         return false;
-    } else {
+    } 
+    if (!checkTerms()) {
+        alert("You need to agree to terms and conditions")
+        return false;
+    }
+     else {
         // Push user input into new object and store it in localStorage
         users.push(new User(form.firstname.value, form.lastname.value, form.gender.value, form.email.value, form.cpr.value, form.password.value))
         localStorage.setItem("Users", JSON.stringify(users));
@@ -90,20 +95,22 @@ function checkGender() {
 }
 
 // Checks if email is already used by checking if it's already in local storage
-function checkEmail(email) {
+function checkEmail() {
     var inputEmail = form.email.value
-    var reqEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    var reqEmail = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
     // loop through users, which are unpacked from localStorage, in order to check for match
     for (var i = 0; i < users.length; i++) {
         // if there is a match within localStorage, the program will stop running
-        if (users[i].email == email) {
-            return false;               
+            if (users[i].email == inputEmail) {
+                return false;               
+                } 
             } 
-        } if (inputEmail == 0){
+        if (inputEmail == 0){
             return false;  
-        } if (inputEmail.match(reqEmail)){
-            return true;
+            } 
+        if (!inputEmail.match(reqEmail)){
+            return false;
         }
             return true; 
 }  
@@ -174,3 +181,16 @@ function checkPhone() {
         return false;
     }
 }
+
+function checkTerms() {
+    var terms = document.getElementById("termscheck")
+    var isChecked = false;
+
+    if (terms.checked) {
+        isChecked = true;
+        return true;
+        }
+    // if none of the radio buttons are checked, code will stop
+    if (!isChecked) { 
+        return false;
+    } }      
