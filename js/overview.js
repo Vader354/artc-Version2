@@ -29,17 +29,8 @@
     function init() {
         // select exhibition tab by default
         document.getElementById("defaultOpen").click();
-        // check which picks are in local storage and make these buttons active 
-        // (prevents that when refreshing the page buttons are 'unselected' again and thus picks can be added double)
-        for (var i = 0; i < pickButtons.length; i++) {
-            for (var j = 0; j < userPicks.length; j++) {
-                if (userPicks[j] == pickButtons[i].id) {
-                pickButtons[i].className += " active";
-                pickButtons[i].textContent = "– My Picks";
-                }
-            }
-        }
-    }
+        // deleted second part of init function 
+    } 
 
 
 
@@ -73,12 +64,18 @@
     }
 
     function pick() {
+
+        for (var i = 0; i < users.length; i++) {
+            if (users[i].email == currentUser[0].email) {
         // check if button is active i.e. element is already in the pick list
         // if button not active, push to pick list and change button appearing 
         if (event.currentTarget.className !== "pickButton active") {
-            userPicks.push(this.id);
-            localStorage.setItem("Picks", JSON.stringify(userPicks));
-            // INSERT NEW COMMENT MARIE :D 
+            
+            // CHANGED: checks who is the current user and adds it to the property mypicks
+            
+            users[i].myPicks.push(this.id); 
+            localStorage.setItem("Users", JSON.stringify(users));
+            
             alert(JSON.stringify(this.id) + " has been added to your picks.");
             // change class to active
             event.currentTarget.className += " active";
@@ -89,13 +86,13 @@
         // if button active (= element already in picks list)
         } else {
             // find index of clicked element
-            var index = userPicks.indexOf(this.id);
+            var index = users[i].myPicks.indexOf(this.id);
             // check if the id is included at all (-1 means not included) otherwise there's nothing to be removed 
             if (index > -1) {
             // splice it out of the picks list and store new array to local storage
-                userPicks.splice(index, 1);
+                users[i].myPicks.splice(index, 1);
             }
-            localStorage.setItem("Picks", JSON.stringify(userPicks));
+            localStorage.setItem("Users", JSON.stringify(users));
             // change button class and appearing so that element can be added again after being removed
             event.currentTarget.className = event.currentTarget.className.replace(" active", "");
             event.currentTarget.textContent = "+ My Picks";
@@ -104,6 +101,8 @@
             alert(JSON.stringify(this.id) + " has been removed from your picks.");
         }
     }
+}
+}
 
 
 
@@ -234,11 +233,15 @@
                 pickButtons[i].addEventListener("click", pick);
             }
             //Taken from init()-function, checks if button is already selected (i.e. element is already in myPicks)
-            for (var i = 0; i < pickButtons.length; i++) {
-                for (var j = 0; j < userPicks.length; j++) {
-                    if (userPicks[j] == pickButtons[i].id) {
-                    pickButtons[i].className += " active";
-                    pickButtons[i].textContent = "– My Picks";
+            for (var i = 0; i < users.length; i++) {
+                if (users[i].email == currentUser[0].email) {
+                    for (var j = 0; j < pickButtons.length; j++) {
+                        for (var k = 0; k < users[i].myPicks.length; k++) {
+                            if (users[i].myPicks[k] == pickButtons[j].id) {
+                                pickButtons[j].className += " active";
+                                pickButtons[j].textContent = "– My Picks";
+                            }
+                        }
                     }
                 }
             }

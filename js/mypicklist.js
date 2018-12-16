@@ -1,5 +1,5 @@
 // get current picks from local storage
-var currentPicks = JSON.parse(localStorage.getItem("Picks"));
+// var currentPicks = JSON.parse(localStorage.getItem("Picks"));
 
 // creates HTML elemenet for the picklist
 function createHTMLlist(exhibitions) {
@@ -14,11 +14,17 @@ var content = "";
 
 // nested loop: for each currentPicks element it goes through the exhibitions 
 // when the matching exhibition is found, the program puts calls the createHTMLlist function on the matched exhibition object and binds it to the contet variable
-for (var i = 0; i < currentPicks.length; i++) {
-    for (var j = 0; j < exhibitions.length; j++) 
-        if (currentPicks[i] == exhibitions[j].name) {
-            content += createHTMLlist(exhibitions[j])
+for (var i = 0; i < users.length; i++) {
+    if (users[i].email == currentUser[0].email) {
+
+        for (var j = 0; j < users[i].myPicks.length; j++) {
+            for (var k = 0; k < exhibitions.length; k++) {
+                if (users[i].myPicks[j] == exhibitions[k].name) {
+                    content += createHTMLlist(exhibitions[k])
+                }
+            }
         }
+    }
 }
 
 // content will be displayed in the picklist div
