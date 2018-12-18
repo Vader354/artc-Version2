@@ -212,6 +212,7 @@
 
                 // makes already selected buttons active; taken from init()-function, checks if button is already selected (i.e. element is already in myPicks)
                 for (var i = 0; i < users.length; i++) {
+                    if (localStorage.getItem("currentUser") !== null){
                     if (users[i].email == currentUser[0].email) {
                         for (var j = 0; j < pickButtons.length; j++) {
                             for (var k = 0; k < users[i].myPicks.length; k++) {
@@ -223,7 +224,7 @@
                         }
                     }
                 }
-
+}
                 // hides newly rendered buttons if no user is logged in; taken from currentUserFunctions
                 if (localStorage.getItem("CurrentUser") == null) {
                     // if localStorage is empty the buttons under overview will be hidden from the user
